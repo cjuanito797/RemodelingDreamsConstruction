@@ -1,0 +1,71 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block nav_settings %}
+<nav class="navbar navbar-default fixed-top navbar-expand-lg navbar-light bg-light pb-2 pt-3 " id="primary-navigation"
+    role="navigation">
+
+    {% endblock %}
+
+    {% block mainbody %}
+    <div class="container-fluid" style="width: 100%;
+         background: linear-gradient(to top, #09203f 0%, #537895 100%);
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;
+         padding-top: var(--scroll-intro, 150px);">
+
+        <div class="container" style="justify-content: center; text-align: center; padding-top: 5%; padding-bottom: 5%;
+        color: white;
+        font-family: serif;
+        font-weight: bold;
+        width: 100%;">
+            <h1 style="font-weight: bold;">My Applicants</h1>
+
+
+
+        </div>
+    </div>
+    <table class="table table-hover table-bordered "
+        style="font-family: s ystem-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+
+        <thead>
+            <tr class="table-info">
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">E-mail</th>
+                <th scope="col" colspan="2">Options</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!-- utilize a for loop in order to print out all of the applicants. -->
+            {% for applicant in applicants %}
+
+            <tr>
+                <td>{{applicant.first_name}} {{applicant.last_name}}</td>
+                <td>{{applicant.telephone}}</td>
+                <td>{{applicant.email}}</td>
+                <td>
+                    <a class="btn btn-danger mb-5" href="{% url 'Admin:deleteApplicant' applicant.id %}"
+                        onclick="return confirm('Are you sure you would like to delete this applicantion?')">Delete</a>
+
+                    <a class="btn btn-success mb-5" href="{% url 'Admin:view_applicant_details' applicant.id %}"
+                        onclick="">View Details</a>
+                </td>
+
+
+            </tr>
+            {% endfor %}
+
+
+        </tbody>
+    </table>
+
+
+    {% endblock %}
+
+
+
+    <script src="../../static/main.js">
+    

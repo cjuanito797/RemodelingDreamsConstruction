@@ -1,0 +1,859 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block mainbody %}
+
+<div class="container-fluid" style="width: 100%;
+     background: linear-gradient(to top, #09203f 0%, #537895 100%);
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     padding-top: var(--scroll-intro, 150px);">
+
+    <div class="container" style="justify-content: center; text-align: center; padding-top: 5%; padding-bottom: 5%;
+    color: white;
+    font-family: serif;
+    font-weight: bold;
+    width: 100%;">
+        <h1 style="font-weight: bold;">{{applicant.first_name}} {{applicant.last_name}}</h1>
+
+
+
+    </div>
+</div>
+
+<div class="sectionHeader pl-5 pt-5">
+    <h4>1. Applicants Personal Information</h4>
+    <hr class="hr">
+</div>
+<div class="row justify-content-between pl-5 pr-5 text-left">
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="first_name" maxlength="30" required id="id_first_name"
+            class="form-control form-control-lg" placeholder="{{applicant.first_name}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="middle_name" maxlength="30" id="id_middle_name" class="form-control form-control-lg"
+            placeholder="{{applicant.middle_name}}" disabled>
+    </div>
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="last_name" maxlength="30" required id="id_last_name"
+            class="form-control form-control-lg" placeholder="{{applicant.last_name}}" disabled>
+    </div>
+</div>
+
+
+<div class="row justify-content-between pl-5 pr-5 text-left" style="width: 45%;">
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="socialSecurityNum" maxlength="9" required id="id_socialSecurityNum"
+            class="form-control form-control-lg" placeholder="{{applicant.socialSecurityNum}}" disabled>
+    </div>
+
+</div>
+
+
+
+<div class="row justify-content-between pl-5 pr-5 text-left">
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="street_num" maxlength="30" required id="id_street_num"
+            class="form-control form-control-lg" placeholder="{{applicant.street_num}}" disabled>
+    </div>
+    <div class="form-group col-sm flex-column d-flex">
+        <select name="state" id="id_state" class="form-control form-control-lg" disabled>
+            <option value="">{{applicant.state}}</option>
+
+
+        </select></p>
+    </div>
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="city" maxlength="25" required id="id_city" class="form-control form-control-lg"
+            placeholder="{{applicant.city}}" disabled>
+    </div>
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="zipcode" maxlength="5" required id="id_zipcode" class="form-control form-control-lg"
+            placeholder="{{applicant.zipcode}}" disabled>
+    </div>
+</div>
+
+
+<div class="row justify-content-between pl-5 pr-5">
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="telephone" maxlength="12" required id="id_telephone"
+            class="form-control form-control-lg" placeholder="{{applicant.telephone}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="cell_phone" maxlength="30" id="id_cell_phone" class="form-control form-control-lg"
+            placeholder="{{applicant.cell_phone}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="email" name="email" maxlength="45" required id="id_email" class="form-control form-control-lg"
+            placeholder="{{applicant.email}}" disabled>
+    </div>
+
+</div>
+
+<div class="row justify-content-between text-left pl-5 pr-5 pt-3" style="width: 35%; align-items: center;">
+    <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+        <h5>
+            Are you legally available to work for the country for which you are applying for?
+        </h5>
+    </div>
+
+    <div class="form-group col-6 flex-column d-flex" style="display: inline-block;">
+        <select name="legally_employeed" id="id_legally_employeed" class="form-control form-control-lg" disabled>
+            <option value="">{{applicant.legally_employeed}}</option>
+
+
+        </select>
+    </div>
+
+</div>
+
+<div class="row justify-content-between text-left pl-5 pr-5 pt-3" style="width: 35%; align-items: center;">
+    <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+        <h5>
+            Have you every pled guilty to a crime?
+        </h5>
+    </div>
+
+    <div class="form-group col-6 flex-column d-flex" style="display: inline-block;">
+        <select name="pled_guilty" id="id_pled_guilty" class="form-control form-control-lg" disabled>
+            <option value="">{{applicant.pled_guilty}}</option>
+
+
+        </select>
+    </div>
+
+</div>
+
+
+<div class="row justify-content-between pl-5 pr-5" style=" align-items: center; display: flex;">
+    <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+        <h5>Date Of Birth:</h5>
+    </div>
+    <div class="form-group col-6 flex-column d-flex" style="display: inline-block;">
+        <input name="date_of_birth" required id="id_date_of_birth" class="form-control form-control-lg"
+            placeholder="{{applicant.date_of_birth}}" disabled>
+    </div>
+</div>
+
+<div class="row justify-content-between pl-5 pr-5" style="align-items: center; display: flex;">
+    <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+        <h5>Date Available To Start: </h5>
+    </div>
+    <div class="form-group col-6 flex-column d-flex" style="display: inline-block;">
+        <input name="date_available_start" required id="id_date_available_start" class="form-control form-control-lg"
+            placeholder="{{applicant.date_available_start}}" disabled>
+    </div>
+</div>
+
+<div class="row justify-content-between pl-5 pr-5" style="align-items: center; display: flex;">
+    <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+        <h5>Please select the employment type you would like. </h5>
+    </div>
+    <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+        <select name="employment_desired" id="id_employment_desired" class="form-control form-control-lg" disabled>
+            <option value="">{{applicant.employment_desired}}</option>
+
+        </select>
+
+    </div>
+</div>
+
+
+<div class="row justify-content-between text-left pl-5 pr-5">
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="drivers_liscence_number" maxlength="30" required id="id_drivers_liscence_number"
+            class="form-control form-control-lg" placeholder="{{applicant.drivers_liscence_number}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <select name="drivers_liscence_state_iss" id="id_drivers_liscence_state_iss"
+            class="form-control form-control-lg" disabled>
+            <option value="">{{applicant.drivers_liscence_state_iss}}</option>
+
+        </select>
+    </div>
+
+</div>
+
+<div class="sectionHeader pl-5 pt-5">
+    <h4>2. Enter Your Employment History</h4>
+    <hr class="hr">
+</div>
+
+<div class="sectionHeader pl-5 pt-5">
+    <h5>Employer 1</h5>
+    <hr class="hr">
+</div>
+
+<div class="row justify-content-between pl-5 pr-5 text-left">
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="employer_1" maxlength="25" required id="id_employer_1"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_1}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="employer_1_tel" maxlength="30" required id="id_employer_1_tel"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_1_tel}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input name="employer_1_date_started" required id="id_employer_1_date_started"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_1_date_started}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input name="employer_1_date_terminated" id="id_employer_1_date_terminated" class="form-control form-control-lg"
+            placeholder="{{applicant.employer_1_date_terminated}}" disabled>
+    </div>
+
+</div>
+
+<div class="row justify-content-between text-left pl-5" style="width: 35%; display: flex; align-items: center;">
+
+    <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+        <h5>Are you currently still employed?</h5>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+        <select name="employer_1_still_employed" id="id_employer_1_still_employed" class="form-control form-control-lg"
+            disabled>
+            <option value="">{{applicant.employer_1_still_employed}}</option>
+
+
+        </select>
+    </div>
+
+</div>
+
+<div class="row justify-content-between text-left pl-5" style="width: 35%; display: flex; align-items: center;">
+
+    <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+        <h5>May we contact this employer?</h5>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+        <select name="employer_1_may_we_contact" id="id_employer_1_may_we_contact" class="form-control form-control-lg"
+            disabled>
+            <option value="">{{applicant.employer_1_may_we_contact}}</option>
+
+
+        </select>
+    </div>
+
+</div>
+
+
+<div class="row justify-content-between pl-5 pr-5 text-left">
+
+    <div class="form-group flex-column d-flex col-sm">
+        <input type="text" name="employer_1_street" maxlength="30" required id="id_employer_1_street"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_1_street}}" disabled>
+    </div>
+
+    <div class="form-group flex-column d-flex col-sm">
+        <input type="text" name="employer_1_city" maxlength="30" required id="id_employer_1_city"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_1_city}}" disabled>
+    </div>
+
+    <div class="form-group flex-column d-flex col-sm">
+        <select name="employer_1_state" id="id_employer_1_state" class="form-control form-control-lg" disabled>
+            <option value="">{{applicant.employer_1_state}}</option>
+
+
+
+        </select></p>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="employer_1_zipcode" maxlength="5" required id="id_employer_1_zipcode"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_1_zipcode}}" disabled>
+    </div>
+
+</div>
+
+<div class="row justify-content-between text-left pl-5 pr-5">
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="employer_1_starting_title" maxlength="25" required id="id_employer_1_starting_title"
+            class="form-control form-control-lg" placeholder="Starting Title: {{applicant.employer_1_starting_title}}"
+            disabled>
+
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="employer_1_starting_wage" maxlength="25" required id="id_employer_1_starting_wage"
+            class="form-control form-control-lg" placeholder="Starting Wage: {{applicant.employer_1_starting_wage}}"
+            disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="employer_1_final_title" maxlength="25" required id="id_employer_1_final_title"
+            class="form-control form-control-lg" placeholder="Final Title: {{applicant.employer_1_final_title}}"
+            disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="employer_1_final_wage" id="id_employer_1_final_wage"
+            class="form-control form-control-lg" placeholder="Final Wage: {{applicant.employer_1_final_wage}}" disabled>
+    </div>
+
+</div>
+
+
+<div class="row justify-content-between pl-5 pr-5 text-left">
+    <div class="form-group col-5 flex-column d-flex">
+        <textarea name="employer_1_summary" cols="40" rows="10" required id="id_employer_1_summary"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_1_summary}}" disabled></textarea>
+    </div>
+</div>
+
+
+<div class="row justify-content-between pl-5 pr-5 text-left">
+    <div class="form-group col-5 flex-column d-flex">
+        <input type="text" name="employer_1_favorite_details" maxlength="300" id="id_employer_1_favorite_details"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_1_favorite_details}}" disabled>
+
+    </div>
+</div>
+
+<div class="row justify-content-between pl-5 pr-5 text-left">
+    <div class="form-group col-5 flex-column d-flex">
+        <input type="text" name="employer_1_least_details" maxlength="300" id="id_employer_1_least_details"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_1_least_details}}" disabled>
+    </div>
+</div>
+
+
+<div class="sectionHeader pl-5 pt-5">
+    <h5>Employer 2</h5>
+    <hr class="hr">
+</div>
+
+<div class="row justify-content-between pl-5 pr-5 text-left">
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="employer_2" maxlength="25" required id="id_employer_2"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_2}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="employer_2_tel" maxlength="30" required id="id_employer_2_tel"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_2_tel}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input name="employer_2_date_started" required id="id_employer_2_date_started"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_2_date_started}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input name="employer_2_date_terminated" id="id_employer_2_date_terminated" class="form-control form-control-lg"
+            placeholder="{{applicant.employer_2_date_terminated}}" disabled>
+    </div>
+
+</div>
+
+<div class="row justify-content-between text-left pl-5" style="width: 35%; display: flex; align-items: center;">
+
+    <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+        <h5>Are you currently still employed?</h5>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+        <select name="employer_2_still_employed" id="id_employer_2_still_employed" class="form-control form-control-lg"
+            disabled>
+            <option value="">{{applicant.employer_2_still_employed}}</option>
+
+
+        </select>
+    </div>
+
+</div>
+
+<div class="row justify-content-between text-left pl-5" style="width: 35%; display: flex; align-items: center;">
+
+    <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+        <h5>May we contact this employer?</h5>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+        <select name="employer_2_may_we_contact" id="id_employer_2_may_we_contact" class="form-control form-control-lg"
+            disabled>
+            <option value="">{{applicant.employer_2_may_we_contact}}</option>
+
+
+        </select>
+    </div>
+
+</div>
+
+
+<div class="row justify-content-between pl-5 pr-5 text-left">
+
+    <div class="form-group flex-column d-flex col-sm">
+        <input type="text" name="employer_2_street" maxlength="30" required id="id_employer_2_street"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_2_street}}" disabled>
+    </div>
+
+    <div class="form-group flex-column d-flex col-sm">
+        <input type="text" name="employer_2_city" maxlength="30" required id="id_employer_2_city"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_2_city}}" disabled>
+    </div>
+
+    <div class="form-group flex-column d-flex col-sm">
+        <select name="employer_2_state" id="id_employer_2_state" class="form-control form-control-lg" disabled>
+            <option value="">{{applicant.employer_2_state}}</option>
+
+
+
+        </select></p>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="employer_2_zipcode" maxlength="5" required id="id_employer_2_zipcode"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_2_zipcode}}" disabled>
+    </div>
+
+</div>
+
+<div class="row justify-content-between text-left pl-5 pr-5">
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="employer_2_starting_title" maxlength="25" required id="id_employer_2_starting_title"
+            class="form-control form-control-lg" placeholder="Starting Title: {{applicant.employer_2_starting_title}}"
+            disabled>
+
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="employer_2_starting_wage" maxlength="25" required id="id_employer_2_starting_wage"
+            class="form-control form-control-lg" placeholder="Starting Wage: {{applicant.employer_2_starting_wage}}"
+            disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="employer_2_final_title" maxlength="25" required id="id_employer_2_final_title"
+            class="form-control form-control-lg" placeholder="Final Title: {{applicant.employer_2_final_title}}"
+            disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="employer_2_final_wage" id="id_employer_2_final_wage"
+            class="form-control form-control-lg" placeholder="Final Wage: {{applicant.employer_2_final_wage}}" disabled>
+    </div>
+
+</div>
+
+
+<div class="row justify-content-between pl-5 pr-5 text-left">
+    <div class="form-group col-5 flex-column d-flex">
+        <textarea name="employer_2_summary" cols="40" rows="10" required id="id_employer_2_summary"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_2_summary}}" disabled></textarea>
+    </div>
+</div>
+
+
+<div class="row justify-content-between pl-5 pr-5 text-left">
+    <div class="form-group col-5 flex-column d-flex">
+        <input type="text" name="employer_2_favorite_details" maxlength="300" id="id_employer_2_favorite_details"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_2_favorite_details}}" disabled>
+
+    </div>
+</div>
+
+<div class="row justify-content-between pl-5 pr-5 text-left">
+    <div class="form-group col-5 flex-column d-flex">
+        <input type="text" name="employer_2_least_details" maxlength="300" id="id_employer_2_least_details"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_2_least_details}}" disabled>
+    </div>
+</div>
+
+<div class="sectionHeader pl-5 pt-5">
+    <h5>Employer 3</h5>
+    <hr class="hr">
+</div>
+
+<div class="row justify-content-between pl-5 pr-5 text-left">
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="employer_3" maxlength="25" required id="id_employer_3"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_3}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="employer_3_tel" maxlength="30" required id="id_employer_3_tel"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_3_tel}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input name="employer_3_date_started" required id="id_employer_3_date_started"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_3_date_started}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input name="employer_3_date_terminated" id="id_employer_3_date_terminated" class="form-control form-control-lg"
+            placeholder="{{applicant.employer_3_date_terminated}}" disabled>
+    </div>
+
+</div>
+
+<div class="row justify-content-between text-left pl-5" style="width: 35%; display: flex; align-items: center;">
+
+    <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+        <h5>Are you currently still employed?</h5>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+        <select name="employer_3_still_employed" id="id_employer_3_still_employed" class="form-control form-control-lg"
+            disabled>
+            <option value="">{{applicant.employer_3_still_employed}}</option>
+
+
+        </select>
+    </div>
+
+</div>
+
+<div class="row justify-content-between text-left pl-5" style="width: 35%; display: flex; align-items: center;">
+
+    <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+        <h5>May we contact this employer?</h5>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+        <select name="employer_3_may_we_contact" id="id_employer_3_may_we_contact" class="form-control form-control-lg"
+            disabled>
+            <option value="">{{applicant.employer_3_may_we_contact}}</option>
+
+
+        </select>
+    </div>
+
+</div>
+
+
+<div class="row justify-content-between pl-5 pr-5 text-left">
+
+    <div class="form-group flex-column d-flex col-sm">
+        <input type="text" name="employer_3_street" maxlength="30" required id="id_employer_3_street"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_3_street}}" disabled>
+    </div>
+
+    <div class="form-group flex-column d-flex col-sm">
+        <input type="text" name="employer_3_city" maxlength="30" required id="id_employer_3_city"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_3_city}}" disabled>
+    </div>
+
+    <div class="form-group flex-column d-flex col-sm">
+        <select name="employer_3_state" id="id_employer_3_state" class="form-control form-control-lg" disabled>
+            <option value="">{{applicant.employer_3_state}}</option>
+
+
+
+        </select></p>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="employer_3_zipcode" maxlength="5" required id="id_employer_3_zipcode"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_3_zipcode}}" disabled>
+    </div>
+
+</div>
+
+<div class="row justify-content-between text-left pl-5 pr-5">
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="employer_3_starting_title" maxlength="25" required id="id_employer_3_starting_title"
+            class="form-control form-control-lg" placeholder="Starting Title: {{applicant.employer_3_starting_title}}"
+            disabled>
+
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="employer_3_starting_wage" maxlength="25" required id="id_employer_3_starting_wage"
+            class="form-control form-control-lg" placeholder="Starting Wage: {{applicant.employer_3_starting_wage}}"
+            disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="employer_3_final_title" maxlength="25" required id="id_employer_3_final_title"
+            class="form-control form-control-lg" placeholder="Final Title: {{applicant.employer_3_final_title}}"
+            disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="employer_3_final_wage" id="id_employer_3_final_wage"
+            class="form-control form-control-lg" placeholder="Final Wage: {{applicant.employer_3_final_wage}}" disabled>
+    </div>
+
+</div>
+
+
+<div class="row justify-content-between pl-5 pr-5 text-left">
+    <div class="form-group col-5 flex-column d-flex">
+        <textarea name="employer_3_summary" cols="40" rows="10" required id="id_employer_3_summary"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_3_summary}}" disabled></textarea>
+    </div>
+</div>
+
+
+<div class="row justify-content-between pl-5 pr-5 text-left">
+    <div class="form-group col-5 flex-column d-flex">
+        <input type="text" name="employer_3_favorite_details" maxlength="300" id="id_employer_3_favorite_details"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_3_favorite_details}}" disabled>
+
+    </div>
+</div>
+
+<div class="row justify-content-between pl-5 pr-5 text-left">
+    <div class="form-group col-5 flex-column d-flex">
+        <input type="text" name="employer_3_least_details" maxlength="300" id="id_employer_3_least_details"
+            class="form-control form-control-lg" placeholder="{{applicant.employer_3_least_details}}" disabled>
+    </div>
+</div>
+
+<div class="sectionHeader pl-5 pt-5">
+
+    <h4>3. Skills & Qualifications</h4>
+    <hr class="hr">
+</div>
+
+<div class="row justify-content-between pl-5 text-left">
+    <div class="form-group flex-column col-5 d-flex">
+        <textarea name="skills_and_qual" cols="40" rows="10" id="id_skills_and_qual"
+            class="form-control form-control-lg" placeholder="{{applicant.skills_and_qual}}" disabled></textarea>
+        </p>
+    </div>
+
+</div>
+
+<div class="sectionHeader pl-5">
+    <h4>4. Educational History</h4>
+    <hr class="hr">
+</div>
+
+<div class="row justify-content-between pl-5 pr-5 text-left">
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="school_name" maxlength="30" required id="id_school_name"
+            class="form-control form-control-lg" placeholder="{{applicant.school_name}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="number" name="years_completed" required id="id_years_completed"
+            class="form-control form-control-lg" placeholder="{{applicant.years_completed}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="degree" maxlength="30" required id="id_degree" class="form-control form-control-lg"
+            placeholder="{{applicant.degree}}" disabled>
+    </div>
+
+</div>
+
+<div class="row justify-content-between pl-5 text-left" style="width: 35%;">
+    <div class="form-group col-sm flex-column d-flex">
+        <h5>Did you complete?</h5>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <select name="completed" id="id_completed" class="form-control form-control-lg" disabled>
+            <option value="">{{applicant.completed}}</option>
+
+
+        </select>
+    </div>
+
+</div>
+
+<div class="row justify-content-between pl-5 pr-5 text-left">
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="certification" maxlength="30" required id="id_certification"
+            class="form-control form-control-lg" placeholder="{{applicant.certification}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="major" maxlength="30" required id="id_major" class="form-control form-control-lg"
+            placeholder="{{applicant.major}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="minor" maxlength="30" id="id_minor" class="form-control form-control-lg"
+            placeholder="{{applicant.minor}}" disabled>
+
+    </div>
+
+</div>
+
+<div class="sectionHeader pl-5 pt-5">
+    <h4>5. References</h4>
+    <hr class="hr">
+</div>
+
+<div class="sectionHeader pl-5 pt-2">
+    <h5>Reference 1.</h5>
+    <hr class="hr">
+</div>
+<div class="row justify-content-between pl-5 pr-5 pt-2">
+
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="reference_1_name" maxlength="45" required id="id_reference_1_name"
+            class="form-control form-control-lg" placeholder="{{applicant.reference_1_name}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="reference_1_relationship" maxlength="30" required id="id_reference_1_relationship"
+            class="form-control form-control-lg" placeholder="{{applicant.reference_1_relationship}}" disabled>
+    </div>
+
+</div>
+
+<div class="row justify-content-between pl-5 pr-5 pt-1">
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="reference_1_telephone" maxlength="12" required id="id_reference_1_telephone"
+            class="form-control form-control-lg" placeholder="{{applicant.reference_1_telephone}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="reference_1_years_known" maxlength="2" required id="id_reference_1_years_known"
+            class="form-control form-control-lg" placeholder="{{applicant.reference_1_years_known}}" disabled>
+    </div>
+</div>
+
+<div class="sectionHeader pl-5 pt-2">
+    <h5>Reference 2.</h5>
+    <hr class="hr">
+</div>
+<div class="row justify-content-between pl-5 pr-5 pt-2">
+
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="reference_2_name" maxlength="45" required id="id_reference_2_name"
+            class="form-control form-control-lg" placeholder="{{applicant.reference_2_name}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="reference_2_relationship" maxlength="30" required id="id_reference_2_relationship"
+            class="form-control form-control-lg" placeholder="{{applicant.reference_2_relationship}}" disabled>
+    </div>
+
+</div>
+
+<div class="row justify-content-between pl-5 pr-5 pt-1">
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="reference_2_telephone" maxlength="12" required id="id_reference_2_telephone"
+            class="form-control form-control-lg" placeholder="{{applicant.reference_2_telephone}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="reference_2_years_known" maxlength="2" required id="id_reference_2_years_known"
+            class="form-control form-control-lg" placeholder="{{applicant.reference_2_years_known}}" disabled>
+    </div>
+</div>
+
+<div class="sectionHeader pl-5 pt-2">
+    <h5>Reference 3.</h5>
+    <hr class="hr">
+</div>
+<div class="row justify-content-between pl-5 pr-5 pt-2">
+
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="reference_3_name" maxlength="45" required id="id_reference_3_name"
+            class="form-control form-control-lg" placeholder="{{applicant.reference_3_name}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="reference_3_relationship" maxlength="30" required id="id_reference_3_relationship"
+            class="form-control form-control-lg" placeholder="{{applicant.reference_3_relationship}}" disabled>
+    </div>
+
+</div>
+
+<div class="row justify-content-between pl-5 pr-5 pt-1">
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="reference_3_telephone" maxlength="12" required id="id_reference_3_telephone"
+            class="form-control form-control-lg" placeholder="{{applicant.reference_3_telephone}}" disabled>
+    </div>
+
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="reference_3_years_known" maxlength="2" required id="id_reference_3_years_known"
+            class="form-control form-control-lg" placeholder="{{applicant.reference_3_years_known}}" disabled>
+    </div>
+</div>
+
+
+<div class="sectionHeader pl-5 pt-5">
+    <h4>6. Applicant Signature</h4>
+    <hr class="hr">
+</div>
+
+<div class="row justify-content-between pl-5 pr-5 pt-2 text-left">
+    <div class="form-group col-sm flex-column d-flex">
+        <p class="text bolded" style="font-family: sans-serif;">
+            I certify that all information I have provided in order to apply for and secure work with
+            this
+            employer is true, complete and cor- rect.
+            I expressly authorize, without reservation, the employer, its representatives, employees or
+            agents to contact and obtain information from all references (personal and professional),
+            employers, public agencies, licensing authorities and educational institutions and to
+            otherwise
+            verify the accuracy of all information provided by me in this application, resume or job
+            interview. I hereby waive any and all rights and claims I may have regarding the employer,
+            its
+            agents, employees or representatives, for seeking, gathering and using truthful and
+            non-defamatory information in a lawful manner, in the employment process and all other
+            persons,
+            corpora- tions or organizations for furnishing such information about me.
+            I understand that this employer does not unlawfully discriminate in employment and no
+            question
+            on this application is used for the purpose of limiting or eliminating any applicant from
+            consideration for employment on a basis prohibited by applicable local, state or federal
+            law.
+            I understand that this application remains current for 90 days. If I am hired, I understand
+            that
+            I am free to resign at any time, with or without cause and with or without prior notice, and
+            the
+            employer reserves the same right to terminate my employment at any time, with or without
+            cause
+            and with or without prior notice except as may be required by law. This application does not
+            consti- tute an agreement or contract for employment for any specified period or definite
+            duration. I understand that no supervisor or representative of the employer is authorized to
+            make any assurances to the contrary and that no implied oral or written agree- ments
+            contrary to
+            the foregoing express language are valid unless they are in writing and signed by the
+            employer’s
+            president.
+            I also understand that if I am hired, I will be required to provide proof of identity and
+            legal
+            authorization to work in the United States of America and that federal immigration laws
+            require
+            me to complete an I-9 Form in this regard.
+            I understand that any information provided by me that is found to be false, incomplete or
+            misrepresented in any respect, will be sufficient cause to (1) eliminate me from further
+            consideration for employment, or (2) may result in my immediate discharge from the
+            employer’s
+            service, whenever it is discovered.
+
+        </p>
+    </div>
+</div>
+
+<div class="row justify-content-between pl-5 pr-5 pt-2 text-left pb-5">
+    <div class="form-group col-sm flex-column d-flex">
+        <input type="text" name="applicantSignature" required id="id_applicantSignature"
+            placeholder="{{applicant.applicantSignature}}" class="form-control form-control-lg" disabled>
+    </div>
+
+    <div class="form-group col-3 flex-column d-flex">
+        <input name="todaysDate" id="id_todaysDate" placeholder="{{applicant.todaysDate}}"
+            class="form-control form-control-lg" disabled>
+    </div>
+</div>
+
+
+{% endblock %}

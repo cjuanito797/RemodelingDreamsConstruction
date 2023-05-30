@@ -1,0 +1,65 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block nav_settings %}
+<nav class="navbar navbar-default fixed-top navbar-expand-lg navbar-light bg-light pb-2 pt-3 " id="primary-navigation"
+    role="navigation">
+    {% endblock %}
+
+    {% block mainbody %}
+
+    <div class="container-fluid" style="width: 100%;
+         background: linear-gradient(to top, #09203f 0%, #537895 100%);
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;
+         padding-top: var(--scroll-intro, 150px);">
+
+        <div class="container" style="justify-content: center; text-align: center; padding-top: 5%; padding-bottom: 5%;
+        color: white;
+        font-family: serif;
+        font-weight: bold;
+        width: 100%;">
+            <h1 style="font-weight: bold;">Edit Your Quotes Below.</h1>
+
+
+
+        </div>
+    </div>
+
+    <table class="table table-hover table-bordered "
+        style="font-family: s ystem-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+
+        <thead>
+            <tr class="table-info">
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Details</th>
+                <th scope="col" colspan="2">Options</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for quote in quotes %}
+            <tr>
+                <td>{{quote.name}}</td>
+                <td>{{quote.streetAddress}}, {{quote.city}}, {{quote.zipcode}}</td>
+                <td>{{quote.phoneNumber}}</td>
+                <td style="word-wrap: break-word; max-width: 200px;">{{quote.details}}</td>
+                <td>
+                    <a class="btn btn-danger mb-5" href="{% url 'Admin:delete_quote' quote.id %}"
+                        onclick="return confirm('Are you sure you would like to delete this quote?')">Delete</a>
+                </td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+    {% endblock %}
+
+    <script src="../../static/main.js">
+    

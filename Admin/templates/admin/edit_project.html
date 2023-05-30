@@ -1,0 +1,32 @@
+{% extends 'home.html' %}
+
+{% block mainbody %}
+<div class="container-fluid" style="width: 100%;
+     background: linear-gradient(to top, #09203f 0%, #537895 100%);
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     padding-top: 150px;">
+
+    <div class="container" style="justify-content: center; text-align: center; padding-top: 5%; padding-bottom: 5%;
+    color: white;
+    font-family: serif;
+    font-weight: bold;
+    width: 100%;">
+        <h1 style="font-weight: bold;">Edit Your Project</h1>
+    </div>
+</div>
+
+<div class="container-fluid pt-5 text-center">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        <button type="submit" class="btn btn-primary p-3"
+            style="background-color: #21374C; border: none; width: 50%;">Save</button>
+
+    </form>
+
+</div>
+{% endblock %}

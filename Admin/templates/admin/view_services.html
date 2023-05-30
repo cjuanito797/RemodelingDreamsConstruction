@@ -1,0 +1,96 @@
+{% extends 'home.html' %}
+{% load static %}
+{% load service_tags %}
+
+
+
+
+{% block mainbody %}
+
+<!-- copy the code for the services from the "Our Services" page but let's remove the transition effect. -->
+<div class="container-fluid" style="width: 100%;
+         background: linear-gradient(to top, #09203f 0%, #537895 100%);
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;
+         padding-top: var(--scroll-intro, 150px);">
+
+    <div class="container" style="justify-content: center; text-align: center; padding-top: 5%; padding-bottom: 5%;
+        color: white;
+        font-family: serif;
+        font-weight: bold;
+        width: 100%;">
+        <h1 style="font-weight: bold;">My Services</h1>
+        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
+            Add A New Service
+        </button>
+
+
+    </div>
+</div>
+<div class="col-md-auto text-center " style="align-items: center; margin-left: 5%;">
+
+    <div class="d-flex md-auto flex-row flex-wrap w-35 text-center">
+
+        {% for service in services %}
+        <a href="{% url 'Admin:edit_service' service.id %}">
+            <div class="card mt-5" style=" width: 25rem; margin: 1vw;">
+
+                <img class=" card-img-top" src="/media/{{service.id|thumbnail}}" style="width: 100; height: 250px;">
+
+                <div class="card-body mx-auto mt-2" style="height: 150px;">
+
+                    <h4 class="text-center" style="height: 50px; color: black;">{{service.name}}</h4>
+                    <hr class="hr">
+
+                </div>
+
+                <div class="card-footer">
+                    <a class="btn btn-danger" href="{% url 'Admin:deleteService' service.id %}"
+                        onclick="return confirm('Are you sure you would like to delete this service?')">Remove
+                        Service</a>
+                </div>
+            </div>
+        </a>
+
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add A New Service Below.</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="text" name="name" maxlength="225" required id="id_name"
+                        class="form-control form-control-lg" placeholder="Service Name">
+                    <br>
+                    <textarea name="details" cols="40" rows="10" required id="id_details"
+                        placeholder="Enter the details for your new service"
+                        class="form-control form-control-lg"></textarea>
+
+                    <button type="submit" class="btn btn-primary mt-5" style="width: 100%;">Add Service</button>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+
+<script src="../../static/main.js">

@@ -1,0 +1,79 @@
+{% extends 'home.html' %}
+
+
+{% block mainbody %}
+
+<div class="container-fluid" style="width: 100%;
+     background: linear-gradient(to top, #09203f 0%, #537895 100%);
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     padding-top: var(--scroll-intro, 150px);">
+
+    <div class="container" style="justify-content: center; text-align: center; padding-top: 5%; padding-bottom: 5%;
+    color: white;
+    font-family: serif;
+    font-weight: bold;
+    width: 100%;">
+        <h1 style="font-weight: bold;">Edit Your Promotional Banner</h1>
+
+        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
+            Add New Image
+        </button>
+    </div>
+</div>
+
+<!-- print out the banner in the same form that we do on every other page. -->
+
+<div class="row justify-content-between" style="">
+    <!-- create a flex row for the promotional products. -->
+    <section id="promotional_banner" style="width: 100%; margin-left: 5%;">
+        <div class="d-flex flex-row w-55 flex-wrap" style="width: 100%;">
+            <!-- utilize a for loop in order to, create a div class for each promotional image. -->
+            {% for promotion in promotional_images %}
+            <div class="promotional_image p-5">
+                <a href="{% url 'Admin:deletePromotion' promotion.id%}"
+                    onclick="return confirm('Are you sure you would like to delete this promotion?')">
+                    <img src="/media/{{promotion}}" style="width: 100%; height: 100%;">
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+
+<a class="btn btn-primary p-3 mt-5"
+    style="width: 25%; margin-left: 35%; border-radius: 10px; border: none; background-color: #21374C;"
+    href="{% url 'Admin:edit_service' id%}">Save</a>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Upload A New Image</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- insert form here. -->
+                <!-- insert the form here. -->
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{form.as_p}}
+
+                    <button type="submit" class="btn btn-primary"
+                        style="background-color: #21374C; border: none;">Submit</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

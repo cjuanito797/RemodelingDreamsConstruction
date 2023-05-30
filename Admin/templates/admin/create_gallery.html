@@ -1,0 +1,82 @@
+{% extends 'home.html' %}
+{% load static %}
+
+
+{% block mainbody %}
+
+
+<!-- Add the banner with responsive padding.  -->
+<div class="container-fluid" style="width: 100%;
+     background: linear-gradient(to top, #09203f 0%, #537895 100%);
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     padding-top: 150px;">
+
+    <div class="container" style="justify-content: center; text-align: center; padding-top: 5%; padding-bottom: 5%;
+    color: white;
+    font-family: serif;
+    font-weight: bold;
+    width: 100%;">
+        <h1 style="font-weight: bold;">Create Your New Project</h1>
+    </div>
+</div>
+
+<div class="container-fluid pt-5 text-center">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-group col-sm">
+            <input type="text" name="name" maxlength="35" id="id_name" class="form-control form-control-lg"
+                placeholder="Name (Optional)">
+        </div>
+
+        <div class="form-group col-sm">
+            <select name="service" required id="id_service" class="form-control form-control-lg"
+                placeholder="Select A Service">
+                <option value="" disabled selected hidden>Select A Service</option>
+
+
+                <option value="1">Additions</option>
+
+                <option value="2">Bath</option>
+
+                <option value="3">Decks</option>
+
+                <option value="4">Doors</option>
+
+                <option value="5">Gutter</option>
+
+                <option value="6">Interior Remodelings</option>
+
+                <option value="7">Kitchens</option>
+
+                <option value="8">Roof</option>
+
+                <option value="9">Siding</option>
+
+                <option value="10">Tile/Flooring</option>
+
+                <option value="11">Windows</option>
+
+                <option value="12">Design/planning</option>
+
+                <option value="18">Testing</option>
+
+            </select>
+
+        </div>
+
+        <div class="form-group col-sm">
+            <input type="file" name="thumbnail" accept="image/*" required id="id_thumbnail"
+                class="form-control form-control-lg">
+        </div>
+
+        <button type="submit" class="btn btn-primary p-3"
+            style="background-color: #21374C; border: none; width: 50%;">Submit</button>
+
+    </form>
+
+</div>
+
+{% endblock %}

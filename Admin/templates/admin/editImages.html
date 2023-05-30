@@ -1,0 +1,68 @@
+{% extends 'home.html' %}
+{% load static %}
+
+
+{% block mainbody %}
+<div class="container-fluid" style="width: 100%;
+         background: linear-gradient(to top, #09203f 0%, #537895 100%);
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;">
+
+    <div class="container" style="justify-content: center; text-align: center; padding-top: 5%; padding-bottom: 5%;
+        color: white;
+        font-family: serif;
+        font-weight: bold;
+        width: 100%;">
+        <h1 style="font-weight: bold;">Edit Your Gallery Below</h1>
+
+        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
+            Add A New Image
+        </button>
+
+    </div>
+</div>
+
+<div class="d-flex md-auto flex-row flex-wrap w-35 text-center pl-5">
+    {% for image in images %}
+    <div class="card mt-5 mr-20 ml-5" style="width: 22rem; ">
+
+
+        <img class="card-img-top" src="/media/{{image}}" style="width: 100; height: 250px;">
+
+        <div class="card-footer">
+            <a href="{% url 'Admin:deleteServiceImage' image.id %}" class="btn btn-danger"
+                onclick="return confirm('Are you sure you would like to delete this image?')">Delete</a>
+        </div>
+
+    </div>
+
+    {% endfor %}
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="text-align: center;">
+                <h5 class="modal-title text-center" id="exampleModalLabel">Add A New Image Below.</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- insert the form here. -->
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{form.as_p}}
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

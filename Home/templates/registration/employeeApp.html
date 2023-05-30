@@ -1,0 +1,1368 @@
+{% extends 'home.html' %}
+{% load static %}
+
+
+{% block mainbody %}
+
+<div class="container-fluid bg-light" style="margin-top: 5%;">
+    <div id="application">
+        <form method="POST" action="{% url 'Home:employeeApplication' %}" class="form-card pl-5 pr-5 pt-5"
+            style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+
+
+            {% csrf_token %}
+
+
+            <input type="hidden" name="csrfmiddlewaretoken"
+                value="82OO5HGljgIbqxAZgbpP7ZS8WL62ifSpMCH9n554WzTDy4dgYB6PrdZQretZwYF8">
+
+
+            <div class="sectionHeader pl-5 pt-5">
+                <h4>1. Enter Your Personal Information</h4>
+                <hr class="hr">
+            </div>
+            <div class="row justify-content-between pl-5 pr-5 text-left">
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="first_name" maxlength="30" required id="id_first_name"
+                        class="form-control form-control-lg" placeholder="First Name">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="middle_name" maxlength="30" id="id_middle_name"
+                        class="form-control form-control-lg" placeholder="Middle Name (Optional)">
+                </div>
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="last_name" maxlength="30" required id="id_last_name"
+                        class="form-control form-control-lg" placeholder="Last Name">
+                </div>
+            </div>
+
+
+            <div class="row justify-content-between pl-5 pr-5 text-left" style="width: 45%;">
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="socialSecurityNum" maxlength="9" required id="id_socialSecurityNum"
+                        class="form-control form-control-lg" placeholder="Social Security #">
+                </div>
+
+            </div>
+
+
+
+            <div class="row justify-content-between pl-5 pr-5 text-left">
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="street_num" maxlength="30" required id="id_street_num"
+                        class="form-control form-control-lg" placeholder="Street #">
+                </div>
+                <div class="form-group col-sm flex-column d-flex">
+                    <select name="state" id="id_state" class="form-control form-control-lg">
+                        <option value="Alabama">Alabama</option>
+
+                        <option value="Alaska">Alaska</option>
+
+                        <option value="Arizona">Arizona</option>
+
+                        <option value="Arkansas">Arkansas</option>
+
+                        <option value="California">California</option>
+
+                        <option value="Colorado">Colorado</option>
+
+                        <option value="Conneticut">Conneticut</option>
+
+                        <option value="Deleware">Deleware</option>
+
+                        <option value="Florida">Florida</option>
+
+                        <option value="Georgia">Georgia</option>
+
+                        <option value="Hawaii">Hawaii</option>
+
+                        <option value="Idaho">Idaho</option>
+
+                        <option value="Illinois">Illinois</option>
+
+                        <option value="Indiana">Indiana</option>
+
+                        <option value="Iowa">Iowa</option>
+
+                        <option value="Kansas">Kansas</option>
+
+                        <option value="Kentucky">Kentucky</option>
+
+                        <option value="Louisiana">Louisiana</option>
+
+                        <option value="Maine">Maine</option>
+
+                        <option value="Maryland">Maryland</option>
+
+                        <option value="Massachusetts">Massachusetts</option>
+
+                        <option value="Michigan">Michigan</option>
+
+                        <option value="Minnesota">Minnesota</option>
+
+                        <option value="Mississippi">Mississippi</option>
+
+                        <option value="Missouri">Missouri</option>
+
+                        <option value="Montana">Montana</option>
+
+                        <option value="Nebraska">Nebraska</option>
+
+                        <option value="Nevada">Nevada</option>
+
+                        <option value="New Hampshire">New Hampshire</option>
+
+                        <option value="New Jersey">New Jersey</option>
+
+                        <option value="New Mexico">New Mexico</option>
+
+                        <option value="New York">New York</option>
+
+                        <option value="North Carolina">North Carolina</option>
+
+                        <option value="North Dakota">North Dakota</option>
+
+                        <option value="Ohio">Ohio</option>
+
+                        <option value="Oklahoma">Oklahoma</option>
+
+                        <option value="Oregon">Oregon</option>
+
+                        <option value="Pennsylvania">Pennsylvania</option>
+
+                        <option value="Rhode Island">Rhode Island</option>
+
+                        <option value="South Carolina">South Carolina</option>
+
+                        <option value="South Dakota">South Dakota</option>
+
+                        <option value="Tennessee">Tennessee</option>
+
+                        <option value="Texas">Texas</option>
+
+                        <option value="Utah">Utah</option>
+
+                        <option value="Vermont">Vermont</option>
+
+                        <option value="Virginia">Virgina</option>
+
+                        <option value="Washington">Washington</option>
+
+                        <option value="West Virginia">West Virginia</option>
+
+                        <option value="Wisconsin">Wisconsin</option>
+
+                        <option value="Wyoming">Wyoming</option>
+
+                    </select></p>
+                </div>
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="city" maxlength="25" required id="id_city"
+                        class="form-control form-control-lg" placeholder="City">
+                </div>
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="zipcode" maxlength="5" required id="id_zipcode"
+                        class="form-control form-control-lg" placeholder="Zipcode">
+                </div>
+            </div>
+
+
+            <div class="row justify-content-between pl-5 pr-5">
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="telephone" maxlength="12" required id="id_telephone"
+                        class="form-control form-control-lg" placeholder="Telephone #">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="cell_phone" maxlength="30" id="id_cell_phone"
+                        class="form-control form-control-lg" placeholder="Cellphone # (Optional)">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="email" name="email" maxlength="45" required id="id_email"
+                        class="form-control form-control-lg" placeholder="E-mail">
+                </div>
+
+            </div>
+
+            <div class="row justify-content-between text-left pl-5 pr-5 pt-3" style="width: 35%; align-items: center;">
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <h5>
+                        Are you legally available to work for the country for which you are applying for?
+                    </h5>
+                </div>
+
+                <div class="form-group col-6 flex-column d-flex" style="display: inline-block;">
+                    <select name="legally_employeed" id="id_legally_employeed" class="form-control form-control-lg">
+                        <option value="Yes">Yes</option>
+
+                        <option value="No">No</option>
+
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="row justify-content-between text-left pl-5 pr-5 pt-3" style="width: 35%; align-items: center;">
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <h5>
+                        Have you every pled guilty to a crime?
+                    </h5>
+                </div>
+
+                <div class="form-group col-6 flex-column d-flex" style="display: inline-block;">
+                    <select name="pled_guilty" id="id_pled_guilty" class="form-control form-control-lg">
+                        <option value="Yes">Yes</option>
+
+                        <option value="No">No</option>
+
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="row justify-content-between pl-5 pr-5" style=" align-items: center; display: flex;">
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <h5>Date Of Birth:</h5>
+                </div>
+                <div class="form-group col-6 flex-column d-flex" style="display: inline-block;">
+                    <input type="date" name="date_of_birth" required id="id_date_of_birth"
+                        class="form-control form-control-lg" placeholder="mm/dd/yyyy">
+                </div>
+            </div>
+
+            <div class="row justify-content-between pl-5 pr-5" style="align-items: center; display: flex;">
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <h5>Date Available To Start: </h5>
+                </div>
+                <div class="form-group col-6 flex-column d-flex" style="display: inline-block;">
+                    <input type="date" name="date_available_start" required id="id_date_available_start"
+                        class="form-control form-control-lg" placeholder="mm/dd/yyyy">
+                </div>
+            </div>
+
+            <div class="row justify-content-between pl-5 pr-5" style="align-items: center; display: flex;">
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <h5>Please select the employment type you would like. </h5>
+                </div>
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <select name="employment_desired" id="id_employment_desired" class="form-control form-control-lg">
+                        <option value="Casual">Casual</option>
+
+                        <option value="Part Time">Part Time</option>
+
+                        <option value="Full Time">Full Time</option>
+
+                    </select>
+
+                </div>
+            </div>
+
+
+            <div class="row justify-content-between text-left pl-5 pr-5">
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="drivers_liscence_number" maxlength="30" required
+                        id="id_drivers_liscence_number" class="form-control form-control-lg"
+                        placeholder="Driver's Liscense #">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <select name="drivers_liscence_state_iss" id="id_drivers_liscence_state_iss"
+                        class="form-control form-control-lg">
+                        <option value="Alabama">Alabama</option>
+
+                        <option value="Alaska">Alaska</option>
+
+                        <option value="Arizona">Arizona</option>
+
+                        <option value="Arkansas">Arkansas</option>
+
+                        <option value="California">California</option>
+
+                        <option value="Colorado">Colorado</option>
+
+                        <option value="Conneticut">Conneticut</option>
+
+                        <option value="Deleware">Deleware</option>
+
+                        <option value="Florida">Florida</option>
+
+                        <option value="Georgia">Georgia</option>
+
+                        <option value="Hawaii">Hawaii</option>
+
+                        <option value="Idaho">Idaho</option>
+
+                        <option value="Illinois">Illinois</option>
+
+                        <option value="Indiana">Indiana</option>
+
+                        <option value="Iowa">Iowa</option>
+
+                        <option value="Kansas">Kansas</option>
+
+                        <option value="Kentucky">Kentucky</option>
+
+                        <option value="Louisiana">Louisiana</option>
+
+                        <option value="Maine">Maine</option>
+
+                        <option value="Maryland">Maryland</option>
+
+                        <option value="Massachusetts">Massachusetts</option>
+
+                        <option value="Michigan">Michigan</option>
+
+                        <option value="Minnesota">Minnesota</option>
+
+                        <option value="Mississippi">Mississippi</option>
+
+                        <option value="Missouri">Missouri</option>
+
+                        <option value="Montana">Montana</option>
+
+                        <option value="Nebraska">Nebraska</option>
+
+                        <option value="Nevada">Nevada</option>
+
+                        <option value="New Hampshire">New Hampshire</option>
+
+                        <option value="New Jersey">New Jersey</option>
+
+                        <option value="New Mexico">New Mexico</option>
+
+                        <option value="New York">New York</option>
+
+                        <option value="North Carolina">North Carolina</option>
+
+                        <option value="North Dakota">North Dakota</option>
+
+                        <option value="Ohio">Ohio</option>
+
+                        <option value="Oklahoma">Oklahoma</option>
+
+                        <option value="Oregon">Oregon</option>
+
+                        <option value="Pennsylvania">Pennsylvania</option>
+
+                        <option value="Rhode Island">Rhode Island</option>
+
+                        <option value="South Carolina">South Carolina</option>
+
+                        <option value="South Dakota">South Dakota</option>
+
+                        <option value="Tennessee">Tennessee</option>
+
+                        <option value="Texas">Texas</option>
+
+                        <option value="Utah">Utah</option>
+
+                        <option value="Vermont">Vermont</option>
+
+                        <option value="Virginia">Virgina</option>
+
+                        <option value="Washington">Washington</option>
+
+                        <option value="West Virginia">West Virginia</option>
+
+                        <option value="Wisconsin">Wisconsin</option>
+
+                        <option value="Wyoming">Wyoming</option>
+
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="sectionHeader pl-5 pt-5">
+                <h4>2. Enter Your Employment History</h4>
+                <hr class="hr">
+            </div>
+
+            <div class="sectionHeader pl-5 pt-5">
+                <h5>Employer 1</h5>
+                <hr class="hr">
+            </div>
+
+            <div class="row justify-content-between pl-5 pr-5 text-left">
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="employer_1" maxlength="25" required id="id_employer_1"
+                        class="form-control form-control-lg" placeholder="Employer Name">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="employer_1_tel" maxlength="30" required id="id_employer_1_tel"
+                        class="form-control form-control-lg" placeholder="Telephone #">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="date" name="employer_1_date_started" required id="id_employer_1_date_started"
+                        class="form-control form-control-lg" placeholder="Date Started">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="date" name="employer_1_date_terminated" id="id_employer_1_date_terminated"
+                        class="form-control form-control-lg" placeholder="Date Terminated (Optional)">
+                </div>
+
+            </div>
+
+            <div class="row justify-content-between text-left pl-5"
+                style="width: 35%; display: flex; align-items: center;">
+
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <h5>Are you currently still employed?</h5>
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <select name="employer_1_still_employed" id="id_employer_1_still_employed"
+                        class="form-control form-control-lg">
+                        <option value="Yes">Yes</option>
+
+                        <option value="No">No</option>
+
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="row justify-content-between text-left pl-5"
+                style="width: 35%; display: flex; align-items: center;">
+
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <h5>May we contact this employer?</h5>
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <select name="employer_1_may_we_contact" id="id_employer_1_may_we_contact"
+                        class="form-control form-control-lg">
+                        <option value="Yes">Yes</option>
+
+                        <option value="No">No</option>
+
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="row justify-content-between pl-5 pr-5 text-left">
+
+                <div class="form-group flex-column d-flex col-sm">
+                    <input type="text" name="employer_1_street" maxlength="30" required id="id_employer_1_street"
+                        class="form-control form-control-lg" placeholder="Street Address">
+                </div>
+
+                <div class="form-group flex-column d-flex col-sm">
+                    <input type="text" name="employer_1_city" maxlength="30" required id="id_employer_1_city"
+                        class="form-control form-control-lg" placeholder="City">
+                </div>
+
+                <div class="form-group flex-column d-flex col-sm">
+                    <select name="employer_1_state" id="id_employer_1_state" class="form-control form-control-lg">
+                        <option value="Alabama">Alabama</option>
+
+                        <option value="Alaska">Alaska</option>
+
+                        <option value="Arizona">Arizona</option>
+
+                        <option value="Arkansas">Arkansas</option>
+
+                        <option value="California">California</option>
+
+                        <option value="Colorado">Colorado</option>
+
+                        <option value="Conneticut">Conneticut</option>
+
+                        <option value="Deleware">Deleware</option>
+
+                        <option value="Florida">Florida</option>
+
+                        <option value="Georgia">Georgia</option>
+
+                        <option value="Hawaii">Hawaii</option>
+
+                        <option value="Idaho">Idaho</option>
+
+                        <option value="Illinois">Illinois</option>
+
+                        <option value="Indiana">Indiana</option>
+
+                        <option value="Iowa">Iowa</option>
+
+                        <option value="Kansas">Kansas</option>
+
+                        <option value="Kentucky">Kentucky</option>
+
+                        <option value="Louisiana">Louisiana</option>
+
+                        <option value="Maine">Maine</option>
+
+                        <option value="Maryland">Maryland</option>
+
+                        <option value="Massachusetts">Massachusetts</option>
+
+                        <option value="Michigan">Michigan</option>
+
+                        <option value="Minnesota">Minnesota</option>
+
+                        <option value="Mississippi">Mississippi</option>
+
+                        <option value="Missouri">Missouri</option>
+
+                        <option value="Montana">Montana</option>
+
+                        <option value="Nebraska">Nebraska</option>
+
+                        <option value="Nevada">Nevada</option>
+
+                        <option value="New Hampshire">New Hampshire</option>
+
+                        <option value="New Jersey">New Jersey</option>
+
+                        <option value="New Mexico">New Mexico</option>
+
+                        <option value="New York">New York</option>
+
+                        <option value="North Carolina">North Carolina</option>
+
+                        <option value="North Dakota">North Dakota</option>
+
+                        <option value="Ohio">Ohio</option>
+
+                        <option value="Oklahoma">Oklahoma</option>
+
+                        <option value="Oregon">Oregon</option>
+
+                        <option value="Pennsylvania">Pennsylvania</option>
+
+                        <option value="Rhode Island">Rhode Island</option>
+
+                        <option value="South Carolina">South Carolina</option>
+
+                        <option value="South Dakota">South Dakota</option>
+
+                        <option value="Tennessee">Tennessee</option>
+
+                        <option value="Texas">Texas</option>
+
+                        <option value="Utah">Utah</option>
+
+                        <option value="Vermont">Vermont</option>
+
+                        <option value="Virginia">Virgina</option>
+
+                        <option value="Washington">Washington</option>
+
+                        <option value="West Virginia">West Virginia</option>
+
+                        <option value="Wisconsin">Wisconsin</option>
+
+                        <option value="Wyoming">Wyoming</option>
+
+                    </select></p>
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="employer_1_zipcode" maxlength="5" required id="id_employer_1_zipcode"
+                        class="form-control form-control-lg" placeholder="Zipcode">
+                </div>
+
+            </div>
+
+            <div class="row justify-content-between text-left pl-5 pr-5">
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="employer_1_starting_title" maxlength="25" required
+                        id="id_employer_1_starting_title" class="form-control form-control-lg"
+                        placeholder="Starting Title">
+
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="employer_1_starting_wage" maxlength="25" required
+                        id="id_employer_1_starting_wage" class="form-control form-control-lg"
+                        placeholder="Starting Wage">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="employer_1_final_title" maxlength="25" required
+                        id="id_employer_1_final_title" class="form-control form-control-lg" placeholder="Final Title">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="employer_1_final_wage" id="id_employer_1_final_wage"
+                        class="form-control form-control-lg" placeholder="Final Wage (Optional)">
+                </div>
+
+            </div>
+
+
+            <div class="row justify-content-between pl-5 pr-5 text-left">
+                <div class="form-group col-5 flex-column d-flex">
+                    <textarea name="employer_1_summary" cols="40" rows="10" required id="id_employer_1_summary"
+                        class="form-control form-control-lg"
+                        placeholder="Enter brief summary of responsibilities."></textarea>
+                </div>
+            </div>
+
+
+            <div class="row justify-content-between pl-5 pr-5 text-left">
+                <div class="form-group col-5 flex-column d-flex">
+                    <input type="text" name="employer_1_favorite_details" maxlength="300"
+                        id="id_employer_1_favorite_details" class="form-control form-control-lg"
+                        placeholder="What did you like most about this position?">
+
+                </div>
+            </div>
+
+            <div class="row justify-content-between pl-5 pr-5 text-left">
+                <div class="form-group col-5 flex-column d-flex">
+                    <input type="text" name="employer_1_least_details" maxlength="300" id="id_employer_1_least_details"
+                        class="form-control form-control-lg"
+                        placeholder="What did you like least about this position (optional).">
+                </div>
+            </div>
+
+            <div class="sectionHeader pl-5 pt-5">
+                <h5>Employer 2 (Optional)</h5>
+                <hr class="hr">
+            </div>
+
+            <div class="row justify-content-between pl-5 pr-5 text-left">
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="employer_2" maxlength="25" id="id_employer_2"
+                        class="form-control form-control-lg" placeholder="Employer Name">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="employer_2_tel" maxlength="30" id="id_employer_2_tel"
+                        class="form-control form-control-lg" placeholder="Telephone #">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="date" name="employer_2_date_started" id="id_employer_2_date_started"
+                        class="form-control form-control-lg" placeholder="Date Started">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="date" name="employer_2_date_terminated" id="id_employer_2_date_terminated"
+                        class="form-control form-control-lg" placeholder="Date Terminated">
+                </div>
+
+            </div>
+
+            <div class="row justify-content-between text-left pl-5"
+                style="width: 35%; display: flex; align-items: center;">
+
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <h5>Are you currently still employed?</h5>
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <select name="employer_2_still_employed" id="id_employer_2_still_employed"
+                        class="form-control form-control-lg">
+                        <option value="Yes">Yes</option>
+
+                        <option value="No">No</option>
+
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="row justify-content-between text-left pl-5"
+                style="width: 35%; display: flex; align-items: center;">
+
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <h5>May we contact this employer?</h5>
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <select name="employer_2_may_we_contact" id="id_employer_2_may_we_contact"
+                        class="form-control form-control-lg">
+                        <option value="Yes">Yes</option>
+
+                        <option value="No">No</option>
+
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="row justify-content-between pl-5 pr-5 text-left">
+
+                <div class="form-group flex-column d-flex col-sm">
+                    <input type="text" name="employer_2_street" maxlength="30" id="id_employer_2_street"
+                        class="form-control form-control-lg" placeholder="Street Address">
+                </div>
+
+                <div class="form-group flex-column d-flex col-sm">
+                    <input type="text" name="employer_2_city" maxlength="30" id="id_employer_2_city"
+                        class="form-control form-control-lg" placeholder="City">
+                </div>
+
+                <div class="form-group flex-column d-flex col-sm">
+                    <select name="employer_2_state" id="id_employer_2_state" class="form-control form-control-lg">
+                        <option value="Alabama">Alabama</option>
+
+                        <option value="Alaska">Alaska</option>
+
+                        <option value="Arizona">Arizona</option>
+
+                        <option value="Arkansas">Arkansas</option>
+
+                        <option value="California">California</option>
+
+                        <option value="Colorado">Colorado</option>
+
+                        <option value="Conneticut">Conneticut</option>
+
+                        <option value="Deleware">Deleware</option>
+
+                        <option value="Florida">Florida</option>
+
+                        <option value="Georgia">Georgia</option>
+
+                        <option value="Hawaii">Hawaii</option>
+
+                        <option value="Idaho">Idaho</option>
+
+                        <option value="Illinois">Illinois</option>
+
+                        <option value="Indiana">Indiana</option>
+
+                        <option value="Iowa">Iowa</option>
+
+                        <option value="Kansas">Kansas</option>
+
+                        <option value="Kentucky">Kentucky</option>
+
+                        <option value="Louisiana">Louisiana</option>
+
+                        <option value="Maine">Maine</option>
+
+                        <option value="Maryland">Maryland</option>
+
+                        <option value="Massachusetts">Massachusetts</option>
+
+                        <option value="Michigan">Michigan</option>
+
+                        <option value="Minnesota">Minnesota</option>
+
+                        <option value="Mississippi">Mississippi</option>
+
+                        <option value="Missouri">Missouri</option>
+
+                        <option value="Montana">Montana</option>
+
+                        <option value="Nebraska">Nebraska</option>
+
+                        <option value="Nevada">Nevada</option>
+
+                        <option value="New Hampshire">New Hampshire</option>
+
+                        <option value="New Jersey">New Jersey</option>
+
+                        <option value="New Mexico">New Mexico</option>
+
+                        <option value="New York">New York</option>
+
+                        <option value="North Carolina">North Carolina</option>
+
+                        <option value="North Dakota">North Dakota</option>
+
+                        <option value="Ohio">Ohio</option>
+
+                        <option value="Oklahoma">Oklahoma</option>
+
+                        <option value="Oregon">Oregon</option>
+
+                        <option value="Pennsylvania">Pennsylvania</option>
+
+                        <option value="Rhode Island">Rhode Island</option>
+
+                        <option value="South Carolina">South Carolina</option>
+
+                        <option value="South Dakota">South Dakota</option>
+
+                        <option value="Tennessee">Tennessee</option>
+
+                        <option value="Texas">Texas</option>
+
+                        <option value="Utah">Utah</option>
+
+                        <option value="Vermont">Vermont</option>
+
+                        <option value="Virginia">Virgina</option>
+
+                        <option value="Washington">Washington</option>
+
+                        <option value="West Virginia">West Virginia</option>
+
+                        <option value="Wisconsin">Wisconsin</option>
+
+                        <option value="Wyoming">Wyoming</option>
+
+                    </select></p>
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="employer_2_zipcode" maxlength="5" id="id_employer_2_zipcode"
+                        class="form-control form-control-lg" placeholder="Zipcode">
+                </div>
+            </div>
+
+            <div class="row justify-content-between text-left pl-5 pr-5">
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="employer_2_starting_title" maxlength="25" id="id_employer_2_starting_title"
+                        class="form-control form-control-lg" placeholder="Starting Title">
+
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="employer_2_starting_wage" maxlength="25" id="id_employer_2_starting_wage"
+                        class="form-control form-control-lg" placeholder="Starting Wage">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="employer_2_final_title" maxlength="25" id="id_employer_2_final_title"
+                        class="form-control form-control-lg" placeholder="Final Title">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="employer_2_final_wage" id="id_employer_2_final_wage"
+                        class="form-control form-control-lg" placeholder="Final Wage (Optional)">
+                </div>
+
+            </div>
+
+
+            <div class="row justify-content-between pl-5 pr-5 text-left">
+                <div class="form-group col-5 flex-column d-flex">
+                    <textarea name="employer_2_summary" cols="40" rows="10" id="id_employer_2_summary"
+                        class="form-control form-control-lg"
+                        placeholder="Enter brief summary of responsibilities."></textarea>
+                </div>
+            </div>
+
+
+            <div class="row justify-content-between pl-5 pr-5 text-left">
+                <div class="form-group col-5 flex-column d-flex">
+                    <input type="text" name="employer_2_favorite_details" maxlength="300"
+                        id="id_employer_2_favorite_details" class="form-control form-control-lg"
+                        placeholder="What did you like most about this position?">
+
+                </div>
+            </div>
+
+            <div class="row justify-content-between pl-5 pr-5 text-left">
+                <div class="form-group col-5 flex-column d-flex">
+                    <input type="text" name="employer_2_least_details" maxlength="300" id="id_employer_2_least_details"
+                        class="form-control form-control-lg"
+                        placeholder="What did you like least about this position (optional).">
+                </div>
+            </div>
+
+
+            <div class="sectionHeader pl-5 pt-5">
+                <h5>Employer 3 (Optional)</h5>
+                <hr class="hr">
+            </div>
+
+            <div class="row justify-content-between pl-5 pr-5 text-left">
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="employer_3" maxlength="25" id="id_employer_3"
+                        class="form-control form-control-lg" placeholder="Employer Name">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="employer_3_tel" maxlength="30" id="id_employer_3_tel"
+                        class="form-control form-control-lg" placeholder="Telephone #">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="date" name="employer_3_date_started" id="id_employer_3_date_started"
+                        class="form-control form-control-lg" placeholder="Date Started">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="date" name="employer_3_date_terminated" id="id_employer_3_date_terminated"
+                        class="form-control form-control-lg" placeholder="Date Terminated">
+                </div>
+
+            </div>
+
+            <div class="row justify-content-between text-left pl-5"
+                style="width: 35%; display: flex; align-items: center;">
+
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <h5>Are you currently still employed?</h5>
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <select name="employer_3_still_employed" id="id_employer_3_still_employed"
+                        class="form-control form-control-lg">
+                        <option value="Yes">Yes</option>
+
+                        <option value="No">No</option>
+
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="row justify-content-between text-left pl-5"
+                style="width: 35%; display: flex; align-items: center;">
+
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <h5>May we contact this employer?</h5>
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <select name="employer_3_may_we_contact" id="id_employer_3_may_we_contact"
+                        class="form-control form-control-lg">
+                        <option value="Yes">Yes</option>
+
+                        <option value="No">No</option>
+
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="row justify-content-between pl-5 pr-5 text-left">
+
+                <div class="form-group flex-column d-flex col-sm">
+                    <input type="text" name="employer_3_street" maxlength="30" id="id_employer_3_street"
+                        class="form-control form-control-lg" placeholder="Street Address">
+                </div>
+
+                <div class="form-group flex-column d-flex col-sm">
+                    <input type="text" name="employer_3_city" maxlength="30" id="id_employer_3_city"
+                        class="form-control form-control-lg" placeholder="City">
+                </div>
+
+                <div class="form-group flex-column d-flex col-sm">
+                    <select name="employer_3_state" id="id_employer_3_state" class="form-control form-control-lg">
+                        <option value="Alabama">Alabama</option>
+
+                        <option value="Alaska">Alaska</option>
+
+                        <option value="Arizona">Arizona</option>
+
+                        <option value="Arkansas">Arkansas</option>
+
+                        <option value="California">California</option>
+
+                        <option value="Colorado">Colorado</option>
+
+                        <option value="Conneticut">Conneticut</option>
+
+                        <option value="Deleware">Deleware</option>
+
+                        <option value="Florida">Florida</option>
+
+                        <option value="Georgia">Georgia</option>
+
+                        <option value="Hawaii">Hawaii</option>
+
+                        <option value="Idaho">Idaho</option>
+
+                        <option value="Illinois">Illinois</option>
+
+                        <option value="Indiana">Indiana</option>
+
+                        <option value="Iowa">Iowa</option>
+
+                        <option value="Kansas">Kansas</option>
+
+                        <option value="Kentucky">Kentucky</option>
+
+                        <option value="Louisiana">Louisiana</option>
+
+                        <option value="Maine">Maine</option>
+
+                        <option value="Maryland">Maryland</option>
+
+                        <option value="Massachusetts">Massachusetts</option>
+
+                        <option value="Michigan">Michigan</option>
+
+                        <option value="Minnesota">Minnesota</option>
+
+                        <option value="Mississippi">Mississippi</option>
+
+                        <option value="Missouri">Missouri</option>
+
+                        <option value="Montana">Montana</option>
+
+                        <option value="Nebraska">Nebraska</option>
+
+                        <option value="Nevada">Nevada</option>
+
+                        <option value="New Hampshire">New Hampshire</option>
+
+                        <option value="New Jersey">New Jersey</option>
+
+                        <option value="New Mexico">New Mexico</option>
+
+                        <option value="New York">New York</option>
+
+                        <option value="North Carolina">North Carolina</option>
+
+                        <option value="North Dakota">North Dakota</option>
+
+                        <option value="Ohio">Ohio</option>
+
+                        <option value="Oklahoma">Oklahoma</option>
+
+                        <option value="Oregon">Oregon</option>
+
+                        <option value="Pennsylvania">Pennsylvania</option>
+
+                        <option value="Rhode Island">Rhode Island</option>
+
+                        <option value="South Carolina">South Carolina</option>
+
+                        <option value="South Dakota">South Dakota</option>
+
+                        <option value="Tennessee">Tennessee</option>
+
+                        <option value="Texas">Texas</option>
+
+                        <option value="Utah">Utah</option>
+
+                        <option value="Vermont">Vermont</option>
+
+                        <option value="Virginia">Virgina</option>
+
+                        <option value="Washington">Washington</option>
+
+                        <option value="West Virginia">West Virginia</option>
+
+                        <option value="Wisconsin">Wisconsin</option>
+
+                        <option value="Wyoming">Wyoming</option>
+
+                    </select></p>
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="employer_3_zipcode" maxlength="5" id="id_employer_3_zipcode"
+                        class="form-control form-control-lg" placeholder="Zipcode">
+                </div>
+
+            </div>
+
+            <div class="row justify-content-between text-left pl-5 pr-5">
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="employer_3_starting_title" maxlength="25" id="id_employer_3_starting_title"
+                        class="form-control form-control-lg" placeholder="Starting Title">
+
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="employer_3_starting_wage" maxlength="25" id="id_employer_3_starting_wage"
+                        class="form-control form-control-lg" placeholder="Starting Wage">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="employer_3_final_title" maxlength="25" id="id_employer_3_final_title"
+                        class="form-control form-control-lg" placeholder="Final Title">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="employer_3_final_wage" id="id_employer_3_final_wage"
+                        class="form-control form-control-lg" placeholder="Final Wage (Optional)">
+                </div>
+
+            </div>
+
+
+            <div class="row justify-content-between pl-5 pr-5 text-left">
+                <div class="form-group col-5 flex-column d-flex">
+                    <textarea name="employer_3_summary" cols="40" rows="10" id="id_employer_3_summary"
+                        class="form-control form-control-lg"
+                        placeholder="Enter brief summary of responsibilities."></textarea>
+                </div>
+            </div>
+
+
+            <div class="row justify-content-between pl-5 pr-5 text-left">
+                <div class="form-group col-5 flex-column d-flex">
+                    <input type="text" name="employer_3_favorite_details" maxlength="300"
+                        id="id_employer_3_favorite_details" class="form-control form-control-lg"
+                        placeholder="What did you like most about this position?">
+
+                </div>
+            </div>
+
+            <div class="row justify-content-between pl-5 pr-5 text-left">
+                <div class="form-group col-5 flex-column d-flex">
+                    <input type="text" name="employer_3_least_details" maxlength="300" id="id_employer_3_least_details"
+                        class="form-control form-control-lg"
+                        placeholder="What did you like least about this position (optional).">
+                </div>
+            </div>
+
+            <div class="sectionHeader pl-5 pt-5">
+
+                <h4>3. Skills & Qualifications</h4>
+                <hr class="hr">
+            </div>
+
+            <div class="row justify-content-between pl-5 text-left">
+                <div class="form-group flex-column col-5 d-flex">
+                    <textarea name="skills_and_qual" cols="40" rows="10" id="id_skills_and_qual"
+                        class="form-control form-control-lg"
+                        placeholder="Please enter your skills and qualifications, that you feel relates to this position."></textarea>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="sectionHeader pl-5">
+                <h4>4. Educational History</h4>
+                <hr class="hr">
+            </div>
+
+            <div class="row justify-content-between pl-5 pr-5 text-left">
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="school_name" maxlength="30" required id="id_school_name"
+                        class="form-control form-control-lg" placeholder="School Name">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="number" name="years_completed" required id="id_years_completed"
+                        class="form-control form-control-lg" placeholder="Years Completed">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="degree" maxlength="30" required id="id_degree"
+                        class="form-control form-control-lg" placeholder="Degree Type">
+                </div>
+
+            </div>
+
+            <div class="row justify-content-between pl-5 text-left" style="width: 35%;">
+                <div class="form-group col-sm flex-column d-flex">
+                    <h5>Did you complete?</h5>
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <select name="completed" id="id_completed" class="form-control form-control-lg">
+                        <option value="Yes">Yes</option>
+
+                        <option value="No">No</option>
+
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="row justify-content-between pl-5 pr-5 text-left">
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="certification" maxlength="30" required id="id_certification"
+                        class="form-control form-control-lg" placeholder="Certification">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="major" maxlength="30" required id="id_major"
+                        class="form-control form-control-lg" placeholder="Major">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="minor" maxlength="30" id="id_minor" class="form-control form-control-lg"
+                        placeholder="Minor">
+
+                </div>
+
+            </div>
+
+            <div class="sectionHeader pl-5 pt-5">
+                <h4>5. References</h4>
+                <hr class="hr">
+            </div>
+
+            <div class="sectionHeader pl-5 pt-2">
+                <h5>Reference 1.</h5>
+                <hr class="hr">
+            </div>
+            <div class="row justify-content-between pl-5 pr-5 pt-2">
+
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="reference_1_name" maxlength="45" required id="id_reference_1_name"
+                        class="form-control form-control-lg" placeholder="Name">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="reference_1_relationship" maxlength="30" required
+                        id="id_reference_1_relationship" class="form-control form-control-lg"
+                        placeholder="Relationship">
+                </div>
+
+            </div>
+
+            <div class="row justify-content-between pl-5 pr-5 pt-1">
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="reference_1_telephone" maxlength="12" required
+                        id="id_reference_1_telephone" class="form-control form-control-lg" placeholder="Telephone #">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="reference_1_years_known" maxlength="2" required
+                        id="id_reference_1_years_known" class="form-control form-control-lg" placeholder="Years Known">
+                </div>
+            </div>
+
+            <div class="sectionHeader pl-5 pt-2">
+                <h5>Reference 2.</h5>
+                <hr class="hr">
+            </div>
+            <div class="row justify-content-between pl-5 pr-5 pt-2">
+
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="reference_2_name" maxlength="45" required id="id_reference_2_name"
+                        class="form-control form-control-lg" placeholder="Name">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="reference_2_relationship" maxlength="30" required
+                        id="id_reference_2_relationship" class="form-control form-control-lg"
+                        placeholder="Relationship">
+                </div>
+
+            </div>
+
+            <div class="row justify-content-between pl-5 pr-5 pt-1">
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="reference_2_telephone" maxlength="12" required
+                        id="id_reference_2_telephone" class="form-control form-control-lg" placeholder="Telephone #">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="reference_2_years_known" maxlength="2" required
+                        id="id_reference_2_years_known" class="form-control form-control-lg" placeholder="Years Known">
+                </div>
+            </div>
+
+            <div class="sectionHeader pl-5 pt-2">
+                <h5>Reference 3.</h5>
+                <hr class="hr">
+            </div>
+            <div class="row justify-content-between pl-5 pr-5 pt-2">
+
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="reference_3_name" maxlength="45" required id="id_reference_3_name"
+                        class="form-control form-control-lg" placeholder="Name">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="reference_3_relationship" maxlength="30" required
+                        id="id_reference_3_relationship" class="form-control form-control-lg"
+                        placeholder="Relationship">
+                </div>
+
+            </div>
+
+            <div class="row justify-content-between pl-5 pr-5 pt-1">
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="reference_3_telephone" maxlength="12" required
+                        id="id_reference_3_telephone" class="form-control form-control-lg" placeholder="Telephone #">
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="reference_3_years_known" maxlength="2" required
+                        id="id_reference_3_years_known" class="form-control form-control-lg" placeholder="Years Known">
+                </div>
+            </div>
+
+
+            <div class="sectionHeader pl-5 pt-5">
+                <h4>6. Applicant Signature</h4>
+                <hr class="hr">
+            </div>
+
+            <div class="row justify-content-between pl-5 pr-5 pt-2 text-left">
+                <div class="form-group col-sm flex-column d-flex">
+                    <p class="text bolded">
+                        I certify that all information I have provided in order to apply for and secure work with
+                        this
+                        employer is true, complete and cor- rect.
+                        I expressly authorize, without reservation, the employer, its representatives, employees or
+                        agents to contact and obtain information from all references (personal and professional),
+                        employers, public agencies, licensing authorities and educational institutions and to
+                        otherwise
+                        verify the accuracy of all information provided by me in this application, resume or job
+                        interview. I hereby waive any and all rights and claims I may have regarding the employer,
+                        its
+                        agents, employees or representatives, for seeking, gathering and using truthful and
+                        non-defamatory information in a lawful manner, in the employment process and all other
+                        persons,
+                        corpora- tions or organizations for furnishing such information about me.
+                        I understand that this employer does not unlawfully discriminate in employment and no
+                        question
+                        on this application is used for the purpose of limiting or eliminating any applicant from
+                        consideration for employment on a basis prohibited by applicable local, state or federal
+                        law.
+                        I understand that this application remains current for 90 days. If I am hired, I understand
+                        that
+                        I am free to resign at any time, with or without cause and with or without prior notice, and
+                        the
+                        employer reserves the same right to terminate my employment at any time, with or without
+                        cause
+                        and with or without prior notice except as may be required by law. This application does not
+                        consti- tute an agreement or contract for employment for any specified period or definite
+                        duration. I understand that no supervisor or representative of the employer is authorized to
+                        make any assurances to the contrary and that no implied oral or written agree- ments
+                        contrary to
+                        the foregoing express language are valid unless they are in writing and signed by the
+                        employer’s
+                        president.
+                        I also understand that if I am hired, I will be required to provide proof of identity and
+                        legal
+                        authorization to work in the United States of America and that federal immigration laws
+                        require
+                        me to complete an I-9 Form in this regard.
+                        I understand that any information provided by me that is found to be false, incomplete or
+                        misrepresented in any respect, will be sufficient cause to (1) eliminate me from further
+                        consideration for employment, or (2) may result in my immediate discharge from the
+                        employer’s
+                        service, whenever it is discovered.
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="row justify-content-between pl-5 pr-5 pt-2 text-left pb-5">
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="text" name="applicantSignature" required id="id_applicantSignature"
+                        placeholder="Applicant Signature" class="form-control form-control-lg">
+                </div>
+
+                <div class="form-group col-3 flex-column d-flex">
+                    <input type="date" name="todaysDate" id="id_todaysDate" placeholder="Today's Date: mm/dd/yyyy"
+                        class="form-control form-control-lg">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block p-3 mb-3"
+                style="width: 50%; margin-left: 25%; padding: 2%; background-color: #21374C; border: none;">Submit</button>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

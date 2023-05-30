@@ -1,0 +1,1201 @@
+{% load static %}
+{% load service_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% block head %}
+
+<head>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+    </script>
+    <meta charset="UTF-8">
+    <title>Remodeling Dreams Construction</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+
+    <style>
+        .col-center {
+            margin: 0 auto;
+            float: none !important;
+        }
+
+        .carousel {
+            margin: 50px auto;
+            padding: 0 70px;
+        }
+
+        .carousel-item {
+            color: #999;
+            font-size: 14px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 290px;
+        }
+
+        .carousel .item .img-box {
+            width: 135px;
+            height: 135px;
+            margin: 0 auto;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+        }
+
+        .carousel .img-box img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: 50%;
+        }
+
+        .carousel .testimonial {
+            color: white;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 30px 0 10px;
+        }
+
+        .carousel .overview {
+            font-style: italic;
+        }
+
+        .carousel .overview b {
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .carousel .carousel-control {
+            width: 40px;
+            height: 40px;
+            margin-top: -20px;
+            top: 50%;
+            background: none;
+        }
+
+        .carousel-control i {
+            font-size: 68px;
+            line-height: 42px;
+            position: absolute;
+            display: inline-block;
+            color: rgba(0, 0, 0, 0.8);
+            text-shadow: 0 3px 3px #e6e6e6, 0 0 0 #000;
+        }
+
+        .carousel .carousel-indicators {
+            bottom: -40px;
+        }
+
+        .carousel-indicators li,
+        .carousel-indicators li.active {
+            width: 10px;
+            height: 10px;
+            margin: 1px 3px;
+            border-radius: 50%;
+        }
+
+        .carousel-indicators li {
+            background: #999;
+            border-color: transparent;
+            box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-indicators li.active {
+            background: #555;
+            box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        #gallery {
+            line-height: 0;
+            -webkit-column-count: 5;
+            /* split it into 5 columns */
+            -webkit-column-gap: 5px;
+            /* give it a 5px gap between columns */
+            -moz-column-count: 5;
+            -moz-column-gap: 5px;
+            column-count: 5;
+            column-gap: 5px;
+        }
+
+        #gallery img {
+            width: 100% !important;
+            height: auto !important;
+            margin-bottom: 5px;
+            /* to match column gap */
+        }
+
+        textarea {
+            font-size: 20px;
+            width: 100%;
+            line-height: 1.5;
+        }
+
+        ul.images {
+            margin: 0;
+            padding: 0;
+            white-space: nowrap;
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        ul.images li {
+            display: inline;
+            width: 250px;
+            height: 250px;
+        }
+
+        .navbar a {
+            font-family: sans-serif;
+        }
+
+        body {
+
+            padding-bottom: 5%;
+            height: 100%;
+            font-family: Vogue;
+
+        }
+
+        .promotional_image {
+            width: 19%;
+            height: 20vh;
+            margin-right: 5%;
+        }
+
+        button {
+            font-family: sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--scroll-padding, 150px);
+            position: relative;
+            min-height: 100%;
+        }
+
+
+        #about_us {
+            background-color: white;
+        }
+
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            /* Set the fixed height of the footer here */
+            line-height: 10px;
+            /* Vertically center the text there */
+            background-color: #f5f5f5;
+        }
+
+        a {
+            font-size: 20px;
+            font-family: sans-serif;
+        }
+
+        @media (max-width: 2300px) {
+            #about_us_image {
+                display: none;
+            }
+        }
+
+        /* Used for IPAD Pro 10.5" - 12.9" */
+
+        @media (min-width: 1000px) {
+            .responsive-font-example {
+                font-size: 20px;
+                color: white;
+            }
+
+            body {
+
+
+                padding-bottom: 10%;
+                font-family: 'Abril Fatface', cursive;
+            }
+
+            .responsive-header {
+                font-size: 80px;
+                color: white;
+            }
+
+            .nav-link {
+                padding-right: 50px;
+                position: relative;
+            }
+        }
+
+        /* Used for IPAD landscape 7.9" & 9.7" */
+        @media (max-width: 1350px) {
+            .promotional_image {
+                width: 45%;
+                margin-right: 0%;
+                height: 35vh;
+            }
+
+            .responsive-font-example {
+                font-size: 40px;
+                color: white;
+            }
+
+            body {
+
+                padding-bottom: 10%;
+                font-family: 'Abril Fatface', cursive;
+            }
+
+            .responsive-header {
+                font-size: 75px;
+                color: white;
+            }
+
+            .nav-link {
+                margin-right: 5px;
+                position: relative;
+            }
+        }
+
+        /* Used for regular browsers */
+        @media (min-width: 1920px) {
+
+            .responsive-font-example {
+                font-size: 30px;
+                color: white;
+            }
+
+            body {
+
+                padding-bottom: 5vw;
+                font-family: 'Abril Fatface', cursive;
+
+            }
+
+            .responsive-header {
+                font-size: 80px;
+                color: white;
+            }
+
+            .nav-link {
+                margin-right: 75px;
+                width: 150px;
+                position: relative;
+            }
+
+
+        }
+
+        @media (max-width: 1000px) {
+
+            .responsive-font-example {
+                font-size: 20px;
+                color: white;
+            }
+
+            body {
+
+                padding-bottom: 10%;
+                font-family: 'Abril Fatface', cursive;
+
+            }
+
+            .responsive-header {
+                font-size: 80px;
+                color: white;
+            }
+
+            .nav-link {
+                padding-right: 75px;
+                position: relative;
+            }
+
+
+        }
+
+
+        /* If the screen size is smaller than 1200px, set the font-size to 80px */
+        @media (max-width: 650px) {
+            .promotional_image {
+                width: 45%;
+                margin-right: 0%;
+                height: 25vh;
+            }
+
+            html {
+                scroll-behavior: smooth;
+                position: relative;
+                min-height: 100%;
+            }
+
+            .responsive-font-example {
+                font-size: 25px;
+                color: white;
+            }
+
+            .responsive-header {
+                font-size: 50px;
+                color: white;
+            }
+
+
+        }
+
+        @media (max-width: 575px) {
+            .promotional_image {
+                width: 50%;
+                margin-right: 0%;
+            }
+
+            body {
+
+                padding-bottom: 15%;
+                font-family: 'Abril Fatface', cursive;
+            }
+
+
+
+            .responsive-font-example {
+                color: white;
+                font-size: 20px;
+            }
+
+            .responsive-header {
+
+                font-size: 45px;
+                color: white;
+            }
+
+        }
+    </style>
+
+    {% block navigation %}
+
+    <nav class="navbar" style="background-color: #21374C;">
+
+
+        <div class="ml-auto" style="align-items: center;">
+
+
+            <a href="https://www.facebook.com/RemodelingDreams" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-facebook"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                </svg>
+            </a>
+            &nbsp;
+
+            <a href="https://www.instagram.com/rdconstruction_2011/" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-instagram"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                </svg>
+            </a>
+        </div>
+
+        </div>
+    </nav>
+
+    {% block nav_settings %}
+    <nav class="navbar navbar-default  navbar-expand-xl navbar-light bg-light pb-2 pt-3 " id="primary-navigation"
+        role="navigation">
+        {% endblock %}
+        <div id="brand" style="display: inline-block;" style="font-family: April;">
+            <a class="navbar-brand" href="{% url 'Home:home' %}"
+                style="font-weight: bolder; font-size: 25px; color: #21374C; border-top: 3px solid #21374C; font-family: April;">
+                <div id="brand-heading" style="width: 100%; text-align: center; border-bottom: 3px solid #21374C;"
+                    class="p-2">
+                    <h4 style="font-weight: bold;">
+                        Remodeling Dreams Construction
+                    </h4>
+                </div>
+                <div id="brand-text" class="" style="text-align: center; color: #21374C; width: 100%;">
+
+                    <h7 style="font-size: 17px;">"Where your dreams become a reality."</h7>
+
+
+                </div>
+            </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+            style="color: white;">
+            <span class="navbar-toggler-icon" style="color: #21374C;"></span>
+        </button>
+
+        <div class="collapse navbar-collapse align-items-end" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto pl-5">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'Home:about_us' %}" target="_top"
+                        style="font-weight: bold; color: #21374C;">About
+                        Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'Home:services' %}" style="font-weight: bold; color: #21374C;">
+                        Services
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'Home:home' %}#our_process"
+                        style="font-weight: bold; color: #21374C;">Our Process</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'Home:home' %}#testimonials" target="_top"
+                        style="font-weight: bold; color: #21374C;">Testimonials</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'Home:home' %}#contact_us" target="_top"
+                        style="font-weight: bold; color: #21374C;" style="color: #21374C;">Contact Us</a>
+                </li>
+            </ul>
+
+
+
+
+            <ul class="navbar-nav ml-auto">
+
+                {% if request.user.is_authenticated %}
+                <div class="dropdown show" style="text-align: center; align-items: center;">
+                    <a class="btn btn-secondary dropdown-toggle p-3 md-auto" href="#" role="button"
+                        id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                        style="background-color: #21374C; border: none; font-weight: bold;">
+                        My Admin
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+                        <a class="navbar-item is-hoverable dropdown-item" href="{% url 'Admin:admin' %}">
+                            <p>
+                                My Admin <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                    fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z" />
+                                </svg>
+                            </p>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item is-hoverable dropdown-item" href="{% url 'Admin:view_quotes' %}">
+                            <p>
+                                Appointments <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                    fill="currentColor" class="bi bi-calendar-week" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
+                                    <path
+                                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                                </svg>
+                            </p>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+
+                        <a class="navbar-item is-hoverable dropdown-item" href="{% url 'Admin:view_services' %}">
+                            <p>
+                                Services
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-tools" viewBox="0 0 16 16">
+                                    <path
+                                        d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z" />
+                                </svg>
+                            </p>
+                        </a>
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item is-hoverable dropdown-item" href="{% url 'Admin:testimonials' %}">
+                            <p>
+                                Testimonials
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-chat-quote-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM7.194 6.766a1.688 1.688 0 0 0-.227-.272 1.467 1.467 0 0 0-.469-.324l-.008-.004A1.785 1.785 0 0 0 5.734 6C4.776 6 4 6.746 4 7.667c0 .92.776 1.666 1.734 1.666.343 0 .662-.095.931-.26-.137.389-.39.804-.81 1.22a.405.405 0 0 0 .011.59c.173.16.447.155.614-.01 1.334-1.329 1.37-2.758.941-3.706a2.461 2.461 0 0 0-.227-.4zM11 9.073c-.136.389-.39.804-.81 1.22a.405.405 0 0 0 .012.59c.172.16.446.155.613-.01 1.334-1.329 1.37-2.758.942-3.706a2.466 2.466 0 0 0-.228-.4 1.686 1.686 0 0 0-.227-.273 1.466 1.466 0 0 0-.469-.324l-.008-.004A1.785 1.785 0 0 0 10.07 6c-.957 0-1.734.746-1.734 1.667 0 .92.777 1.666 1.734 1.666.343 0 .662-.095.931-.26z" />
+                                </svg>
+                            </p>
+                        </a>
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item is-hoverable dropdown-item" href="{% url 'Admin:applicants' %}">
+                            <p>Applicants <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                    fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+                                    <path
+                                        d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z" />
+                                </svg></p>
+
+                        </a>
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item is-hoverable dropdown-item" href="{% url 'Admin:applicants' %}">
+                            <p>Settings
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                    class="bi bi-gear-wide-connected" viewBox="0 0 16 16">
+                                    <path
+                                        d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434l.071-.286zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5zm0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78h4.723zM5.048 3.967c-.03.021-.058.043-.087.065l.087-.065zm-.431.355A4.984 4.984 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8 4.617 4.322zm.344 7.646.087.065-.087-.065z" />
+                                </svg>
+                            </p>
+                        </a>
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item is-hoverable" href="{% url 'Home:logout' %}"><button
+                                style="width: 100%; height: 100%;" class="btn btn-danger p-3">Sign
+                                Out</button></a>
+                        <hr class="navbar-divider">
+                    </div>
+                </div>
+
+                {% endif %}
+
+                &NonBreakingSpace;
+                &NonBreakingSpace;
+                <a class="btn btn-primary p-3 md-auto" href="{% url 'Home:requestAQuote' %}"
+                    style="background-color: #21374C; border: none; font-weight: bold;">Schedule
+                    Consultation</a>
+
+
+            </ul>
+
+        </div>
+
+
+    </nav>
+
+    {% endblock %}
+
+</head>
+
+{% endblock %}
+
+{% block body_settings %}
+
+<body style="overflow-x: hidden;">
+    {% endblock %}
+
+    {% block mainbody %}
+    <section id="intro" style="padding-top: var(--scroll-intro, 375px); padding-bottom: 30%; width: 100%;
+        background-image: url('../static/housePlans.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-resize: none;
+        overflow-y: none;
+        max-height: 100vh;
+        font-family: Vogue;
+        ">
+
+        <!-- section that serves for an introduction. -->
+        <!-- Content here -->
+        <div class="container-fluid" style="text-align: center; width: 100%; align-items: center; margin-top: 5%;">
+            <!-- Content here -->
+            <h3 style="font-weight: bolder; font-family: Vogue;" class="responsive-header">Concept &#x2022; Create
+                &#x2022;
+                Renovate</h1>
+                <br>
+
+
+        </div>
+
+
+        <div class="container-fluid pt-5"
+            style="display: inline-block; justify-content: center; align-items: center; text-align: center;">
+
+            <h3 class="responsive-font-example" style="color: white; font-weight: bold;">"Your trusted contractor
+                serving the
+                Omaha/Council Bluffs Area, schedule your in-home appointment today."
+            </h3>
+
+
+        </div>
+
+    </section>
+
+
+    <section id="our_facets" style="font-family: Vogue; font-weight: bold;">
+        <div class="row justify-content-between" style="background-color: red;">
+            <div class="col-sm text-center p-3" style="background-color: #21374C; border-left: 3px solid white;">
+                <h3 style="color: white; font-weight: bold;">Custom Designs</h3>
+            </div>
+
+            <div class="col-sm text-center p-3" style="background-color: #21374C; border-left: 3px solid white;">
+                <h3 style="color: white;">Renovation</h3>
+            </div>
+
+            <div class="col-sm text-center p-3" style="background-color: #21374C; border-left: 3px solid white;">
+                <h3 style="color: white;">Craftsmanship</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about_us" style="padding-top: 2%; padding-bottom: 5%; width: 100%; background-color: #FBFBFB;">
+
+        <!-- section for displaying our work. -->
+        <div class="container-fluid">
+
+            <div class="row justify-content-between p-4">
+
+                <div class="col-sm text-left pl-5 pr-5 text-center"
+                    style="background-color: #FBFBFB; border-radius: 5px;">
+
+                    <h1 class="display-5">Our Work Speaks Volume</h1>
+                    <hr class="hr" style="color: navy">
+                    <p class="lead text-left pl-5 pr-5 pb-5"
+                        style="font-family: sans-serif; font-weight: bold; padding-left: 5vw; padding-righ: 5vw; ">We
+                        are a home remodeling
+                        company based in Council Bluffs, Iowa. Remodeling Dreams Construction was founded in 2011, we
+                        built this company with the combined strength, family values and decades of experience in
+                        construction, home remodeling, and contracting. Thanks to our decades of experience, we have the
+                        expertise, manpower, and resources required to complete every job to your satisfaction. You may
+                        read more about us on our "About Us" page.</p>
+
+                    <a class="btn btn-primary p-3" href="{% url 'Home:home' %}#testimonials"
+                        style="background-color:#21374C; border: none;">About Us</a>
+                </div>
+
+                <div class="col-lg text-left pl-5 pr-1">
+                    <img src="https://lirp.cdn-website.com/c3dd34c0/dms3rep/multi/opt/kono29-814w.png">
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="promotional_banner" style="width: 100%; margin-left: 5%;">
+        <div class="d-flex flex-row w-55 flex-wrap" style="width: 100%;">
+            <div class="promotional_image p-5">
+                <img src="https://www.everlastsiding.com/sites/default/files/Everlast_4C-darker%20siding%20text_2.jpg"
+                    style="width: 100%; height: 100%;">
+            </div>
+
+            <div class="promotional_image p-5">
+                <img src="https://images.trex.com/is/image/trexcompany/trex-platinum-badge-lg-1?ts=1676322000206&$mediaCarouselMain$&dpr=off"
+                    style="width: 100%; height: 100%;">
+
+
+            </div>
+
+            <div class="promotional_image p-5">
+                <img src="https://pacificshorestones.com/wp-content/uploads/2017/03/cambria-logo.png"
+                    style="width: 100%; height: 100%;">
+
+
+            </div>
+
+            <div class="promotional_image p-5">
+                <img src="https://cdnassets.hw.net/9b/c7/8b1fbab241e3b8ebf963bef62492/pella-dot-cmyk.jpg"
+                    style="width: 100%; height: 100%;">
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="our_process" class="pt-5 pb-5" style="background-color: #DDDDCF;">
+        <div id="sectionHeader" style="text-align: center; width: 100%" style="background-color: brown;" class="pb-5">
+            <h1 class="display-5">Our Client Focused Process</h1>
+            <hr class="hr">
+        </div>
+
+        <div class="container-fluid" style="background-color:#21374C; ">
+            <div class="row p-0">
+                <div class="container-fluid" style="padding-left: 10vw; padding-right: 10vw;">
+                    <div id="myCarousel" class="carousel slide" data-interval="false">
+                        <!-- Carousel -->
+                        <div class="carousel-inner" style="width: 100%; ">
+
+
+                            <div class="item carousel-item active">
+                                <div id="card-heading" style="display: flex;  justify-content: center;">
+                                    <h3 style="color: white; font-family: sans-serif; font-weight: bold;">1. Schedule A
+                                        Consultation</h3>
+                                </div>
+                                <hr class="hr" style="background-color: white;">
+
+
+
+                                <div id="description" style=" display: inline-block; text-align:left;padding: 5%;">
+                                    <p class="lead" style="color: white; font-family: sans-serif; font-weight: bold;">We
+                                        schedule a first
+                                        in-home appointment to
+                                        discuss the scope of the project and the contractor relationship as well as
+                                        our approach to the design, development and execution of work. We begin our
+                                        assessment by taking pictures and obtaining exact measurements. This will
+                                        ensure that your rendering has everything you discussed and allow us to
+                                        provide a well prepared proposal. Click below to schedule your consultation
+                                        below.</p>
+                                </div>
+                            </div>
+
+                            <div class="item carousel-item">
+                                <div id="card-heading" style="display: flex;  justify-content: center;">
+                                    <h3 style="color: white; font-family: sans-serif; font-weight: bold;">2. Project
+                                        Proposal</h3>
+                                </div>
+                                <hr class="hr" style="background-color: white;">
+
+
+
+                                <div id="description" style=" display: inline-block; text-align:left;padding: 5%;">
+                                    <p class="lead" style="color: white; font-family: sans-serif; font-weight: bold;">We
+                                        will select high-quality materials, create
+                                        necessary 3D rendering and finishes that will suit the design, budget and style
+                                        of your space. After we have finalized all the details of the project, we will
+                                        prepare a detailed proposal. This includes materials, scope of
+                                        work, product allowances and a price for the project. This is
+                                        sent to you in written form. </p>
+                                </div>
+                            </div>
+
+                            <!-- card #3 -->
+                            <div class="item carousel-item">
+                                <div id="card-heading" style="display: flex;  justify-content: center;">
+                                    <h3 style="color: white; font-family: sans-serif; font-weight: bold;">3. Proposal
+                                        Acceptance</h3>
+                                </div>
+                                <hr class="hr" style="background-color: white;">
+
+
+
+                                <div id="description" style=" display: inline-block; text-align:left;padding: 5%;">
+                                    <p class="lead" style="color: white; font-family: sans-serif; font-weight: bold;">We
+                                        will make sure you are comfortable with the
+                                        plan and create a contract reflecting all of the details you want in your Final
+                                        Design, The contract will be sent and electronically signed. The deposit will be
+                                        collected and materials will be ordered and delivered to the warehouse. Our
+                                        Production Manager will be assigned to your project and you will be in
+                                        communication as your project preparations are made,.</p>
+                                </div>
+                            </div>
+
+
+                            <!-- card #4 -->
+                            <div class="item carousel-item">
+                                <div id="card-heading" style="display: flex;  justify-content: center;">
+                                    <h3 style="color: white; font-family: sans-serif; font-weight: bold;">4. Project
+                                        Kickoff</h3>
+                                </div>
+                                <hr class="hr"
+                                    style="background-color: white; font-family: sans-serif; font-weight: bold;">
+
+
+
+                                <div id="description" style=" display: inline-block; text-align:left;padding: 5%;">
+                                    <p class="lead" style="color: white; font-family: sans-serif; font-weight: bold;">
+                                        Your Production Manager will keep you in the
+                                        loop throughout the entire process. We will also schedule the Project start date
+                                        and get to work! Watch as our experienced carpenters and remodeling team
+                                        complete your project with creativity, skills and attention to detail to achieve
+                                        beautiful results.
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <!-- card #5 -->
+                            <div class="item carousel-item">
+                                <div id="card-heading" style="display: flex;  justify-content: center;">
+                                    <h3 style="color: white; font-family: sans-serif; font-weight: bold;">5. Project
+                                        Completion</h3>
+                                </div>
+                                <hr class="hr" style="background-color: white; ">
+
+
+
+                                <div id="description" style=" display: inline-block; text-align:left;padding: 5%;">
+                                    <p class="lead" style="color: white; font-family: sans-serif; font-weight: bold;">
+                                        Now is when you get to see your finished
+                                        project. We are proud of the high standards we hold for our projects and work
+                                        extremely hard to ensure that your finished project matches the contract and
+                                        renderings as you expected. Upon completion, we will send you the warranties for
+                                        your labor and materials.
+
+                                    </p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- Carousel Controls -->
+                        <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev"
+                            style="color: white;">
+                            <i class="fa fa-angle-left">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+                            </i>
+                        </a>
+                        <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+
+                            <i class="fa fa-angle-right"> <span class="carousel-control-next-icon"
+                                    aria-hidden="true"></span>
+                            </i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="card text-center" style="border: none; background-color: #DDDDCF;">
+
+            <div class="card-body" style="border: none;">
+                <h5 class="card-title"></h5>
+                <p class="card-text lead">Click below to schedule your in-home consultation, today.</p>
+                <a href="{% url 'Home:requestAQuote' %}" class="btn btn-primary p-3"
+                    style="background-color:#21374C; border: none;">Schedule Consultation</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="services" class="container-fluid pt-5">
+
+        <div id="sectionHeader" style="text-align: center;">
+            <h1 class="pt-5 pb-5 display-5">Here's A Preview Of What We Can Do</h1>
+            <hr class="hr">
+        </div>
+        <div class="col-xl text-center" style="padding-left: 0.5vw;">
+            <div class="d-flex flex-row flex-wrap w-5 text-center justify-content-center pt-5 pb-5">
+
+                {% for service in services %}
+                <a href="{{service.get_absolute_url}}">
+                    <div class="card mt-5" style=" width: 55vh; margin: 1vw; height: 40vh;">
+
+                        <img class=" card-img-top" src="/media/{{service.id|thumbnail}}"
+                            style="width: 100%; height: 35vh;">
+
+                        <div class="card-body" style="height: 1vh; border-top: 1px solid white; width: 55vh;">
+
+                            <h4 class="text-center" style="color: black; font-weight: bold; font-family: sans-serif">
+                                {{service.name}}</h4>
+                            <hr class="hr">
+
+                        </div>
+                    </div>
+                </a>
+
+                {% endfor %}
+
+            </div>
+        </div>
+
+        <div class="card text-center" style="border: none;">
+
+            <div class="card-body" style="border: none;">
+                <h5 class="card-title"></h5>
+                <p class="card-text lead">Click below for a full listing of our services.</p>
+                <a href="{% url 'Home:services' %}" class="btn btn-primary p-3"
+                    style="background-color:#21374C; border: none;">Our
+                    Services</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="testimonials" class="pb-5 pt-5" style="overflow-y: hidden; background-color: #CFDDDD;">
+        <div id="sectionHeader" style="text-align: center;">
+            <h1 class="display-5">What Our Customers Have To Say</h1>
+            <hr class="hr">
+        </div>
+
+        <div class="container-fluid" style="background-color:#21374C; ">
+            <div class="row p-0">
+                <div class="container-fluid" style="">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Carousel -->
+                        <div class="carousel-inner" style="width: 100%; ">
+
+                            {% for testimonial in testimonials %}
+                            {% if forloop.counter0 == 0 %}
+                            <div class="item carousel-item active pt-5">
+                                <p class="testimonial pt-5" style="width: 50%; margin-left: 25%;">
+                                    "{{testimonial.quote}}"</p>
+                                <p class="overview" style="color: white;"><b>{{testimonial.reviewer}}</b>,
+                                    {{testimonial.rating|stars}}</p>
+                            </div>
+
+                            {% else %}
+                            <div class="item carousel-item pt-5">
+                                <p class="testimonial pt-5" style="width: 50%; margin-left: 25%;">
+                                    "{{testimonial.quote}}"</p>
+                                <p class="overview" style="color: white;"><b>{{testimonial.reviewer}}</b>,
+                                    {{testimonial.rating|stars}}</p>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+
+                        </div>
+                        <!-- Carousel Controls -->
+                        <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev"
+                            style="color: white;">
+                            <i class="fa fa-angle-left">
+                            </i>
+                        </a>
+                        <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+
+                            <i class="fa fa-angle-right"> </i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section id="contact_us"
+        style="padding-top: 1%; padding-bottom: 3%; text-align: center; background-color: rgba(246,246,246,255);">
+        <div id="sectionHeader pt-5" style="text-align: center; padding-top: 2%; width: 50%; margin-left: 25%;">
+            <h1 class="display-5">Ready To Remodel?</h1>
+            <hr class="hr">
+            <p class="lead">Simply fill out the form below, and one of our representatives will reach out to you.</p>
+        </div>
+        <div class="row justify-content-between pl-5 pr-5 pt-3" style="background-color: #f6f6f6;">
+            <div class="container-fluid py-md-5" style="padding-left: 10vw; padding-right: 10vw;">
+                <form method="post">
+                    {% csrf_token %}
+
+                    <div class="row justify-content-between text-left pl-5 pr-5">
+                        <div class="form-group col-sm flex-column d-flex">
+                            <input type="text" name="name" maxlength="225" required id="id_name"
+                                class="form-control form-control-lg" placeholder="First & Last Name"
+                                style="font-family: sans-serif; font-weight: bold;">
+                        </div>
+
+                        <div class="form-group col-sm flex-column d-flex">
+                            <input type="text" name="phoneNumber" maxlength="30" required id="id_phoneNumber"
+                                class="form-control form-control-lg" placeholder="Phone #"
+                                style="font-family: sans-serif; font-weight: bold;">
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-between text-left pl-5 pr-5">
+                        <div class="form-group col-sm flex-column d-flex">
+                            <input type="email" name="email" maxlength="254" required id="id_email"
+                                class="form-control form-control-lg" placeholder="Email"
+                                style="font-family: sans-serif; font-weight: bold;">
+                        </div>
+
+                        <div class="form-group col-sm">
+                            <input type="text" name="streetAddress" maxlength="45" required id="id_streetAddress"
+                                class="form-control form-control-lg" placeholder="Street Address"
+                                style="font-family: sans-serif; font-weight: bold;">
+                        </div>
+
+                    </div>
+
+                    <div class="row justify-content-between text-left pl-5 pr-5">
+                        <div class="form-group col-sm">
+                            <input type="text" name="zipcode" maxlength="5" required id="id_zipcode"
+                                class="form-control form-control-lg" placeholder="Zipcode"
+                                style="font-family: sans-serif; font-weight: bold;">
+                        </div>
+
+                        <div class="form-group col-sm">
+                            <input type="text" name="state" maxlength="30" required id="id_state"
+                                class="form-control form-control-lg" placeholder="State"
+                                style="font-family: sans-serif; font-weight: bold;">
+                        </div>
+
+                        <div class="form-group col-sm">
+                            <input type="text" name="city" maxlength="30" required id="id_city"
+                                class="form-control form-control-lg" placeholder="City"
+                                style="font-family: sans-serif; font-weight: bold;">
+                        </div>
+                    </div>
+
+
+                    <div class="row justify-content-between text-left pl-5 pr-5">
+                        <div class="form-group col-sm">
+                            <textarea name="details" cols="40" rows="10" required id="id_details"
+                                class="form-control form-control-lg"
+                                placeholder="Please provide a brief description of your upcoming project."
+                                style="font-family: sans-serif; font-weight: bold;"></textarea>
+                        </div>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary" style="width: 35%; margin-left:; border-radius: 10px; height: 50px;
+                        background-color: #21374C; border: none; font-weight: bold;">Submit</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="row justify-content-center" style="">
+
+            <div class="col-sm pb-5" style="width: auto; ">
+                <div class="sectionHeader  pt-5 ">
+                    <h2 style="font-family: serif; font-weight: bolder;">Get In Touch With Us.</h2>
+                    <hr class="hr">
+                </div>
+
+                <div class="col-sm justify-content-center p-5"
+                    style="text-align: left; background-color: white; width: 50%; margin-left: 25%; border-radius: 5px;">
+                    <p class="lead">
+                        19445 Birdsley Road, Council Bluffs, IA
+                    </p>
+                    <p class="lead">
+                        712-256-7556
+                    </p>
+
+                    <p class="lead">
+                        rdc@cox-internet.com
+                    </p>
+
+                    <img src="../static/logo.png" style="width: 100%;">
+
+
+
+                </div>
+            </div>
+
+            <div class="col-sm pt-5">
+                <div style="width: 100%"><iframe width="100%" height="300" frameborder="0" scrolling="no"
+                        marginheight="0" marginwidth="0"
+                        src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=19445%20Birdsley%20Rd,%20Council%20Bluffs,%20IA%2051503+(remodeling%20dreams%20construction)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
+                            href="https://www.maps.ie/distance-area-calculator.html">area maps</a></iframe></div>
+            </div>
+
+        </div>
+    </section>
+
+
+    {% endblock %}
+
+
+
+
+    {% block footer %}
+
+    <!-- Footer -->
+    <div class="footer pt-5">
+        <footer class="text-center text-lg-start bg-light text-muted">
+            <!-- Section: Social media -->
+            <section class="" id="social_links">
+            </section>
+
+            <!-- Section: Social media -->
+
+            <!-- Section: Links  -->
+            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+                <div class="container text-center text-md-start mt-5">
+                    <!-- Grid row -->
+                    <div class="row mt-5">
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+
+
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-4 text-left  pl-5">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Useful links
+                            </h6>
+                            <p>
+                                <a href="{% url 'Home:employeeApplication' %}" class="text-reset">Join Our Team</a>
+                            </p>
+                            <p>
+                                <a href="{% url 'Home:requestAQuote' %}" class="text-reset">Request A Quote</a>
+                            </p>
+                            <p>
+                                <a href="{% url 'Admin:admin' %}" class="text-reset">Admin</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Help</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col text-left pl-5"
+                            style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4" style="font-family: 'Abril Fatface', cursive;">
+                                Contact
+                            </h6>
+                            <p><i class="fas fa-home me-3"></i>19445 Birdsley Road, Council Bluffs, IA
+                            </p>
+                            <p><i class="fas fa-print me-3"></i>712-256-7556</p>
+
+                            <p>
+                                <i class="fas fa-envelope me-3"></i>
+                                rdc@cox-internet.com
+                            </p>
+
+
+
+                            <p><i class="fas fa-phone me-3"></i>https://www.remodelingdreamsconstruction.com</p>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                </div>
+            </section>
+            <!-- Section: Links  -->
+
+            <!-- Copyright -->
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+
+                <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Remodeling Dreams
+                    Construction</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+
+    </div>
+    {% endblock %}
+
+    <script src="../static/main.js"></script>
+
+    <script>
+        $(function visitLink() {
+            var navMain = $(".navbar-collapse"); // avoid dependency on #id
+            // "a:not([data-toggle])" - to avoid issues caused
+            // when you have dropdown inside navbar
+            navMain.on("click", "a:not([data-toggle])", null, function () {
+                navMain.collapse('hide');
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>
