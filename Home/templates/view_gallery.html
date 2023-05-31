@@ -1,6 +1,9 @@
 {% extends 'home.html' %}
 {% load static %}
-
+{% block css_links %}
+<link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'css/lightbox.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
 {% block mainbody %}
 
 <div class="container-fluid" style="width: 100%;
@@ -21,9 +24,13 @@
 
         {% for image in images %}
 
-        <img src="/media/{{image}}">
+        <a href="/media/{{image}}" data-lightbox="models" data-title="Caption">
+            <img src="/media/{{image}}">
+        </a>
 
         {% endfor %}
     </div>
 </div>
+<script src="../static/lightbox-plus-jquery.js"></script>
+
 {% endblock %}
