@@ -4,24 +4,25 @@
 
 
 {% block mainbody %}
-<div id="services_banner" class="container-fluid" style="width: 100%;
-         background-image: url('https://www.woodstairs.com/wp-content/uploads/2017/04/banner-3-2.jpg');
+<div class="container-fluid" style="width: 100%;
+        background-image: url('https://www.woodstairs.com/wp-content/uploads/2017/04/banner-3-2.jpg');
          background-position: right center;
          background-repeat: no-repeat;
-         background-size: cover;>
+         background-size: cover;
+         padding-top: 375px;">
 
-    <div class=" container" style="justify-content: center; text-align: center; padding-bottom: 5%;
+    <div class="container" style="justify-content: center; text-align: center; padding-bottom: 5%;
         color: white;
         font-family: serif;
         font-weight: bold;
         width: 100%;">
-    <h1>Our Services</h1>
+        <h1>Our Services</h1>
 
+    </div>
 </div>
-</div>
 
 
-<div class="col-md-auto text-center " style="align-items: center;">
+<div class="col-md-auto text-center " style="align-items: center; margin-left: 5%;">
 
     <div class="d-flex md-auto flex-row flex-wrap w-35 text-center">
 
@@ -31,7 +32,7 @@
 
 
                 <div class="flip-card-inner">
-                    <div class="card mt-5 mr-20 ml-5" style="width: 22rem; ">
+                    <div class="card" style="width: 22rem; ">
 
                         <img class="card-img-top" src="/media/{{service.id|thumbnail}}"
                             style="width: 100; height: 250px;">
