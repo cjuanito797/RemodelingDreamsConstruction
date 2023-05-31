@@ -32,7 +32,7 @@
         {% for image in images %}
         <a href="{% url 'Admin:deleteGalleryImage' image.id %}"
             onclick="return confirm('Are you sure you would like to remove this from the gallery?')">
-            <div class="card m-3" style="width: 23vw;">
+            <div class="card m-3" style="width: 23rem;">
 
 
                 <img class="card-img-top" id="gallery_thumbnail" src="/media/{{image}}"
