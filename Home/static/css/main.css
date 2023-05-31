@@ -1,7 +1,4 @@
-.image_gallery {
 
-    max-width: 100%;
-}
 
  #intro {
      padding-top: var(--scroll-intro, 375px);
@@ -35,6 +32,11 @@
  }
 
  @media (max-width: 575px) {
+
+     .image_gallery {
+
+         max-width: 100%;
+     }
      #intro {
          padding-top: 10%;
          padding-bottom: 30%;
