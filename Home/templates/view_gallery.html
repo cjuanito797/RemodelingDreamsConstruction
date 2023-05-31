@@ -15,19 +15,15 @@
     </div>
 </div>
 
-<div class="col-md-auto text-center " style="align-items: center;">
+<div class="image_container">
 
-
-    <div class="d-flex md-auto flex-row flex-wrap w-35 text-center">
+    <div class="gallery">
 
         {% for image in images %}
 
-        <div class="col-sm p-3 image_gallery">
+        <img src="/media/{{image}}">
 
-            <img src="/media/{{image}}" style="width: 100%; height: 50%; vertical-align: middle;">
-        </div>
         {% endfor %}
-
     </div>
 </div>
 {% endblock %}
