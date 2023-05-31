@@ -2,7 +2,7 @@
      padding-top: var(--scroll-intro, 375px);
      padding-bottom: 30%;
      width: 100%;
-     background-image: url("../plans.jpg");
+     background-image: url("../housePlans.jpg");
      background-size: cover;
      background-position: center center;
      background-repeat: no-repeat;
@@ -17,7 +17,7 @@
          padding-top: 10%;
          padding-bottom: 30%;
          width: 100%;
-         background-image: url("../plans.jpg");
+         background-image: url("../housePlans.jpg");
          background-size: cover;
          background-position: center center;
          background-repeat: no-repeat;
