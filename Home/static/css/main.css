@@ -34,7 +34,7 @@
  @media (max-width: 575px) {
 
      .image_gallery {
-
+         flex: 100%;
          max-width: 100%;
      }
      #intro {
