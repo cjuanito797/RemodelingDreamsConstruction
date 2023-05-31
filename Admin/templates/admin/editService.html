@@ -80,8 +80,9 @@
                 <a href="{% url 'Admin:edit_project' project.id %}"
                     onclick="return confirm('Are you sure you would like to edit this project?')">
                     <img class="card-img-top" id="gallery_thumbnail" src="/media/{{project.thumbnail}}"
-                        style="width: 100%; height: 25rem;"></a>
-                <div class="card-footer" style="display: flex;">
+                        style="width: 100%; height: 24rem;"></a>
+                <div class="card-footer text-center"
+                    style="display: flex; align-items: center; text-align: center; height: 6rem;">
                     <a class="btn btn-primary p-3" href="{% url 'Admin:edit_gallery' project.id %}"
                         style="border-radius: 10px; background-color: #21374C; border: none; width: 50%;">Edit
                         Gallery</a>
