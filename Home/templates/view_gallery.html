@@ -22,18 +22,10 @@
 
         {% for image in images %}
 
-        <a href="#">
-            <div class="card mt-5" style=" width: 25rem; margin: 1vw;">
+        <div class="col-sm p-3" style="max-width: 25%;">
 
-                <img class=" card-img-top" src="/media/{{image}}" style="width: 100%; height: 350px;">
-
-
-
-                <div class="card-footer">
-
-                </div>
-            </div>
-        </a>
+            <img src="/media/{{image}}" style="width: 100%; height: 50%; vertical-align: middle;">
+        </div>
         {% endfor %}
 
     </div>
