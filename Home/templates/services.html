@@ -2,6 +2,11 @@
 {% load static %}
 {% load service_tags %}
 
+{% block css_links %}
+<link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'css/services.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
 {% block mainbody %}
 <div class="container-fluid" style="width: 100%;
         background-image: url('https://www.woodstairs.com/wp-content/uploads/2017/04/banner-3-2.jpg');
