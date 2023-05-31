@@ -1,3 +1,8 @@
+.image_gallery {
+
+    max-width: 100%;
+}
+
  #intro {
      padding-top: var(--scroll-intro, 375px);
      padding-bottom: 30%;
