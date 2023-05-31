@@ -12,6 +12,17 @@
      font-family: Vogue;
  }
 
+ .facet {
+     background-color: #21374C;
+     border-left: 3px solid white;
+
+ }
+
+ .facet h3 {
+     color: white;
+     font-weight: bold;
+ }
+
  @media (max-width: 575px) {
      #intro {
          padding-top: 10%;
