@@ -1,8 +1,8 @@
 {% extends 'home.html' %}
-
+{% load static %}
 {% load service_tags %}
 {% block mainbody %}
-<form method="post" enctype="multipart/form-data" id="form" style="padding-top: var(--scroll-intro, 150px);">
+<form method="post" enctype="multipart/form-data" id="form">
     {% csrf_token %}
 
     <h1 class="text-center">
@@ -20,7 +20,7 @@
                 {{edit_thumbnail}}
             </div>
 
-            <div class="col-sm pt-5 pr-5 pl-5 text-left">
+            <div class="col-sm pt-5 pr-5 pl-5 text-left" style="width: 100%;">
                 {{form.details}}
 
             </div>
