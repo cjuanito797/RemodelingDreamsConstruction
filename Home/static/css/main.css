@@ -2,7 +2,7 @@
      padding-top: var(--scroll-intro, 375px);
      padding-bottom: 30%;
      width: 100%;
-     background-image: url('../housePlans.jpg');
+     background-image: url("../housePlans.jpg");
      background-size: cover;
      background-position: center center;
      background-repeat: no-repeat;
@@ -18,7 +18,7 @@
          padding-top: var(--scroll-intro, 375px);
          padding-bottom: 30%;
          width: 100%;
-         background-image: url('../static/housePlans.jpg');
+         background-image: url("../housePlans.jpg");
          background-size: cover;
          background-position: center center;
          background-repeat: no-repeat;
@@ -27,6 +27,22 @@
          overflow-y: none;
          max-height: 100vh;
          font-family: Vogue;
+     }
+
+     html {
+         height: 100%;
+         width: 100%;
+         margin: 0px;
+         overflow-x: hidden;
+
+     }
+
+     body {
+         height: 100%;
+         width: 100%;
+         margin: 0px;
+         overflow-x: hidden;
+
      }
 
      .promotional_image {
