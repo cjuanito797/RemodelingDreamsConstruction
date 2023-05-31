@@ -12,6 +12,12 @@
      font-family: Vogue;
  }
 
+ #about_us {
+     padding-top: 2%;
+     width: 100%;
+     background-color: #FBFBFB;
+ }
+
  .facet {
      background-color: #21374C;
      border-left: 3px solid white;
