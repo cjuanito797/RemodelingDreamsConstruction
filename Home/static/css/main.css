@@ -13,7 +13,19 @@
  }
 
  @media (max-width: 575px) {
-
+     #intro {
+         padding-top: 10%;
+         padding-bottom: 30%;
+         width: 100%;
+         background-image: url("../plans.jpg");
+         background-size: cover;
+         background-position: center center;
+         background-repeat: no-repeat;
+         background-resize: none;
+         overflow-y: none;
+         max-height: 100vh;
+         font-family: Vogue;
+     }
 
      html {
          height: 100%;
