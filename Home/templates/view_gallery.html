@@ -25,20 +25,8 @@
         <a href="#">
             <div class="card mt-5" style=" width: 25rem; margin: 1vw;">
 
-                <img class=" card-img-top" src="/media/{{image}}" style="width: 100; height: 250px;">
+                <img class=" card-img-top" src="/media/{{image}}" style="width: 100%; height: 100%">
 
-                <div class="card-body mx-auto mt-2" style="height: 150px;">
-
-                    <h4 class="text-center" style="height: 50px; color: black;">{{service.name}}</h4>
-                    <hr class="hr">
-
-                </div>
-
-                <div class="card-footer">
-                    <a class="btn btn-danger" href="{% url 'Admin:deleteService' service.id %}"
-                        onclick="return confirm('Are you sure you would like to delete this service?')">Remove
-                        Service</a>
-                </div>
             </div>
         </a>
         {% endfor %}
