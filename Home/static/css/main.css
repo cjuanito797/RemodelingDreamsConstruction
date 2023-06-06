@@ -85,6 +85,8 @@
          width: 100%;
          margin: 0px;
          overflow-x: hidden;
+         display: flex;
+         flex-direction: column;
 
      }
 
@@ -247,6 +249,13 @@
      margin: 0px;
      overflow-x: hidden;
      font-family: Vogue;
+     display: flex;
+     flex-direction: column;
+
+ }
+
+ .footer {
+     margin-top: auto;
 
  }
 
@@ -299,7 +308,8 @@
 
      body {
 
-
+         display: flex;
+         flex-direction: column;
          font-family: 'Abril Fatface', cursive;
      }
 
@@ -328,7 +338,8 @@
      }
 
      body {
-
+         display: flex;
+         flex-direction: column;
          font-family: 'Abril Fatface', cursive;
      }
 
@@ -352,7 +363,8 @@
      }
 
      body {
-
+         display: flex;
+         flex-direction: column;
          font-family: 'Abril Fatface', cursive;
 
      }

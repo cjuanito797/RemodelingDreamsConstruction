@@ -186,6 +186,7 @@ CSP_IMG_SRC = [
     "http://www.w3.org/2000/svg",
     "https://west-south.com/wp-content/",
     "https://static.vecteezy.com/",
+    "https://www.woodstairs.com/",
 ]
 
 CSP_FRAME_SRC = [
