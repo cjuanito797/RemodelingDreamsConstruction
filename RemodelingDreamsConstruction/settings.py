@@ -148,3 +148,14 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
+
+MIDDLEWARE += ["csp.middleware.CSPMiddleware"]
+
+CSP_SCRIPT_SRC = [
+    "'self'",
+    "https://stackpath.bootstrapcdn.com",
+    "https://cdn.jsdelivr.net",
+    "https://code.jquery.com"
+
+]
+CSP_STYLE_SRC = ["https://cdn.jsdelivr.net/", "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js", "'unsafe-inline'", "'self'", "'data:'"]
