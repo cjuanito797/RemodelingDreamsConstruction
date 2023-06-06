@@ -39,6 +39,7 @@ def home(request):
             new_quote = form.save(commit=False)
             new_quote.save()
 
+
             # send e-mail to customer.
             send_mail(
                  "Thank You For Choosing Remodeling Dreams Construction",
@@ -59,6 +60,8 @@ def home(request):
 
             msg = EmailMultiAlternatives("A New Quote Has Been Created", text_content, 'cfanito797@gmail.com', ['rdcquoterequest@aol.com'])
             msg.send()
+
+            form = quoteForm()
 
             return redirect('Home:success')
 
