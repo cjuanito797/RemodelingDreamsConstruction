@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "django_permissions_policy.PermissionsPolicyMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -55,6 +56,10 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+PERMISSIONS_POLICY = {
+    "accelerometer": [],
+}
 
 ROOT_URLCONF = "RemodelingDreamsConstruction.urls"
 
@@ -152,10 +157,38 @@ SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 MIDDLEWARE += ["csp.middleware.CSPMiddleware"]
 
 CSP_SCRIPT_SRC = [
+    "'unsafe-inline'",
     "'self'",
     "https://stackpath.bootstrapcdn.com",
     "https://cdn.jsdelivr.net",
-    "https://code.jquery.com"
-
+    "https://code.jquery.com",
 ]
-CSP_STYLE_SRC = ["https://cdn.jsdelivr.net/", "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js", "'unsafe-inline'", "'self'", "'data:'"]
+
+CSP_STYLE_SRC = [
+    "https://fonts.googleapis.com/",
+    "https://cdn.jsdelivr.net/",
+    "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js",
+    "'unsafe-inline'",
+    "'self'",
+]
+
+CSP_FONT_SRC = [
+    "https://fonts.gstatic.com/",
+]
+
+CSP_IMG_SRC = [
+    "'self'",
+    "https://www.everlastsiding.com/",
+    "https://scontent-dfw5-1.xx.fbcdn.net/v/",
+    "https://images.trex.com/is/image/trexcompany/",
+    "https://pacificshorestones.com/wp-content/",
+    "https://cdnassets.hw.net/",
+    "http://www.w3.org/2000/svg",
+    "https://west-south.com/wp-content/",
+    "https://static.vecteezy.com/",
+]
+
+CSP_FRAME_SRC = [
+    "https://maps.google.com/maps",
+    "https://www.google.com/maps/",
+]
