@@ -37,6 +37,7 @@ def testimonials(request):
         if form.is_valid():
             new_testimonial = form.save(commit=False)
             new_testimonial.save()
+            form = AddTestimonial()
     else:
         form = AddTestimonial()
 
