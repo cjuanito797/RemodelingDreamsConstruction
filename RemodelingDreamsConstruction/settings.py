@@ -187,7 +187,7 @@ CSP_IMG_SRC = [
     "https://west-south.com/wp-content/",
     "https://static.vecteezy.com/",
     "https://www.woodstairs.com/",
-    "https://www.gfedaleroof.com/wp-content/uploads/",
+    "https://www.gfedaleroof.com/wp-content/uploads/2020/05/Platinum_PCC_PrimaryLogo_RGB.png",
     "data:"
 ]
 
