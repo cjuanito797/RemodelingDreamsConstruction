@@ -115,10 +115,10 @@
 
 
 
-            <ul class="navbar-nav ml-auto" style="background-color: blue; width: auto">
+            <ul class="navbar-nav ml-auto" style="width: 25%;">
 
                 {% if request.user.is_authenticated %}
-                <div class="dropdown show" id="admin_dropdown">
+                <div class=" dropdown show" id="admin_dropdown">
                     <a class="btn btn-secondary dropdown-toggle p-3 md-auto" href="#" role="button"
                         id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         My Admin
@@ -210,7 +210,7 @@
 
                 &NonBreakingSpace;
                 &NonBreakingSpace;
-                <a class="btn-block btn-secondary  p-3 md-auto w-100" href="{% url 'Home:requestAQuote' %}"
+                <a class="btn btn-secondary  p-3 md-auto w-100" href="{% url 'Home:requestAQuote' %}" role="button"
                     id="contact_us_button" style="width: 100%;">Schedule Consultation</a>
 
 
