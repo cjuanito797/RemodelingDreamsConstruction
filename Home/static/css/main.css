@@ -50,6 +50,7 @@
 #dropdownMenuLink {
     background-color: #353839;
     border: none;
+    font-weight: bold;
 }
 
 #sign_out {
