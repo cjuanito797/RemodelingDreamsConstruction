@@ -62,9 +62,10 @@
 }
 
 #contact_us_button {
-    background-color: #353839;
+    background-color: red;
     border: none;
     font-weight: bold;
+    width: 100%;
 }
 
 #intro_container {
