@@ -208,6 +208,10 @@
                         </div>
                     </div>
 
+                    {% else %}
+                    <a class="btn btn-secondary p-3 md-auto w-100" href="{% url 'Home:requestAQuote' %}"
+                        id="contact_us_button" type="button">Schedule Consultation</a>
+
                     {% endif %}
 
                     &NonBreakingSpace;
