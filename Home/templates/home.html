@@ -122,11 +122,9 @@
                 {% if request.user.is_authenticated %}
                 <div class=" dropdown show" id="admin_dropdown">
 
-                    <li class="nav-item active">
-                        <a class="btn btn-secondary dropdown-toggle p-3 md-auto" href="#" id="dropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My
-                            Admin</a>
-                    </li>
+                    <a class="btn btn-secondary dropdown-toggle p-3 md-auto" href="#" id="dropdownMenuLink"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My
+                        Admin</a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 
@@ -212,10 +210,9 @@
                     {% endif %}
 
                     &NonBreakingSpace;
-                    <li class="nav-item">
-                        <a class="btn btn-secondary p-3 md-auto" href="{% url 'Home:requestAQuote' %}"
-                            id="contact_us_button"><strong>Schedule Consultation</strong></a>
-                    </li>
+
+                    <a class="btn btn-secondary p-3 md-auto" href="{% url 'Home:requestAQuote' %}"
+                        id="contact_us_button"><strong>Schedule Consultation</strong></a>
                 </div>
 
             </ul>
