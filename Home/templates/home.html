@@ -117,13 +117,11 @@
 
             <ul class="navbar-nav ml-auto">
 
-
-
                 {% if request.user.is_authenticated %}
                 <div class=" dropdown show" id="admin_dropdown">
 
-                    <a class="btn btn-secondary dropdown-toggle p-3 md-auto" href="#" id="dropdownMenuLink"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My
+                    <a class="nav-link btn btn-secondary dropdown-toggle p-3 md-auto" href="#" id="dropdownMenuLink"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">My
                         Admin</a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -211,8 +209,8 @@
 
                     &NonBreakingSpace;
 
-                    <a class="btn btn-secondary p-3 md-auto" href="{% url 'Home:requestAQuote' %}"
-                        id="contact_us_button"><strong>Schedule Consultation</strong></a>
+                    <a class="nav-link btn btn-secondary p-3 md-auto" href="{% url 'Home:requestAQuote' %}"
+                        id="contact_us_button" role="button"><strong>Schedule Consultation</strong></a>
                 </div>
 
             </ul>
