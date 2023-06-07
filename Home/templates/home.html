@@ -210,7 +210,7 @@
                     {% endif %}
 
                     <a class="btn btn-secondary p-3 md-auto fw-bold" href="{% url 'Home:requestAQuote' %}"
-                        id="contact_us_button"><strong>Schedule Consultation<strong></a>
+                        id="contact_us_button"><strong>Schedule Consultation</strong></a>
                 </div>
 
             </ul>
@@ -768,92 +768,90 @@
 
     {% block footer %}
 
-    <div class="footer pt-5">
-        <footer class="text-lg-start bg-light text-muted">
+    <footer class="text-lg-start bg-light text-muted">
 
-            <!-- create a responsive flexbox container for creating a row.  -->
-            <section class="p-3 text-center border-top border-bottom" style="background-color: #21374C;">
-                <p class="lead fw-bold text-white lead">Call today to schedule your free consultation!
-                </p>
-            </section>
+        <!-- create a responsive flexbox container for creating a row.  -->
+        <section class="p-3 text-center border-top border-bottom" style="background-color: #21374C;">
+            <p class="lead fw-bold text-white lead">Call today to schedule your free consultation!
+            </p>
+        </section>
 
-            <section class="d-flex justify-content-center p-4" style="background-color: white;">
+        <section class="d-flex justify-content-center p-4" style="background-color: white;">
 
-                <div class="row justify-content-center mt-5" style="text-align: left;">
+            <div class="row justify-content-center mt-5" style="text-align: left;">
 
-                    <div class="col-sm m-0 w-50" style="margin: 10%;">
+                <div class="col-sm m-0 w-50" style="margin: 10%;">
 
-                        <!-- add the resources links -->
-                        <h5 class="text-uppercase text-md-auto fw-bold mb-3 text-decoration-underline m-1"
-                            style="text-decoration: underline;">
-                            Resources</h5>
+                    <!-- add the resources links -->
+                    <h5 class="text-uppercase text-md-auto fw-bold mb-3 text-decoration-underline m-1"
+                        style="text-decoration: underline;">
+                        Resources</h5>
 
-                        <p class="fw-bold m-1">
-                            <a href="{% url 'Home:employeeApplication' %}" class="text-reset text-decoration-none">Join
-                                Our Team</a>
+                    <p class="fw-bold m-1">
+                        <a href="{% url 'Home:employeeApplication' %}" class="text-reset text-decoration-none">Join
+                            Our Team</a>
 
-                        </p>
+                    </p>
 
-                        <p class="fw-bold m-1">
-                            <a href="{% url 'Admin:admin' %}" class="text-reset text-decoration-none">Admin</a>
+                    <p class="fw-bold m-1">
+                        <a href="{% url 'Admin:admin' %}" class="text-reset text-decoration-none">Admin</a>
 
-                        </p>
+                    </p>
 
-                        <p class="fw-bold m-1">
-                            <a href="{% url 'Home:about_us' %}" class="text-reset text-decoration-none">About Us</a>
+                    <p class="fw-bold m-1">
+                        <a href="{% url 'Home:about_us' %}" class="text-reset text-decoration-none">About Us</a>
 
-                        </p>
+                    </p>
 
-                        <p class="fw-bold m-1">
-                            <a href="{% url 'Home:services' %}" class="text-reset text-decoration-none">Services</a>
+                    <p class="fw-bold m-1">
+                        <a href="{% url 'Home:services' %}" class="text-reset text-decoration-none">Services</a>
 
-                        </p>
-
-                    </div>
-
-                    <div class="col-sm m-0  w-50" style="margin: 10%;">
-
-                        <!-- add the resources links -->
-                        <h5 class="text-uppercase text-md-auto fw-bold mb-3 m-1" style="text-decoration: underline;">
-                            Contact Us</h5>
-
-                        <p class="lead fw-bold m-2 text-reset" style="font-family: serif; font-weight: bold;">
-                            19445 Birdsley Road, Council Bluffs, IA, 51503
-                        </p>
-
-                        <p class="lead fw-bold m-2" style="font-family: serif; font-weight: bold;">
-                            (712)-256-7556
-                        </p>
-
-                        <p class="lead fw-bold m-2 text-reset" style="font-family: serif; font-weight: bold;">
-                            rdc@cox-internet.com
-                        </p>
-
-                        <p class="fw-bold m-1">
-                        </p>
-
-
-
-
-                    </div>
+                    </p>
 
                 </div>
 
-            </section>
+                <div class="col-sm m-0  w-50" style="margin: 10%;">
 
-            <!-- copyright section -->
-            <section class="d-flex justify-content-center p-3 bg-light">
-                <div class="row m-2">
-                    <a class="fw-bold text-decoration-none text-reset" href="#">@ Remodeling Dreams
-                        Construction</a>
+                    <!-- add the resources links -->
+                    <h5 class="text-uppercase text-md-auto fw-bold mb-3 m-1" style="text-decoration: underline;">
+                        Contact Us</h5>
+
+                    <p class="lead fw-bold m-2 text-reset" style="font-family: serif; font-weight: bold;">
+                        19445 Birdsley Road, Council Bluffs, IA, 51503
+                    </p>
+
+                    <p class="lead fw-bold m-2" style="font-family: serif; font-weight: bold;">
+                        (712)-256-7556
+                    </p>
+
+                    <p class="lead fw-bold m-2 text-reset" style="font-family: serif; font-weight: bold;">
+                        rdc@cox-internet.com
+                    </p>
+
+                    <p class="fw-bold m-1">
+                    </p>
+
+
+
+
                 </div>
 
+            </div>
 
-            </section>
+        </section>
 
-        </footer>
+        <!-- copyright section -->
+        <section class="d-flex justify-content-center p-3 bg-light">
+            <div class="row m-2">
+                <a class="fw-bold text-decoration-none text-reset" href="#">@ Remodeling Dreams
+                    Construction</a>
+            </div>
 
-    </div>
+
+        </section>
+
+    </footer>
+
 
 
     {% endblock %}
