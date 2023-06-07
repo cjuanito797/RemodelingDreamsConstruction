@@ -122,6 +122,7 @@
 
                     {% if request.user.is_authenticated %}
                     <div class=" dropdown show" id="admin_dropdown">
+
                         <a class="btn btn-secondary dropdown-toggle p-3 md-auto" href="#" type="button"
                             id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My
                             Admin</a>
@@ -209,13 +210,17 @@
                     </div>
 
                     {% else %}
-                    <a class="btn btn-secondary p-3 md-auto w-100" href="{% url 'Home:requestAQuote' %}"
-                        id="contact_us_button" type="button">Schedule Consultation</a>
+                    <li class="nav-item">
+                        <a class="btn btn-secondary p-3 md-auto w-100" href="{% url 'Home:requestAQuote' %}"
+                            id="contact_us_button" type="button">Schedule Consultation</a>
+                    </li>
 
                     {% endif %}
 
-                    <a class="btn btn-secondary p-3 md-auto w-100" href="{% url 'Home:requestAQuote' %}"
-                        id="contact_us_button" type="button">Schedule Consultation</a>
+                    <li class="nav-item">
+                        <a class="btn btn-secondary p-3 md-auto w-100" href="{% url 'Home:requestAQuote' %}"
+                            id="contact_us_button" type="button">Schedule Consultation</a>
+                    </li>
                 </div>
 
             </ul>
