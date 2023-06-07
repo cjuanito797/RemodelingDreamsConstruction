@@ -36,10 +36,10 @@
 
     {% block navigation %}
 
-    <nav class="navbar" style="background-color: #21374C;">
+    <nav class="navbar" id="social_nav">
 
 
-        <div class="ml-auto" style="align-items: center;">
+        <div class="ml-auto">
 
 
             <a href="https://www.facebook.com/RemodelingDreams" target="_blank">
@@ -67,55 +67,48 @@
     <nav class="navbar navbar-default  navbar-expand-xl navbar-light bg-light pb-2 pt-3 " id="primary-navigation"
         role="navigation">
         {% endblock %}
-        <div id="brand" style="display: inline-block;" style="font-family: April;">
-            <a class="navbar-brand" href="{% url 'Home:home' %}"
-                style="font-weight: bolder; font-size: 25px; color: #21374C; border-top: 3px solid #21374C; font-family: April;">
-                <div id="brand-heading" style="width: 100%; text-align: center; border-bottom: 3px solid #21374C;"
-                    class="p-2">
-                    <h4 style="font-weight: bold;">
+        <div id="brand">
+            <a class="navbar-brand" href="{% url 'Home:home' %}">
+                <div id="brand-heading" class="p-2">
+                    <h4>
                         Remodeling Dreams Construction
                     </h4>
                 </div>
-                <div id="brand-text" class="" style="text-align: center; color: #21374C; width: 100%;">
+                <div id="brand-text">
 
-                    <h7 style="font-size: 17px;">"Where your dreams become a reality."</h7>
+                    <h7>"Where your dreams become a reality."</h7>
 
 
                 </div>
             </a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-            style="color: white;">
-            <span class="navbar-toggler-icon" style="color: #21374C;"></span>
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse align-items-end" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto pl-5">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'Home:about_us' %}" target="_top"
-                        style="font-weight: bold; color: #21374C;">About
+                    <a class="nav-link" href="{% url 'Home:about_us' %}" target="_top">About
                         Us</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'Home:services' %}" style="font-weight: bold; color: #21374C;">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'Home:services' %}">
                         Services
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'Home:home' %}#our_process"
-                        style="font-weight: bold; color: #21374C;">Our Process</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'Home:home' %}#our_process">Our Process</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'Home:home' %}#testimonials" target="_top"
-                        style="font-weight: bold; color: #21374C;">Testimonials</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'Home:home' %}#testimonials" target="_top">Testimonials</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'Home:home' %}#contact_us" target="_top"
-                        style="font-weight: bold; color: #21374C;" style="color: #21374C;">Contact Us</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'Home:home' %}#contact_us" target="_top">Contact Us</a>
                 </li>
             </ul>
 
@@ -125,10 +118,9 @@
             <ul class="navbar-nav ml-auto">
 
                 {% if request.user.is_authenticated %}
-                <div class="dropdown show" style="text-align: center; align-items: center;">
+                <div class="dropdown show" id="admin_dropdown">
                     <a class="btn btn-secondary dropdown-toggle p-3 md-auto" href="#" role="button"
-                        id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                        style="background-color: #21374C; border: none; font-weight: bold;">
+                        id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         My Admin
                     </a>
 
@@ -208,8 +200,8 @@
                         </a>
                         <hr class="navbar-divider">
 
-                        <a class="navbar-item is-hoverable" href="{% url 'Home:logout' %}"><button
-                                style="width: 100%; height: 100%;" class="btn btn-danger p-3">Sign
+                        <a class="navbar-item is-hoverable" href="{% url 'Home:logout' %}" id="sign_out"><button
+                                class="btn btn-danger p-3">Sign
                                 Out</button></a>
                         <hr class="navbar-divider">
                     </div>
@@ -219,8 +211,8 @@
 
                 &NonBreakingSpace;
                 &NonBreakingSpace;
-                <a class="btn btn-primary p-3 md-auto" href="{% url 'Home:requestAQuote' %}"
-                    style="background-color: #21374C; border: none; font-weight: bold;">Schedule
+                <a class="btn btn-secondary  p-3 md-auto" href="{% url 'Home:requestAQuote' %}" role="button"
+                    id="contact_us_button">Schedule
                     Consultation</a>
 
 
@@ -239,7 +231,7 @@
 
 {% block body_settings %}
 
-<body style="overflow-x: hidden;">
+<body>
     {% endblock %}
 
     {% block mainbody %}
@@ -247,9 +239,9 @@
 
         <!-- section that serves for an introduction. -->
         <!-- Content here -->
-        <div class="container-fluid" style="text-align: center; width: 100%; align-items: center; margin-top: 5%;">
+        <div class="container-fluid" id="intro_container">
             <!-- Content here -->
-            <h3 style="font-weight: bolder; font-family: Vogue;" class="responsive-header">Concept &#x2022; Create
+            <h3 class="responsive-header">Concept &#x2022; Create
                 &#x2022;
                 Renovate</h1>
                 <br>
@@ -258,12 +250,10 @@
         </div>
 
 
-        <div class="container-fluid pt-5"
-            style="display: inline-block; justify-content: center; align-items: center; text-align: center;">
+        <div class="container-fluid pt-5" id="message_container">
 
-            <h3 class="responsive-font-example" style="color: white; font-weight: bold;">"Your trusted contractor
-                serving the
-                Omaha/Council Bluffs Area, schedule your in-home appointment today."
+            <h3 class="responsive-font-example">"Your trusted
+                Remodeling/Builder serving the Omaha/Council Bluffs and surrounding areas."
             </h3>
 
 
@@ -272,7 +262,7 @@
     </section>
 
 
-    <section id="our_facets" style="font-family: Vogue; font-weight: bold;">
+    <section id="our_facets">
         <div class="row justify-content-between">
             <div class="col-sm text-center p-3 facet">
                 <h3>Custom Designs</h3>
@@ -438,7 +428,7 @@
                                         Design, The contract will be sent and electronically signed. The deposit will be
                                         collected and materials will be ordered and delivered to the warehouse. Our
                                         Production Manager will be assigned to your project and you will be in
-                                        communication as your project preparations are made,.</p>
+                                        communication as your project preparations are made.</p>
                                 </div>
                             </div>
 
@@ -711,25 +701,23 @@
 
                 <div class="col-sm justify-content-center"
                     style="text-align: left; background-color: white; width: 75%; margin-left: 15%; border-radius: 5px;">
+                    <img src="../static/logo.jpeg" style="width: 100%;">
+
+                    <a href="https://remodelingdreamsconstruction.com"
+                        target="_blank">remodelingdreamsconstruction.com</a>
                     <p class="lead">
-                        19445 Birdsley Road, Council Bluffs, IA
-                    </p>
-                    <p class="lead">
-                        712-256-7556
+                        19445 Birdsley Road, Council Bluffs, IA, 51503<br>
+                        712-256-7556<br>
+                        rdc@cox-internet.com<br>
                     </p>
 
-                    <p class="lead">
-                        rdc@cox-internet.com
-                    </p>
-
-                    <img src="../static/logo.png" style="width: 100%;">
 
 
 
                 </div>
             </div>
 
-            <div class="col-sm p-5">
+            <div class="col-sm" style="margin-top: 10%;">
                 <div style="width: 100%"><iframe width="100%" height="300" frameborder="0" scrolling="no"
                         marginheight="0" marginwidth="0"
                         src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=19445%20Birdsley%20Rd,%20Council%20Bluffs,%20IA%2051503+(remodeling%20dreams%20construction)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
