@@ -45,12 +45,14 @@
 #admin_dropdown {
     text-align: center;
     align-items: center;
+    width: 100%;
 }
 
 #dropdownMenuLink {
     background-color: #353839;
     border: none;
     font-weight: bold;
+    width: 100%;
 }
 
 #sign_out {
@@ -87,10 +89,6 @@
     color: white;
     font-weight: bold;
 }
-
-
-
-
 
 
 .image_container {
