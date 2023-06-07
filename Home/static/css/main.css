@@ -24,6 +24,10 @@ body {
     flex-direction: column;
 }
 
+.footer {
+    margin-top: auto;
+}
+
 #social_nav {
     background-color: #353839;
 }
@@ -346,12 +350,6 @@ body {
      height: 250px;
  }
 
-
-
- .footer {
-     margin-top: auto;
-
- }
 
  .promotional_image {
      width: 19%;
