@@ -22,39 +22,36 @@
 
     </div>
 </div>
+<table class="table table-bordered" style="table-layout: auto;">
 
-<div class="table-responsive">
-    <table class="table table-bordered" style="table-layout: auto;">
+    <thead>
+        <tr class="table-info">
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Details</th>
+            <th scope="col" colspan="2">Options</th>
+        </tr>
+    </thead>
 
-        <thead>
-            <tr class="table-info">
-                <th scope="col">Name</th>
-                <th scope="col">Address</th>
-                <th scope="col">Phone Number</th>
-                <th scope="col">Details</th>
-                <th scope="col" colspan="2">Options</th>
-            </tr>
-        </thead>
+    <tbody>
 
-        <tbody>
+        {% for quote in quotes %}
+        <tr>
+            <td>{{quote.name}}</td>
+            <td>{{quote.streetAddress}}, {{quote.city}}, {{quote.zipcode}}</td>
+            <td>{{quote.phoneNumber}}</td>
+            <td style="word-wrap: break-word; max-width: 200px;">{{quote.details}}</td>
+            <td>
+                <a class="btn btn-danger mb-5" href="{% url 'Admin:delete_quote' quote.id %}"
+                    onclick="return confirm('Are you sure you would like to delete this quote?')">Delete</a>
+            </td>
+        </tr>
 
-            {% for quote in quotes %}
-            <tr>
-                <td>{{quote.name}}</td>
-                <td>{{quote.streetAddress}}, {{quote.city}}, {{quote.zipcode}}</td>
-                <td>{{quote.phoneNumber}}</td>
-                <td style="word-wrap: break-word; max-width: 200px;">{{quote.details}}</td>
-                <td>
-                    <a class="btn btn-danger mb-5" href="{% url 'Admin:delete_quote' quote.id %}"
-                        onclick="return confirm('Are you sure you would like to delete this quote?')">Delete</a>
-                </td>
-            </tr>
+        {% endfor %}
 
-            {% endfor %}
-
-        </tbody>
-    </table>
-</div>
+    </tbody>
+</table>
 
 {% endblock %}
 
