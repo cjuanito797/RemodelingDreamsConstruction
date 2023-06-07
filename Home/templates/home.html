@@ -90,11 +90,11 @@
         <div class="collapse navbar-collapse align-items-end" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto pl-5">
                 <li class="nav-item active">
-                    <a class="nav-link btn btn-primary" href="{% url 'Home:about_us' %}" target="_top">About
+                    <a class="nav-link" href="{% url 'Home:about_us' %}" target="_top">About
                         Us</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link btn btn-primary" href="{% url 'Home:services' %}">
+                    <a class="nav-link" href="{% url 'Home:services' %}">
                         Services
                     </a>
                 </li>
@@ -120,9 +120,11 @@
                 {% if request.user.is_authenticated %}
                 <div class=" dropdown show" id="admin_dropdown">
 
-                    <a class="nav-link btn btn-secondary dropdown-toggle p-3 md-auto" href="#" id="dropdownMenuLink"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">My
-                        Admin</a>
+                    <li class="nav-item active">
+                        <a class="nav-link btn btn-secondary dropdown-toggle p-3 md-auto" href="#" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My
+                            Admin</a>
+                    </li>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 
@@ -209,8 +211,10 @@
 
                     &NonBreakingSpace;
 
-                    <a class="nav-link btn btn-secondary p-3 md-auto" href="{% url 'Home:requestAQuote' %}"
-                        id="contact_us_button"><strong>Schedule Consultation</strong></a>
+                    <li class="nav-item active">
+                        <a class="nav-link btn btn-secondary p-3 md-auto" href="{% url 'Home:requestAQuote' %}"
+                            id="contact_us_button"><strong>Schedule Consultation</strong></a>
+                    </li>
                 </div>
 
             </ul>
