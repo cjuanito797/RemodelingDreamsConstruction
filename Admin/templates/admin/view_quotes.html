@@ -43,6 +43,12 @@
         {{quote.details}}
     </div>
 
+    <div class="col-sm">
+        <h3><u>Contact</u></h3>
+        {{quote.phoneNumber}}<br>
+        {{quote.email}}
+    </div>
+
     <div class="col-sm text-center">
         <a href="{% url 'Admin:delete_quote' quote.id %}" role="button" class="btn btn-danger"
             onclick="return confirm('Are you sure you would like to delete?')">Delete</a>
