@@ -3,5 +3,7 @@ const navigationHeight = document.querySelector('#primary-navigation').offsetHei
 console.log("Height of the navbar is: ", navigationHeight)
 document.documentElement.style.setProperty('--scroll-padding', navigationHeight + "px");
 
-document.documentElement.style.setProperty('--scroll-intro', navigationHeight + "px");
-console.log("Height is: ", navigationHeight);
+const socialNavHeight = document.querySelector('#social_nav').offsetHeight;
+console.log("Height of the social navbar is: ", socialNavHeight)
+
+console.log(navigationHeight + socialNavHeight)
