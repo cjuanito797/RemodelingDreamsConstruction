@@ -265,6 +265,7 @@ footer {
  }
 
  #testimonials {
+     padding-top: var(--scroll-intro, 375px);
      background-color: #CFDDDD;
  }
 
