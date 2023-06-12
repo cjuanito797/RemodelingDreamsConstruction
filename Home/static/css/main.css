@@ -14,7 +14,7 @@ margin: 0px;
 overflow-x: hidden;
 font-family: 'Abril Fatface';
 scroll-behavior: smooth;
-scroll-padding-top: 250px;
+scroll-padding-top: var(--scroll-padding, 0px);
 }
 
 body {
@@ -27,7 +27,7 @@ body {
     display: flex;
     flex-direction: column;
     scroll-behavior: smooth;
-    scroll-padding-top: 250px;
+    scroll-padding-top: var(--scroll-padding, 0px);
 }
 
 footer {
