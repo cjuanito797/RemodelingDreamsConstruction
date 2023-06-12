@@ -290,8 +290,8 @@
 
                     </div>
 
-                    <hr class="hr" style="color: navy">
-                    <p class="lead text-left" style="font-family: sans-serif; font-weight: bold; ">
+                    <hr class="hr">
+                    <p class="lead text-left about_us_text">
                         We
                         are a home remodeling
                         company based in Council Bluffs, Iowa. Remodeling Dreams Construction was
@@ -308,8 +308,8 @@
                         read more about us on our "About Us" page.</p>
 
                     <div class="section-header text-center">
-                        <a class="btn btn-primary p-3 fw-bold" href="{% url 'Home:home' %}#testimonials"
-                            style="background-color:#21374C; border: none;">About Us</a>
+                        <a class="btn btn-primary p-3 about_us_button" href="{% url 'Home:home' %}#testimonials">About
+                            Us</a>
                     </div>
                 </div>
 
@@ -323,29 +323,29 @@
         </div>
     </section>
 
-    <section id="promotional_banner" style="width: 100%; margin-left: 7%;">
-        <div class="d-flex flex-row w-55 flex-wrap pb-2" style="width: 100%;">
+    <section id="promotional_banner">
+        <div class="d-flex flex-row w-100 flex-wrap pb-2">
             <div class="promotional_image p-3">
                 <img src="https://www.everlastsiding.com/sites/default/files/Everlast_4C-darker%20siding%20text_2.jpg"
-                    style="width: 75%; height: 75%;">
+                    width="75%" height="75%">
             </div>
 
             <div class="promotional_image">
                 <img src="https://images.trex.com/is/image/trexcompany/trex-platinum-badge-lg-1?ts=1676322000206&$mediaCarouselMain$&dpr=off"
-                    style="width: 75%; height: 75%;">
+                    width="75%" height="75%">
 
 
             </div>
 
             <div class="promotional_image p-3">
-                <img src="https://pacificshorestones.com/wp-content/uploads/2017/03/cambria-logo.png"
-                    style="width: 75%; height: 75%;">
+                <img src="https://pacificshorestones.com/wp-content/uploads/2017/03/cambria-logo.png" width="75%"
+                    height="75%">
 
 
             </div>
 
             <div class="promotional_image p-1">
-                <img src="../static/pella.png" style="width: 75%; height: 100%;">
+                <img src="../static/pella.png" width="75%" height="100%">
 
 
             </div>
@@ -354,32 +354,30 @@
 
     </section>
 
-    <section id="our_process" class="pt-5 pb-5" style="background-color: #DDDDCF;">
-        <div id="sectionHeader" style="text-align: center; width: 100%" class="pb-5">
+    <section id="our_process" class="pt-5 pb-5">
+        <div id="sectionHeader" class="pb-5">
             <h1 class="display-5">Our Client Focused Process</h1>
             <hr class="hr">
         </div>
 
-        <div class="container-fluid" style="background-color:#21374C; ">
+        <div class="container-fluid our_process_container">
             <div class="row p-0">
-                <div class="container-fluid" style="">
+                <div class="container-fluid">
                     <div id="myCarousel" class="carousel slide" data-interval="false">
                         <!-- Carousel -->
-                        <div class="carousel-inner" style="width: 100%;">
+                        <div class="carousel-inner">
 
 
                             <div class="item carousel-item active">
-                                <div id="card-heading" style="display: flex; justify-content: center;">
-                                    <h3 style="color: white; font-family: sans-serif; font-weight: bold;">
+                                <div id="card-heading our_process_card">
+                                    <h3 class="our_process_header">
                                         1. Schedule A
                                         Consultation</h3>
                                 </div>
-                                <hr class="hr" style="background-color: white;">
+                                <hr class="hr our_process_underline">
 
-
-
-                                <div id="description" style=" display: inline-block; text-align: center; padding: 1%;">
-                                    <p class="lead" style="color: white; font-family: sans-serif; font-weight: bold;">
+                                <div id="description">
+                                    <p class="lead description_text">
                                         We
                                         schedule a first
                                         in-home appointment to
@@ -398,17 +396,17 @@
                             </div>
 
                             <div class="item carousel-item">
-                                <div id="card-heading" style="display: flex;  justify-content: center;">
-                                    <h3 style="color: white; font-family: sans-serif; font-weight: bold;">
+                                <div id="card-heading our_process_card">
+                                    <h3 class="our_process_header">
                                         2. Project
                                         Proposal</h3>
                                 </div>
-                                <hr class="hr" style="background-color: white;">
+                                <hr class="hr our_process_underline">
 
 
 
-                                <div id="description" style=" display: inline-block; text-align: center; padding: 1%;">
-                                    <p class="lead" style="color: white; font-family: sans-serif; font-weight: bold;">
+                                <div id="description">
+                                    <p class="lead description_text">
                                         We
                                         will select high-quality materials, create
                                         necessary 3D rendering and finishes that will suit the design,
@@ -423,17 +421,17 @@
 
                             <!-- card #3 -->
                             <div class="item carousel-item">
-                                <div id="card-heading" style="display: flex;  justify-content: center;">
-                                    <h3 style="color: white; font-family: sans-serif; font-weight: bold;">
+                                <div id="card-heading our_process_card">
+                                    <h3 class="our_process_header">
                                         3. Proposal
                                         Acceptance</h3>
                                 </div>
-                                <hr class="hr" style="background-color: white;">
+                                <hr class="hr our_process_underline">
 
 
 
-                                <div id="description" style=" display: inline-block; text-align: center; padding: 1%;">
-                                    <p class="lead" style="color: white; font-family: sans-serif; font-weight: bold;">
+                                <div id="description">
+                                    <p class="lead description_text">
                                         We
                                         will make sure you are comfortable with the
                                         plan and create a contract reflecting all of the details you
@@ -451,18 +449,17 @@
 
                             <!-- card #4 -->
                             <div class="item carousel-item">
-                                <div id="card-heading" style="display: flex;  justify-content: center;">
-                                    <h3 style="color: white; font-family: sans-serif; font-weight: bold;">
+                                <div id="card-heading our_process_card">
+                                    <h3 class="our_process_header">
                                         4. Project
                                         Kickoff</h3>
                                 </div>
-                                <hr class="hr"
-                                    style="background-color: white; font-family: sans-serif; font-weight: bold;">
+                                <hr class="hr our_process_underline">
 
 
 
-                                <div id="description" style=" display: inline-block; text-align: center; padding: 1%;">
-                                    <p class="lead" style="color: white; font-family: sans-serif; font-weight: bold;">
+                                <div id="description">
+                                    <p class="lead description_text">
                                         Your Production Manager will keep you in the
                                         loop throughout the entire process. We will also schedule the
                                         Project start date
@@ -478,17 +475,17 @@
 
                             <!-- card #5 -->
                             <div class="item carousel-item">
-                                <div id="card-heading" style="display: flex;  justify-content: center;">
-                                    <h3 style="color: white; font-family: sans-serif; font-weight: bold;">
+                                <div id="card-heading our_process_card">
+                                    <h3 class="our_process_header">
                                         5. Project
                                         Completion</h3>
                                 </div>
-                                <hr class="hr" style="background-color: white; ">
+                                <hr class="hr our_process_underline">
 
 
 
-                                <div id="description" style=" display: inline-block; text-align: center; padding: 1%;">
-                                    <p class="lead" style="color: white; font-family: sans-serif; font-weight: bold;">
+                                <div id="description">
+                                    <p class="lead description_text">
                                         Now is when you get to see your finished
                                         project. We are proud of the high standards we hold for our
                                         projects and work
@@ -505,8 +502,7 @@
 
                         </div>
                         <!-- Carousel Controls -->
-                        <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev"
-                            style="color: white;">
+                        <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
                             <i class="fa fa-angle-left">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 
@@ -526,13 +522,13 @@
 
 
 
-        <div class="card text-center" style="border: none; background-color: #DDDDCF;">
+        <div class="card text-center contact_us_card">
 
-            <div class="card-body" style="border: none;">
+            <div class="card-body">
                 <h5 class="card-title"></h5>
                 <p class="card-text lead">Click below to schedule your in-home consultation, today.</p>
-                <a href="{% url 'Home:requestAQuote' %}" class="btn btn-primary p-3"
-                    style="background-color:#21374C; border: none;">Schedule Consultation</a>
+                <a href="{% url 'Home:requestAQuote' %}" class="btn btn-primary p-3 contact_us_button">Schedule
+                    Consultation</a>
             </div>
 
         </div>
@@ -542,24 +538,22 @@
 
     <section id="services" class="container-fluid pt-5">
 
-        <div id="sectionHeader" style="text-align: center;">
+        <div id="sectionHeader">
             <h1 class="pt-5 pb-5 display-5">Here's A Preview Of What We Can Do</h1>
             <hr class="hr">
         </div>
-        <div class="col-xl text-center" style="padding-left: 0.5vw;">
+        <div class="col-xl text-center">
             <div class="d-flex flex-row flex-wrap w-5 text-center justify-content-center pt-5 pb-5">
 
                 {% for service in services %}
                 <a href="{{service.get_absolute_url}}">
-                    <div class="card mt-5" style=" width: 55vh; margin: 1vw; height: 45vh;">
+                    <div class="card mt-5 service_card">
 
-                        <img class=" card-img-top" src="/media/{{service.id|thumbnail}}"
-                            style="width: 100%; height: 35vh;">
+                        <img class="card-img-top service_image" src="/media/{{service.id|thumbnail}}">
 
-                        <div class="card-body" style="height: 10vh; border-top: 1px solid white; width: 55vh;">
+                        <div class="card-body service_body">
 
-                            <h4 class="text-center p-0"
-                                style="color: black; font-weight: bold; font-family: sans-serif">
+                            <h4 class="text-center p-0 service_card_title">
                                 {{service.name}}</h4>
                             <hr class="hr">
 
@@ -572,13 +566,12 @@
             </div>
         </div>
 
-        <div class="card text-center" style="border: none;">
+        <div class="card text-center border-0">
 
-            <div class="card-body" style="border: none;">
+            <div class="card-body border-0">
                 <h5 class="card-title"></h5>
                 <p class="card-text lead">Click below for a full listing of our services.</p>
-                <a href="{% url 'Home:services' %}" class="btn btn-primary p-3"
-                    style="background-color:#21374C; border: none;">Our
+                <a href="{% url 'Home:services' %}" class="btn btn-dark p-3 our_services_button">Our
                     Services</a>
             </div>
 
@@ -586,25 +579,25 @@
 
     </section>
 
-    <section id="testimonials" class="pb-5 pt-5" style="background-color: #CFDDDD;">
-        <div id="sectionHeader" style="text-align: center;">
+    <section id="testimonials" class="pb-5 pt-5">
+        <div id="sectionHeader">
             <h1 class="display-5">What Our Customers Have To Say</h1>
             <hr class="hr">
         </div>
 
-        <div class="container-fluid" style="background-color:#21374C; ">
+        <div class="container-fluid testimonials_container">
             <div class="row p-0">
-                <div class="container-fluid" style="">
+                <div class="container-fluid">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <!-- Carousel -->
-                        <div class="carousel-inner" style="width: 100%; ">
+                        <div class="carousel-inner">
 
                             {% for testimonial in testimonials %}
                             {% if forloop.counter0 == 0 %}
                             <div class="item carousel-item active pt-5">
-                                <p class="testimonial pt-5" style="width: 50%; margin-left: 25%;">
+                                <p class="testimonial pt-5">
                                     "{{testimonial.quote}}"</p>
-                                <p class="overview" style="color: white;">
+                                <p class="overview text-white">
                                     <b>{{testimonial.reviewer}}</b>,
                                     {{testimonial.rating|stars}}
                                 </p>
@@ -612,9 +605,9 @@
 
                             {% else %}
                             <div class="item carousel-item pt-5">
-                                <p class="testimonial pt-5" style="width: 50%; margin-left: 25%;">
+                                <p class="testimonial pt-5">
                                     "{{testimonial.quote}}"</p>
-                                <p class="overview" style="color: white;">
+                                <p class="overview text-white">
                                     <b>{{testimonial.reviewer}}</b>,
                                     {{testimonial.rating|stars}}
                                 </p>
@@ -624,8 +617,7 @@
 
                         </div>
                         <!-- Carousel Controls -->
-                        <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev"
-                            style="color: white;">
+                        <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
                             <i class="fa fa-angle-left">
                             </i>
                         </a>
@@ -641,44 +633,39 @@
 
     </section>
 
-    <section id="contact_us"
-        style="padding-top: 1%; padding-bottom: 3%; text-align: center; background-color: rgba(246,246,246,255);">
-        <div id="sectionHeader pt-5" style="text-align: center; padding-top: 2%; width: 50%; margin-left: 25%;">
+    <section id="contact_us">
+        <div id="contact_us_header">
             <h1 class="display-5">Ready To Remodel?</h1>
             <hr class="hr">
             <p class="lead">Simply fill out the form below, and one of our representatives will reach
                 out to you.</p>
         </div>
-        <div class="row justify-content-between pt-3" style="background-color: #f6f6f6;">
-            <div class="container-fluid py-md-5" style="padding-left: 10vw; padding-right: 10vw;">
+        <div class="row justify-content-between pt-3">
+            <div class="container-fluid py-md-5 contact_us_form">
                 <form method="post">
                     {% csrf_token %}
 
                     <div class="row justify-content-between text-left pl-5 pr-5">
                         <div class="form-group col-sm flex-column d-flex">
                             <input type="text" name="name" maxlength="225" required id="id_name"
-                                class="form-control form-control-lg" placeholder="First & Last Name"
-                                style="font-family: sans-serif; font-weight: bold;">
+                                class="form-control form-control-lg" placeholder="First & Last Name">
                         </div>
 
                         <div class="form-group col-sm flex-column d-flex">
                             <input type="text" name="phoneNumber" maxlength="30" required id="id_phoneNumber"
-                                class="form-control form-control-lg" placeholder="Phone #"
-                                style="font-family: sans-serif; font-weight: bold;">
+                                class="form-control form-control-lg" placeholder="Phone #">
                         </div>
                     </div>
 
                     <div class="row justify-content-between text-left pl-5 pr-5">
                         <div class="form-group col-sm flex-column d-flex">
                             <input type="email" name="email" maxlength="254" required id="id_email"
-                                class="form-control form-control-lg" placeholder="Email"
-                                style="font-family: sans-serif; font-weight: bold;">
+                                class="form-control form-control-lg" placeholder="Email">
                         </div>
 
                         <div class="form-group col-sm">
                             <input type="text" name="streetAddress" maxlength="45" required id="id_streetAddress"
-                                class="form-control form-control-lg" placeholder="Street Address"
-                                style="font-family: sans-serif; font-weight: bold;">
+                                class="form-control form-control-lg" placeholder="Street Address">
                         </div>
 
                     </div>
@@ -686,20 +673,17 @@
                     <div class="row justify-content-between text-left pl-5 pr-5">
                         <div class="form-group col-sm">
                             <input type="text" name="zipcode" maxlength="5" required id="id_zipcode"
-                                class="form-control form-control-lg" placeholder="Zipcode"
-                                style="font-family: sans-serif; font-weight: bold;">
+                                class="form-control form-control-lg" placeholder="Zipcode">
                         </div>
 
                         <div class="form-group col-sm">
                             <input type="text" name="state" maxlength="30" required id="id_state"
-                                class="form-control form-control-lg" placeholder="State"
-                                style="font-family: sans-serif; font-weight: bold;">
+                                class="form-control form-control-lg" placeholder="State">
                         </div>
 
                         <div class="form-group col-sm">
                             <input type="text" name="city" maxlength="30" required id="id_city"
-                                class="form-control form-control-lg" placeholder="City"
-                                style="font-family: sans-serif; font-weight: bold;">
+                                class="form-control form-control-lg" placeholder="City">
                         </div>
                     </div>
 
@@ -708,32 +692,30 @@
                         <div class="form-group col-sm">
                             <textarea name="details" cols="40" rows="10" required id="id_details"
                                 class="form-control form-control-lg"
-                                placeholder="Please provide a brief description of your upcoming project."
-                                style="font-family: sans-serif; font-weight: bold;"></textarea>
+                                placeholder="Please provide a brief description of your upcoming project."></textarea>
                         </div>
                     </div>
 
 
-                    <button type="submit" class="btn btn-primary" style="width: 35%; margin-left:; border-radius: 10px; height: 50px;
-                        background-color: #21374C; border: none; font-weight: bold;">Submit</button>
+                    <button type="submit" class="btn btn-primary contact_us_button">Submit</button>
                 </form>
             </div>
 
         </div>
 
-        <div class="row justify-content-center" style=" align-items: center;">
+        <div class="row justify-content-center">
 
             <div class="col-sm pb-5 text-center">
                 <div class="sectionHeader  pt-5 ">
-                    <h2 style="font-family: serif; font-weight: bolder;">Get In Touch With Us.</h2>
+                    <h2>Get In Touch With Us.</h2>
                     <hr class="hr">
                 </div>
 
 
-                <img src="../static/logo.jpeg" style="width: 70%; height: 50%;">
+                <img src="../static/logo.jpeg" width="70%" height="50%">
                 <br>
 
-                <div class="container-fluid text-left p-0" style="width: 70%;">
+                <div class="container-fluid text-center p-0">
                     <p class="lead">
                         19445 Birdsley Rd<br>
                         Council Bluffs, IA 51503<br>
@@ -744,17 +726,11 @@
                     </p>
                 </div>
 
-
-
-
-
-
-
             </div>
 
-            <div class="col-sm" style="margin-top: 10%;">
-                <div style="width: 100%"><iframe width="100%" height="300" frameborder="0" scrolling="no"
-                        marginheight="0" marginwidth="0"
+            <div class="col-sm mt-5">
+                <div class="w-100"><iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0"
+                        marginwidth="0"
                         src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=19445%20Birdsley%20Rd,%20Council%20Bluffs,%20IA%2051503+(remodeling%20dreams%20construction)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
                             href="https://www.maps.ie/distance-area-calculator.html">area
                             maps</a></iframe></div>
@@ -771,20 +747,19 @@
     <footer class="text-lg-start bg-light text-muted">
 
         <!-- create a responsive flexbox container for creating a row.  -->
-        <section class="p-3 text-center border-top border-bottom" style="background-color: #21374C;">
+        <section class="p-3 text-center border-top border-bottom footer-heading bg-dark">
             <p class="lead fw-bold text-white lead">Call today to schedule your free consultation!
             </p>
         </section>
 
-        <section class="d-flex justify-content-center p-4" style="background-color: white;">
+        <section class="d-flex justify-content-center p-4 bg-light">
 
-            <div class="row justify-content-center mt-5" style="text-align: left;">
+            <div class="row justify-content-center mt-5 text-left">
 
-                <div class="col-sm m-0 w-50" style="margin: 10%;">
+                <div class="col-sm m-0 w-50 mt-5">
 
                     <!-- add the resources links -->
-                    <h5 class="text-uppercase text-md-auto fw-bold mb-3 text-decoration-underline m-1"
-                        style="text-decoration: underline;">
+                    <h5 class="text-uppercase text-md-auto fw-bold mb-3 text-decoration-underline m-1">
                         Resources</h5>
 
                     <p class="fw-bold m-1">
@@ -810,21 +785,21 @@
 
                 </div>
 
-                <div class="col-sm m-0  w-50" style="margin: 10%;">
+                <div class="col-sm m-0 w-50 mt-5">
 
                     <!-- add the resources links -->
-                    <h5 class="text-uppercase text-md-auto fw-bold mb-3 m-1" style="text-decoration: underline;">
+                    <h5 class="text-uppercase text-md-auto fw-bold mb-3 m-1">
                         Contact Us</h5>
 
-                    <p class="lead fw-bold m-2 text-reset" style="font-family: serif; font-weight: bold;">
+                    <p class="lead fw-bold m-2 text-reset footer-info">
                         19445 Birdsley Road, Council Bluffs, IA, 51503
                     </p>
 
-                    <p class="lead fw-bold m-2" style="font-family: serif; font-weight: bold;">
+                    <p class="lead fw-bold m-2">
                         (712)-256-7556
                     </p>
 
-                    <p class="lead fw-bold m-2 text-reset" style="font-family: serif; font-weight: bold;">
+                    <p class="lead fw-bold m-2 text-reset">
                         rdc@cox-internet.com
                     </p>
 
@@ -841,7 +816,7 @@
         </section>
 
         <!-- copyright section -->
-        <section class="d-flex justify-content-center p-3 bg-light">
+        <section class="d-flex justify-content-center p-3 bg-dark">
             <div class="row m-2">
                 <a class="fw-bold text-decoration-none text-reset" href="#">@ Remodeling Dreams
                     Construction</a>

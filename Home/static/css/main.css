@@ -31,7 +31,7 @@ footer {
 
 
 #social_nav {
-    background-color: #353839;
+    background-color: black;
 }
 
 #brand {
@@ -41,14 +41,14 @@ footer {
 
 .navbar-brand {
     font-size: 25px;
-    color: #353839;
-    border-top: 3px solid #353839;
+    color: black;
+    border-top: 3px solid black;
     font-family: 'Abril';
 
 }
 
 #brand-heading {
-    border-bottom: 3px solid #353839;
+    border-bottom: 3px solid black;
     text-align: center;
 }
 
@@ -58,7 +58,7 @@ footer {
 
 #brand-text {
     text-align: center;
-    color: #353839;
+    color: black;
     width: 100%;
     font-size: 17px;
     font-weight: bold;
@@ -70,7 +70,7 @@ footer {
 }
 
 #dropdownMenuLink {
-    background-color: #353839;
+    background-color: black;
     border: none;
     font-weight: bold;
 }
@@ -82,7 +82,7 @@ footer {
 }
 
 #contact_us_button {
-    background-color: #353839;
+    background-color: black;
 }
 
 #intro_container {
@@ -146,15 +146,10 @@ footer {
      font-family: Vogue;
  }
 
- #about_us {
-     padding-top: 2%;
-     width: 100%;
-     background-color: #FBFBFB;
- }
 
  .facet {
      font-family: 'Abril';
-     background-color: #353839;
+     background-color: black;
      border-left: 3px solid white;
      color: white;
      font-weight: bolder;
@@ -162,6 +157,170 @@ footer {
  }
 
  .facet h3 {
+     font-weight: bold;
+ }
+
+ #about_us {
+     padding-top: 2%;
+     width: 100%;
+     background-color: #FBFBFB;
+ }
+
+ .about_us_text {
+     font-family: sans;
+     font-weight: bold;
+ }
+
+ .about_us_button {
+     background-color: black;
+     border: none;
+ }
+
+ #promotional_banner {
+     width: 100%;
+     margin-left: 7%;
+ }
+
+ #our_process {
+     background-color: #DDDDCF;
+ }
+
+ #sectionHeader {
+     text-align: center;
+     width: 100%;
+ }
+
+ .our_process_container {
+     background-color: black;
+ }
+
+
+ .carousel-inner {
+     width: 100%;
+ }
+
+ .our_process_card {
+     display: flex;
+     justify-content: center;
+ }
+
+ .our_process_header {
+     color: white;
+     font-family: sans-serif;
+     font-weight: bold;
+ }
+
+ .our_process_underline {
+     background-color: white;
+ }
+
+ #description {
+     display: inline-block;
+     text-align: center;
+     padding: 1%;
+ }
+
+ .description_text {
+     color: white;
+     font-family: sans-serif;
+     font-weight: bold;
+ }
+
+ .contact_us_card {
+     background-color: #DDDDCF;
+     border: none;
+ }
+
+ .contact_us_button {
+     background-color: black;
+     border: none;
+ }
+
+ .service_card {
+     width: 55vh;
+     margin: 1vw;
+     height: 45vh;
+ }
+
+ .service_image {
+     width: 100%;
+     height: 35vh;
+ }
+
+ .service_body {
+     height: 10vh;
+     border-top: 1px solid white;
+     width: 55vh;
+ }
+
+ .service_card_title {
+     color: black;
+     font-weight: bold;
+     font-family: sans-serif;
+ }
+
+ .our_services_button {
+     background-color: black;
+     border: none;
+ }
+
+ #testimonials {
+     background-color: #CFDDDD;
+ }
+
+ .testimonials_container {
+     background-color: black;
+ }
+
+ .testimonial {
+     width: 50%;
+     margin-left: 25%;
+ }
+
+ #contact_us {
+     padding-top: 1%;
+     padding-bottom: 3%;
+     text-align: center;
+     background-color: rgba(246,246,246,255);
+ }
+
+ #contact_us_header {
+     text-align: center;
+     padding-top: 2%;
+     width: 50%;
+     margin-left: 25%;
+ }
+
+ .contact_us_form {
+     padding-left: 10vw;
+     padding-right: 10vw;
+ }
+
+ .form-control {
+     font-family: sans-serif;
+     font-weight: bold;
+ }
+
+ .contact_us_button {
+    width: 35%;
+    border-radius: 10px;
+    height: 50px;
+    background-color: black;
+    border: none;
+    font-weight: bold;
+ }
+
+ h2 {
+     font-family: sans-serif;
+     font-weight: bold;
+ }
+
+ .footer-heading {
+     background-color: black;
+ }
+
+ .footer-info {
+     font-family: serif;
      font-weight: bold;
  }
 
