@@ -302,9 +302,7 @@ footer {
  }
 
  .contact_us_button {
-    width: 35%;
     border-radius: 10px;
-    height: 50px;
     background-color: black;
     border: none;
     font-weight: bold;
