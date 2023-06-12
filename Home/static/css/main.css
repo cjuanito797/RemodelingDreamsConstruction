@@ -14,7 +14,6 @@ margin: 0px;
 overflow-x: hidden;
 font-family: 'Abril Fatface';
 scroll-behavior: smooth;
-scroll-padding-top: var(--scroll-padding, 375px);
 }
 
 body {
@@ -27,7 +26,7 @@ body {
     display: flex;
     flex-direction: column;
     scroll-behavior: smooth;
-    scroll-padding-top: var(--scroll-padding, 375px);
+
 }
 
 footer {
@@ -187,6 +186,7 @@ footer {
  }
 
  #our_process {
+     scroll-padding-top: var(--scroll-padding, 375px);
      background-color: #DDDDCF;
  }
 
@@ -270,7 +270,7 @@ footer {
  }
 
  #testimonials {
-     scroll-padding-top: 375px;
+     scroll-padding-top: var(--scroll-padding, 375px);
      background-color: #CFDDDD;
  }
 
