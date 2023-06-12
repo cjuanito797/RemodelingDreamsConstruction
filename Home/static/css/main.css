@@ -324,6 +324,9 @@ footer {
      font-weight: bold;
  }
 
+ .footer-bottom {
+     background-color: black;
+ }
 
  @media (max-width: 575px) {
 
