@@ -289,7 +289,7 @@ def createGallery(request, pk):
 
             # get the service and assign it to this gallery object.
             service = Service.objects.filter(pk=pk)
-            gallery.service.pk = service.pk
+            gallery.service_id = pk
             gallery.save()
             # return the user to the page where they can add images for this new gallery.
             return redirect('Admin:edit_gallery', gallery.id)
