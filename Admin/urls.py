@@ -23,7 +23,7 @@ urlpatterns = [
     path('editGallery/<int:pk>', views.edit_gallery, name="edit_gallery"),
     path('deleteGalleryImage/<int:pk>', views.deleteGalleryImage, name="deleteGalleryImage"),
     path('deleteProject/<int:pk>', views.deleteProject, name='deleteProject'),
-    path('createGallery/', views.createGallery, name="createGallery"),
+    path('createGallery/<int:pk>', views.createGallery, name="createGallery"),
     path('editProject/<int:pk>', views.edit_project, name="edit_project"),
 
 ]

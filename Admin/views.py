@@ -279,13 +279,17 @@ def edit_project(request, pk):
 
 
 
-def createGallery(request):
+def createGallery(request, pk):
     if request.method == "POST":
         form = CreateGallery(request.POST, request.FILES)
 
         if form.is_valid():
             # create the new project.
             gallery = form.save(commit=False)
+
+            # get the service and assign it to this gallery object.
+            service = Service.objects.filter(pk=pk)
+            gallery.service.pk = service.pk
             gallery.save()
             # return the user to the page where they can add images for this new gallery.
             return redirect('Admin:edit_gallery', gallery.id)

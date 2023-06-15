@@ -37,7 +37,7 @@ class AddPromotion(forms.ModelForm):
 class CreateGallery(forms.ModelForm):
     class Meta:
         model = Project
-        fields = ('name', 'service', 'thumbnail')
+        fields = ('name', 'thumbnail')
 
 class AddGalleryImage(forms.ModelForm):
     class Meta:
