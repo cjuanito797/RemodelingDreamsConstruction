@@ -288,7 +288,6 @@ def createGallery(request, pk):
             gallery = form.save(commit=False)
 
             # get the service and assign it to this gallery object.
-            service = Service.objects.filter(pk=pk)
             gallery.service_id = pk
             gallery.save()
             # return the user to the page where they can add images for this new gallery.
