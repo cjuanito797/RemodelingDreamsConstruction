@@ -630,6 +630,10 @@ footer {
 
 
  @media (max-width: 650px) {
+
+     .promotional_banner {
+         margin: 0;
+     }
      .promotional_image {
          width: 50%;
          margin-right: 0%;
@@ -637,10 +641,6 @@ footer {
          padding: 0;
          background-color: blue;
      }
-
-
-
-
 
      .responsive-font-example {
          font-size: 25px;
