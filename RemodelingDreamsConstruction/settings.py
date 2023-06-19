@@ -139,12 +139,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'cfanito797@gmail.com'
-EMAIL_HOST_PASSWORD = 'ojhimukaguvdtgkc'
+EMAIL_HOST_USER = 'prairiecodellc@gmail.com'
+EMAIL_HOST_PASSWORD = 'zoangbcbhkpzpbmv'
 EMAIL_USE_SSL = False
 
-DEFAULT_FROM_EMAIL = 'cfanito797@gmail.com'
-SERVER_EMAIL = 'cfanito797@gmail.com'
+DEFAULT_FROM_EMAIL = 'prairiecodellc@gmail.com'
+SERVER_EMAIL = 'prairiecodellc@gmail.com'
 
 # Add to project/settings.py
 SECURE_HSTS_SECONDS = 31536000  # Unit is seconds; *USE A SMALL VALUE FOR TESTING!*
