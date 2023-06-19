@@ -632,7 +632,7 @@ footer {
  @media (max-width: 650px) {
 
      #promotional_banner {
-         margin-left: 1%;
+         margin-left: 2%;
      }
      .promotional_image {
          width: 50%;
@@ -642,9 +642,9 @@ footer {
      }
 
      .promotional_image img {
-         width: 95%;
-         height: 100%;
-         padding: 2%;
+         width: 85%;
+         height: 90%;
+         padding: 1%;
      }
 
      .responsive-font-example {
