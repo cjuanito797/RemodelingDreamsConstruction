@@ -43,8 +43,8 @@ def home(request):
             # send e-mail to customer.
             send_mail(
                  "Thank You For Choosing Remodeling Dreams Construction",
-                 "Hello, We Appreciate you for reaching out to us. A representative will contact you in order to set up a date and time for your appointment",
-                 "cfanito797@icloud.com",
+                 "Hello, We Appreciate you for reaching out to us. A representative will contact you in order to set up a date and time for your appointment.",
+                 "Rdcquoterequest@aol.com",
                  [form.cleaned_data['email']],
                  fail_silently=False,
              )
