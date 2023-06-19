@@ -629,10 +629,9 @@ footer {
  }
 
 
- /* If the screen size is smaller than 1200px, set the font-size to 80px */
  @media (max-width: 650px) {
      .promotional_image {
-         width: 45%;
+         width: 55%;
          margin-right: 0%;
          height: 25vh;
      }
