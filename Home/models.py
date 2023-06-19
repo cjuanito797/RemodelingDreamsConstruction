@@ -215,7 +215,7 @@ class requestAQuote(models.Model):
     state = models.CharField(max_length=30)
     zipcode = models.CharField(max_length=5)
     details = models.TextField(blank=False)
-    date = models.DateTimeField(default=datetime.now, blank=False)
+    date = models.DateTimeField(default=datetime.now, blank=True)
 
 
 class Service(models.Model):
