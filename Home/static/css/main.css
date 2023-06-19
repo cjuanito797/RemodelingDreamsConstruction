@@ -631,7 +631,7 @@ footer {
 
  @media (max-width: 650px) {
 
-     .promotional_banner {
+     #promotional_banner {
          margin: 0;
      }
      .promotional_image {
