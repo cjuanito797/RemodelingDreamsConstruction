@@ -631,9 +631,10 @@ footer {
 
  @media (max-width: 650px) {
      .promotional_image {
-         width: 55%;
+         width: 50%;
          margin-right: 0%;
          height: 25vh;
+         padding: 0;
      }
 
 
