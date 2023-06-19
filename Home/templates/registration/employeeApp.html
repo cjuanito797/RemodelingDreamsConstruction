@@ -398,19 +398,28 @@
                     <input type="text" name="employer_1_tel" maxlength="30" required id="id_employer_1_tel"
                         class="form-control form-control-lg" placeholder="Telephone #">
                 </div>
+            </div>
 
-                <div class="form-group col-sm flex-column d-flex">
-                    <input type="text" name="employer_1_date_started" required id="id_employer_1_date_started"
-                        class="form-control form-control-lg" placeholder="Date Started" onfocus="(this.type='date')"
-                        onblur="(this.type='text')">
+            <div class="row justify-content-between pl-1 pr-1" style=" align-items: center; display: flex;">
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <h5>Date Started:</h5>
                 </div>
 
                 <div class="form-group col-sm flex-column d-flex">
-                    <input type="text" name="employer_1_date_terminated" id="id_employer_1_date_terminated"
-                        class="form-control form-control-lg" placeholder="Date Terminated (Optional)"
-                        onfocus="(this.type='date')" onblur="(this.type='text')">
+                    <input type="date" name="employer_1_date_started" required id="id_employer_1_date_started"
+                        class="form-control form-control-lg" placeholder="Date Started">
+                </div>
+            </div>
+
+            <div class="row justify-content-between pl-1 pr-1" style=" align-items: center; display: flex;">
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <h5>Date Terminated (Optional):</h5>
                 </div>
 
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="date" name="employer_1_date_terminated" id="id_employer_1_date_terminated"
+                        class="form-control form-control-lg" placeholder="Date Terminated (Optional)">
+                </div>
             </div>
 
             <div class="row justify-content-between text-left pl-1"
@@ -645,17 +654,27 @@
                     <input type="text" name="employer_2_tel" maxlength="30" id="id_employer_2_tel"
                         class="form-control form-control-lg" placeholder="Telephone #">
                 </div>
+            </div>
 
-                <div class="form-group col-sm flex-column d-flex">
-                    <input type="text" name="employer_2_date_started" id="id_employer_2_date_started"
-                        class="form-control form-control-lg" placeholder="Date Started" onfocus="(this.type='date')"
-                        onblur="(this.type='text')">
+            <div class="row justify-content-between pl-1 pr-1" style=" align-items: center; display: flex;">
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <h5>Date Started:</h5>
                 </div>
 
                 <div class="form-group col-sm flex-column d-flex">
-                    <input type="text" name="employer_2_date_terminated" id="id_employer_2_date_terminated"
-                        class="form-control form-control-lg" placeholder="Date Terminated" onfocus="(this.type='date')"
-                        onblur="(this.type='text')">
+                    <input type="date" name="employer_2_date_started" id="id_employer_2_date_started"
+                        class="form-control form-control-lg" placeholder="Date Started">
+                </div>
+            </div>
+
+            <div class="row justify-content-between pl-1 pr-1" style=" align-items: center; display: flex;">
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <h5>Date Terminated (Optional):</h5>
+                </div>
+
+                <div class="form-group col-sm flex-column d-flex">
+                    <input type="date" name="employer_2_date_terminated" id="id_employer_2_date_terminated"
+                        class="form-control form-control-lg" placeholder="Date Terminated">
                 </div>
 
             </div>
@@ -890,11 +909,22 @@
                     <input type="text" name="employer_3_tel" maxlength="30" id="id_employer_3_tel"
                         class="form-control form-control-lg" placeholder="Telephone #">
                 </div>
+            </div>
+
+            <div class="row justify-content-between pl-1 pr-1" style=" align-items: center; display: flex;">
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <h5>Date Started:</h5>
+                </div>
 
                 <div class="form-group col-sm flex-column d-flex">
-                    <input type="text" name="employer_3_date_started" id="id_employer_3_date_started"
-                        class="form-control form-control-lg" placeholder="Date Started" onfocus="(this.type='date')"
-                        onblur="(this.type='text')">
+                    <input type="date" name="employer_3_date_started" id="id_employer_3_date_started"
+                        class="form-control form-control-lg" placeholder="Date Started">
+                </div>
+            </div>
+
+            <div class="row justify-content-between pl-1 pr-1" style=" align-items: center; display: flex;">
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <h5>Date Terminated (Optional):</h5>
                 </div>
 
                 <div class="form-group col-sm flex-column d-flex">
@@ -902,8 +932,10 @@
                         class="form-control form-control-lg" placeholder="Date Terminated" onfocus="(this.type='date')"
                         onblur="(this.type='text')">
                 </div>
-
             </div>
+
+
+
 
             <div class="row justify-content-between text-left pl-1"
                 style="width: 35%; display: flex; align-items: center;">
@@ -1126,7 +1158,7 @@
             </div>
 
             <div class="row justify-content-between pl-1 text-left">
-                <div class="form-group flex-column col-5 d-flex">
+                <div class="form-group flex-column col-sm d-flex">
                     <textarea name="skills_and_qual" cols="40" rows="10" id="id_skills_and_qual"
                         class="form-control form-control-lg"
                         placeholder="Please enter your skills and qualifications, that you feel relates to this position."></textarea>
@@ -1356,6 +1388,14 @@
                 <div class="form-group col-sm flex-column d-flex">
                     <input type="text" name="applicantSignature" required id="id_applicantSignature"
                         placeholder="Applicant Signature" class="form-control form-control-lg">
+                </div>
+
+
+            </div>
+
+            <div class="row justify-content-between pl-1 pr-1" style=" align-items: center; display: flex;">
+                <div class="form-group col-sm flex-column d-flex" style="display: inline-block;">
+                    <h5>Today's Date: </h5>
                 </div>
 
                 <div class="form-group col-3 flex-column d-flex">
