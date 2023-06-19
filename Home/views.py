@@ -44,7 +44,7 @@ def home(request):
             send_mail(
                  "Thank You For Choosing Remodeling Dreams Construction",
                  "Hello, We Appreciate you for reaching out to us. A representative will contact you in order to set up a date and time for your appointment",
-                 "Don't Reply <do_not_reply@domain.example>",
+                 "cfanito797@icloud.com",
                  [form.cleaned_data['email']],
                  fail_silently=False,
              )
@@ -58,7 +58,7 @@ def home(request):
             text_content = plaintext.render(content)
 
 
-            msg = EmailMultiAlternatives("A New Quote Has Been Created", text_content, 'cfanito797@gmail.com', ['rdcquoterequest@aol.com'])
+            msg = EmailMultiAlternatives("A New Quote Has Been Created", text_content, 'rdcdonotreply@gmail.com', ['rdcquoterequest@aol.com'])
             msg.send()
 
             form = quoteForm()
