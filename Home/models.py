@@ -2,7 +2,7 @@ from unittest.util import _MAX_LENGTH
 from django.db import models
 from django.db.models.deletion import DO_NOTHING
 from django.urls import reverse
-
+from datetime import datetime
 # Create your models here.
 
 class Employee(models.Model):
@@ -215,6 +215,7 @@ class requestAQuote(models.Model):
     state = models.CharField(max_length=30)
     zipcode = models.CharField(max_length=5)
     details = models.TextField(blank=False)
+    date = models.DateTimeField(default=datetime.now, blank=False)
 
 
 class Service(models.Model):
