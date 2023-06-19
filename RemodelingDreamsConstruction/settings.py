@@ -143,6 +143,7 @@ EMAIL_HOST_USER = 'rdcdonotreply@gmail.com'
 EMAIL_HOST_PASSWORD = 'eacfxmwhbltehsfd'
 EMAIL_USE_SSL = False
 
+DEFAULT_FROM_EMAIL = 'rdcdonotreply@gmail.com'
 SERVER_EMAIL = 'rdcdonotreply@gmail.com'
 
 # Add to project/settings.py
