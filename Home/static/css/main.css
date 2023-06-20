@@ -17,6 +17,10 @@ scroll-padding-top: 275px;
 font-family: 'Abril Fatface';
 }
 
+a : hover{
+    text-decoration: underline;
+}
+
 h1 {
     font-family: 'Abril';
     font-weight: bolder;
