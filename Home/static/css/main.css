@@ -21,6 +21,11 @@ h1 {
     font-weight: bolder;
 }
 
+p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
 body {
 
     width: 100%;
