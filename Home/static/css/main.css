@@ -16,6 +16,10 @@ scroll-behavior: smooth;
 scroll-padding-top: 275px;
 }
 
+h1 {
+    font-family: 'Abril';
+}
+
 body {
 
     width: 100%;
