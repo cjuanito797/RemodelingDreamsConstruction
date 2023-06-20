@@ -632,7 +632,7 @@ footer {
  @media (max-width: 650px) {
 
      #promotional_banner {
-         margin-left: 5%;
+         margin-left: 10%;
      }
      .promotional_image {
          width: 50%;
