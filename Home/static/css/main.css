@@ -12,14 +12,12 @@ width: 100%;
 height: 100%;
 margin: 0px;
 overflow-x: hidden;
-font-family: 'Abril Fatface';
 scroll-behavior: smooth;
 scroll-padding-top: 275px;
 }
 
 body {
 
-    font-family: 'Abril Fatface';
     width: 100%;
     height: 100%;
     margin: 0px;
