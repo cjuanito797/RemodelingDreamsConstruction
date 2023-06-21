@@ -2,7 +2,7 @@ from django.db import models
 from Home.models import Service as Service
 # Create your models here.
 class Testimonial(models.Model):
-    quote = models.TextField(max_length=500)
+    quote = models.TextField(max_length=1000)
     reviewer = models.CharField(max_length=55)
     rating = models.PositiveSmallIntegerField(choices=(
         (1, "★☆☆☆☆"),

@@ -87,7 +87,6 @@ class Employee(models.Model):
     date_available_start = models.DateField()
 
     EMPLOYMENT_OPTIONS = (
-            ('Casual', 'Casual'),
             ('Part Time', 'Part Time'),
             ('Full Time', 'Full Time'),
         )
