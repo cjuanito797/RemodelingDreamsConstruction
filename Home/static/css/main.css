@@ -662,7 +662,28 @@ footer {
          padding: 0;
      }
 
-     .promotional_image img {
+     #everlast {
+         width: auto;
+         height: auto;
+         padding: 2%;
+
+     }
+
+     #trex {
+         width: auto;
+         height: auto;
+         padding: 2%;
+
+     }
+
+     #cambria {
+         width: auto;
+         height: auto;
+         padding: 2%;
+
+     }
+
+     #pella {
          width: 50%;
          height: 60%;
          padding: 2%;
