@@ -597,7 +597,7 @@
                             {% if forloop.counter0 == 0 %}
                             <div class="item carousel-item active pt-5">
                                 <p class="testimonial pt-5">
-                                    "{{testimonial.quote}}"</p>
+                                    {{testimonial.quote}}</p>
                                 <p class="overview text-white">
                                     <b>{{testimonial.reviewer}}</b>
                                     {{testimonial.rating|stars}}
@@ -607,7 +607,7 @@
                             {% else %}
                             <div class="item carousel-item pt-5">
                                 <p class="testimonial pt-5">
-                                    "{{testimonial.quote}}"</p>
+                                    {{testimonial.quote}}</p>
                                 <p class="overview text-white">
                                     <b>{{testimonial.reviewer}}</b>
                                     {{testimonial.rating|stars}}
