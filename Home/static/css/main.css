@@ -647,6 +647,12 @@ footer {
 
  @media (max-width: 650px) {
 
+     .testimonial {
+         width: 100%;
+         margin: 0;
+         padding: 0;
+     }
+
      #promotional_banner {
          margin-left: 13%;
      }
