@@ -653,7 +653,8 @@ footer {
      }
 
      #promotional_banner {
-         margin-left: 13%;
+         margin-left: 5%;
+         text-align: center;
      }
      .promotional_image {
          width: 50%;
@@ -671,7 +672,7 @@ footer {
 
      #trex {
          width: 100%;
-         height: 50%;
+         height: auto;
          padding: 2%;
          background-color: blue;
 
