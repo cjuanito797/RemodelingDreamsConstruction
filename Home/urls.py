@@ -16,5 +16,6 @@ urlpatterns = [
     path("quote/", views.requestAQuote, name="requestAQuote"),
     path("aboutUs/", views.about_us, name="about_us"),
     path("viewGallery/<int:pk>", views.view_gallery, name="view_gallery"),
+    path("ourProcess/", views.our_process, name="our_process"),
 
 ]

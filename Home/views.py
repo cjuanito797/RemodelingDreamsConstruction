@@ -232,3 +232,6 @@ def service_detail(request, id, slug):
 
     return render(request, "service_details.html", {'service': service, 'service_images': service_images, 'promotional_images': promotional_images,
                                                     'projects' : projects})
+
+def our_process(request):
+    return render(request, "our_process.html")
