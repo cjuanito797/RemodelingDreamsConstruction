@@ -15,7 +15,8 @@ class quoteForm(forms.ModelForm):
         if self.cleaned_data['details'] is not None:
             for keyword in common_spam_keywords:
                 if keyword in self.cleaned_data['details'].lower():
-                   return 1
+                    print("Found an error!")
+                    return 1
             return self.cleaned_data
 
 class LoginForm(forms.Form):

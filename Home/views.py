@@ -37,12 +37,13 @@ def home(request):
             print("Customer Succesfully submitted form.")
             # create a new quote object.
             #
-            if form.check_spam():
+            if form.check_spam() == 1:
                 found_spam = 1
+                print("Found Spam in the contents of the form. Quiting...")
+                form = quoteForm()
                 return render(request, "home.html", {'form': form, 'found_spam': found_spam})
             else:
                 found_spam = 0
-                form = quoteForm()
             new_quote = form.save(commit=False)
             new_quote.save()
 
@@ -98,7 +99,6 @@ def requestAQuote(request):
                 return render(request, "requestAQuote.html", {'form': form, 'found_spam': found_spam})
             else:
                 found_spam = 0
-                form = quoteForm()
             lead = form.save(commit=False)
 
             # create a new requestAQuote instance
