@@ -36,6 +36,13 @@ def home(request):
             # render the success page.
             print("Customer Succesfully submitted form.")
             # create a new quote object.
+            #
+            if form.check_spam():
+                found_spam = 1
+                return render(request, "home.html", {'form': form, 'found_spam': found_spam})
+            else:
+                found_spam = 0
+                form = quoteForm()
             new_quote = form.save(commit=False)
             new_quote.save()
 
@@ -84,6 +91,14 @@ def requestAQuote(request):
             cd = form.cleaned_data
 
             # create a new instances of the data model.
+            #
+            if form.check_spam():
+                found_spam = 1
+                form = quoteForm()
+                return render(request, "requestAQuote.html", {'form': form, 'found_spam': found_spam})
+            else:
+                found_spam = 0
+                form = quoteForm()
             lead = form.save(commit=False)
 
             # create a new requestAQuote instance
