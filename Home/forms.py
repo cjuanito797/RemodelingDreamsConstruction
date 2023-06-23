@@ -10,7 +10,7 @@ class quoteForm(forms.ModelForm):
             'city', 'state', 'zipcode', 'details')
 
     def check_spam(self):
-        common_spam_keywords = ["href", "https", "click", "http", "www", "//"]
+        common_spam_keywords = ["href", "https", "click", "http", "www", "//", ".org", ".com", ".net", ".io"]
 
         if self.cleaned_data['details'] is not None:
             for keyword in common_spam_keywords:
