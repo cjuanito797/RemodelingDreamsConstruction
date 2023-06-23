@@ -12,12 +12,12 @@ class AddService(forms.ModelForm):
 class AddTestimonial(forms.ModelForm):
     class Meta:
         model = Testimonial
-        fields = ('quote', 'reviewer', 'rating')
+        fields = ('quote', 'reviewer', 'rating', 'image')
 
 class EditTestimonial(forms.ModelForm):
     class Meta:
         model = Testimonial
-        fields = ('quote', 'reviewer', 'rating')
+        fields = ('quote', 'reviewer', 'rating', 'image')
 
 class EditService(forms.ModelForm):
     class Meta:

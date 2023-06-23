@@ -32,7 +32,7 @@ def testimonials(request):
     testimonials = Testimonial.objects.all()
 
     if request.method == 'POST':
-        form = AddTestimonial(request.POST)
+        form = AddTestimonial(request.POST, request.FILES)
 
         if form.is_valid():
             new_testimonial = form.save(commit=False)
@@ -58,15 +58,12 @@ def edit_testimonial(request, pk):
 
     # load the form with the instance of this object.
     #
-    print("About to edit a testimonial.")
     if request.method == "POST":
-        form = EditTestimonial(request.POST, instance=test_edit)
-        print("Yes, the method is of type post.")
+        form = EditTestimonial(request.POST, request.FILES, instance=test_edit)
         # ensure that the form is valid, save and return to main testimonials page.
         if form.is_valid():
             test_edit = form.save()
             test_edit.save()
-            print("form is valid!")
 
             return redirect('Admin:testimonials')
 

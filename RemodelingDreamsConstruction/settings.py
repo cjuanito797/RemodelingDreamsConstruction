@@ -178,6 +178,7 @@ CSP_FONT_SRC = [
 
 CSP_IMG_SRC = [
     "'self'",
+    "/media/"
     "https://www.everlastsiding.com/",
     "https://scontent-dfw5-1.xx.fbcdn.net/v/",
     "https://images.trex.com/is/image/trexcompany/",

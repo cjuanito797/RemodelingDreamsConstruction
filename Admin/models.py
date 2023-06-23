@@ -11,6 +11,7 @@ class Testimonial(models.Model):
         (4, "★★★★☆"),
         (5, "★★★★★"),
     ))
+    image = models.ImageField(upload_to='gallery/', null=True, blank=True)
 
 class Project(models.Model):
     name = models.CharField(max_length=35, null=True, blank=True)
