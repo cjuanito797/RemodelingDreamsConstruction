@@ -25,12 +25,7 @@
 <div class="container-fluid text-center mt-2">
     <form method="post" enctype="multipart/form-data" id="form">
         {% csrf_token %}
-        <div class="col-sm form-group">
-            <textarea name="quote" cols="40" rows="10" maxlength="1000" required id="id_quote"
-                class="form-control form-control-lg">{{testimonial.quote}}</textarea>
 
-
-        </div>
 
 
         <div class="row justify-content-center">
@@ -59,6 +54,13 @@
                 </select>
 
             </div>
+        </div>
+
+        <div class="col-sm form-group">
+            <textarea name="quote" cols="40" rows="10" maxlength="1000" required id="id_quote"
+                class="form-control form-control-lg">{{testimonial.quote}}</textarea>
+
+
         </div>
 
         <div class="col-sm form-group">
