@@ -1,0 +1,71 @@
+{% extends 'home.html' %}
+{% load static %}
+
+
+
+{% block mainbody %}
+
+<div class="container-fluid" style="width: 100%;
+         background: linear-gradient(to top, #09203f 0%, #537895 100%);
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;">
+
+    <div class=" container" style="justify-content: center; text-align: center; padding-top: 5%; padding-bottom: 5%;
+        color: white;
+        font-family: serif;
+        font-weight: bold;
+        width: 100%;">
+        <h1 style="font-weight: bold;">Our Reviews</h1>
+    </div>
+</div>
+
+{% for testimonial in testimonials %}
+<div class="row justify-content-center">
+
+    <div class="col-sm">
+    </div>
+
+    <div class="col-md-5">
+        <div class="row justify-content-center p-4">
+            {% if forloop.counter|divisibleby:2 %}
+            <div class="col-sm">
+                <img src="/media/{{testimonial.image}}" width="400" height="300">
+            </div>
+
+            <div class="col-sm p-5">
+                <p class="lead"><strong>{{testimonial.quote}}</strong></p>
+                <p class="lead ">- {{testimonial.reviewer}}</p>
+            </div>
+
+            {% else %}
+
+            <div class="col-sm p-5">
+                <p class="lead"><strong>{{testimonial.quote}}</strong></p>
+                <p class="lead ">- {{testimonial.reviewer}}</p>
+            </div>
+
+            <div class="col-sm">
+                <img src="/media/{{testimonial.image}}" width="400" height="300">
+            </div>
+
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <div class="col-sm">
+    </div>
+
+</div>
+
+{% endfor %}
+
+
+
+
+
+
+{% endblock %}
