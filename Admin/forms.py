@@ -14,6 +14,11 @@ class AddTestimonial(forms.ModelForm):
         model = Testimonial
         fields = ('quote', 'reviewer', 'rating')
 
+class EditTestimonial(forms.ModelForm):
+    class Meta:
+        model = Testimonial
+        fields = ('quote', 'reviewer', 'rating')
+
 class EditService(forms.ModelForm):
     class Meta:
         model = Service

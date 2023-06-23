@@ -1,0 +1,77 @@
+{% extends 'home.html' %}
+{% load static %}
+
+
+{% block mainbody %}
+
+<div class="container-fluid" style="width: 100%;
+         background: linear-gradient(to top, #09203f 0%, #537895 100%);
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;">
+
+    <div class=" container" style="justify-content: center; text-align: center; padding-top: 5%; padding-bottom: 5%;
+        color: white;
+        font-family: serif;
+        font-weight: bold;
+        width: 100%;">
+        <h1 style="font-weight: bold;">Edit Testimonial Below.</h1>
+
+
+
+    </div>
+</div>
+
+<div class="container-fluid text-center mt-2">
+    <form method="POST" id="form">
+        {% csrf_token %}
+        <div class="col-sm form-group">
+            <textarea name="quote" cols="40" rows="10" maxlength="1000" required id="id_quote"
+                class="form-control form-control-lg">{{testimonial.quote}}</textarea>
+
+
+        </div>
+
+
+        <div class="row justify-content-center">
+            <div class="col-sm form-group">
+                <input type="text" name="reviewer" value="Brian Cady" maxlength="55" required id="id_reviewer"
+                    class="form-control form-control-lg">
+
+
+            </div>
+
+
+            <div class="col-sm form-group">
+                <select name="rating" required id="id_rating" class="form-control form-control-lg">
+                    <option value="">---------</option>
+
+                    <option value="1">★☆☆☆☆</option>
+
+                    <option value="2">★★☆☆☆</option>
+
+                    <option value="3">★★★☆☆</option>
+
+                    <option value="4">★★★★☆</option>
+
+                    <option value="5" selected>★★★★★</option>
+
+                </select>
+
+            </div>
+        </div>
+
+        <button type="submit" class="p-3 btn btn-primary w-25">Save</button>
+
+    </form>
+
+
+</div>
+
+
+
+
+
+{% endblock %}
+
+<script src="../../static/main.js">

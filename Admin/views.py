@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404, HttpResponse, 
 from django.contrib.auth.decorators import login_required
 from Home.models import requestAQuote, Service, ServiceImage, Employee, ServicePromotion
 from .models import *
-from .forms import EditService, EditThumbnail, AddImage, AddService, AddTestimonial, AddPromotion, AddGalleryImage, CreateGallery, EditProject
+from .forms import EditService, EditThumbnail, AddImage, AddService, AddTestimonial, AddPromotion, AddGalleryImage, CreateGallery, EditProject, EditTestimonial
 import json
 from django.utils.text import slugify
 
@@ -50,6 +50,31 @@ def delete_testimonial(request, pk):
     test_del.delete()
 
     return redirect('Admin:testimonials')
+
+@login_required (login_url = '/login/')
+def edit_testimonial(request, pk):
+    # query the testimonial to be edited.
+    test_edit = Testimonial.objects.filter(pk=pk).first()
+
+    # load the form with the instance of this object.
+    #
+    print("About to edit a testimonial.")
+    if request.method == "POST":
+        form = EditTestimonial(request.POST, instance=test_edit)
+        print("Yes, the method is of type post.")
+        # ensure that the form is valid, save and return to main testimonials page.
+        if form.is_valid():
+            test_edit = form.save()
+            test_edit.save()
+            print("form is valid!")
+
+            return redirect('Admin:testimonials')
+
+    else:
+        form = EditTestimonial(instance=test_edit)
+
+    return render(request, "admin/edit_testimonials.html", {'form': form, 'testimonial': test_edit})
+
 
 
 # Create your views here.
