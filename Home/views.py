@@ -25,7 +25,7 @@ def view_gallery(request, pk):
 # Create your views here.
 def home(request):
 
-    services = Service.objects.filter(name__in=['Additions', 'Doors', 'Decks', 'Design/planning', 'Interior Remodelings', 'Siding', ]).order_by('name')
+    services = Service.objects.filter(name__in=['Additions', 'Doors', 'Decks', 'Design/Planning', 'Interior Remodelings', 'Siding', ]).order_by('name')
     testimonials = Testimonial.objects.all()
     testimonial_count = Testimonial.objects.all().count()
 
