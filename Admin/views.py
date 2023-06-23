@@ -337,3 +337,6 @@ def deleteProject(request, pk):
 
     project.delete()
     return redirect('Admin:edit_service', pk)
+
+def settings(request, pk):
+    return render(request, "admin/settings.html")
