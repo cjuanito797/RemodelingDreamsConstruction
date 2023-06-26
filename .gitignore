@@ -5,3 +5,4 @@ venv/
 media/
 notes/
 migrations/
+static/
