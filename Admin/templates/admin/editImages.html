@@ -20,6 +20,9 @@
             Add A New Image
         </button>
 
+        <br>
+        <a href="{% url 'Admin:edit_service' service.id %}" class="btn btn-success p-3 m-3">Save</a>
+
     </div>
 </div>
 
@@ -54,7 +57,8 @@
                 <!-- insert the form here. -->
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {{form.as_p}}
+                    <label for="id_image">Image:</label>
+                    <input type="file" name="image" accept="image/*" id="id_image" multiple="multiple">
 
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

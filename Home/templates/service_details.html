@@ -56,10 +56,10 @@
     </div>
 </div>
 
-<div class="row justify-content-between text-left pl-5 pr-5 pt-5">
-    <div class="sectionHeader pt-5" style="text-align: center; width: 100%;">
-        <h2 class="header">View Our {{service.name}} Projects</h2>
-        <hr class="hr" style="width: 50%; border: 1px solid grey;">
+<div class="row justify-content-between text-left pl-5 pr-5 pt-5 w-100">
+    <div class="sectionHeader pt-5 text-center w-100">
+        <h1>View Our {{service.name}} Projects</h2>
+            <hr class="hr">
     </div>
 
     <!-- create a flex row for the project gallery containers. -->
@@ -86,6 +86,26 @@
 
 
         </div>
+    </div>
+
+
+</div>
+
+<div class="row justify-content-center w-100 text-center p-1 ml-1">
+    <div class="sectionHeader text-center w-100">
+        <h1>More From Our Work</h1>
+        <hr class="hr">
+    </div>
+
+    <div class="d-flex md-auto flex-row flex-wrap text-center w-55 ml-2" style="align-items: center;">
+        {% for image in service_images %}
+
+        <img src="/media/{{image}}" style="display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 50%;
+          height: 35vh;
+          padding: 1%;"> {% endfor %}
     </div>
 
 

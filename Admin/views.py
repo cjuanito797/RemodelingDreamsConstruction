@@ -226,6 +226,12 @@ def edit_service_images(request, pk):
         form = AddImage(request.POST, request.FILES)
 
         # check to make sure that the form is valid.
+        # print out the images from request.files.
+
+        print("Testing multiple file upload!")
+        for file in request.FILES:
+            print(file)
+
         if form.is_valid():
             new_url = request.FILES.get('image', False)
             if new_url != False:
