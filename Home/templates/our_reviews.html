@@ -30,7 +30,7 @@
         <div class="row justify-content-center p-4">
             {% if forloop.counter|divisibleby:2 %}
             <div class="col-sm">
-                <img src="/media/{{testimonial.image}}" width=100% height=85%;>
+                <img src="/media/{{testimonial.image}}" width=100% height=85%; onerror="this.style.display='none'">
             </div>
 
             <div class="col-sm p-5">
@@ -46,7 +46,7 @@
             </div>
 
             <div class="col-sm">
-                <img src="/media/{{testimonial.image}}" width=100%; height=85%;>
+                <img src="/media/{{testimonial.image}}" width=100%; height=85%; onerror="this.style.display='none'" />
             </div>
 
 
