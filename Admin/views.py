@@ -5,6 +5,9 @@ from .models import *
 from .forms import EditService, EditThumbnail, AddImage, AddService, AddTestimonial, AddPromotion, AddGalleryImage, CreateGallery, EditProject, EditTestimonial
 import json
 from django.utils.text import slugify
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth import authenticate, login, update_session_auth_hash
+
 
 @login_required(login_url = '/login/')
 def deleteApplicant(request, pk):
@@ -345,4 +348,25 @@ def deleteProject(request, pk):
     return redirect('Admin:edit_service', pk)
 
 def settings(request):
-    return render(request, "admin/settings.html")
+    if request.method == "POST":
+        print("A form was just submitted.")
+        if 'ChangePassword' in request.POST:
+            # render the form.
+            print("It appears that you opted to change the password!")
+            if request.user.is_authenticated:
+
+                change_password = PasswordChangeForm (request.user, request.POST)
+
+                if change_password.is_valid ( ):
+                    user = change_password.save (commit=False)
+                    change_password.save ( )
+                    update_session_auth_hash (request, user)
+
+                    return redirect('Home:user_login')
+
+    else:
+        change_password = PasswordChangeForm(request.user)
+
+
+
+        return render(request, "admin/settings.html", {'change_password' : change_password})
