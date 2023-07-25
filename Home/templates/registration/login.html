@@ -41,6 +41,14 @@ background-attachment: fixed;"">
                                 id="id_password" class="form-control form-control-lg" placeholder="Password">
                         </div>
 
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                onclick="myFunction()">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Show Password
+                            </label>
+                        </div>
+
                         <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="{% url 'password_reset' %}"
                                 style="font-family: 'Abril Fatface', cursive;">Forgot password?</a></p>
 
@@ -59,6 +67,24 @@ background-attachment: fixed;"">
         </div>
     </div>
     </div>
+
+    <script>
+
+        function myFunction() {
+            /* get the password element. */
+
+            /* determine the type that password is. */
+
+            var x = document.getElementById("id_password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+
+        }
+
+    </script>
 
 
     {% endblock %}
