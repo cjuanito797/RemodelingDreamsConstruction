@@ -16,7 +16,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-MEDIA_ROOT = os.path.join (BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -27,9 +27,9 @@ SECRET_KEY = "django-insecure-@sxd3tivehk_k!p=&^g#)@65+*+gpz-0cwd-*oo85m*uw^%m)=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['3.132.195.102', '127.0.0.1', 'remodelingdreamsconstruction.com', 'www.remodelingdreamsconstruction.com',]
-
-
+ALLOWED_HOSTS = ['3.132.195.102', '127.0.0.1',
+                 'remodelingdreamsconstruction.com',
+                 'www.remodelingdreamsconstruction.com', ]
 
 # Application definition
 
@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "Home.apps.HomeConfig",
     "Admin.apps.AdminConfig",
-
 
 ]
 
@@ -66,7 +65,7 @@ ROOT_URLCONF = "RemodelingDreamsConstruction.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        'DIRS': [os.path.join (BASE_DIR, 'templates'), ],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), ],
         'APP_DIRS': True,
         "OPTIONS": {
             "context_processors": [
@@ -81,7 +80,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "RemodelingDreamsConstruction.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -92,7 +90,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -100,11 +97,13 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator", },
+    {
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator", },
+    {
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator", },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
@@ -117,10 +116,8 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-
 
 
 STATIC_URL = '/static/'
@@ -147,7 +144,8 @@ DEFAULT_FROM_EMAIL = 'rdcdonotreply@gmail.com'
 SERVER_EMAIL = 'rdcdonotreply@gmail.com'
 
 # Add to project/settings.py
-SECURE_HSTS_SECONDS = 31536000  # Unit is seconds; *USE A SMALL VALUE FOR TESTING!*
+SECURE_HSTS_SECONDS = 31536000  # Unit is seconds; *USE A SMALL VALUE FOR
+# TESTING!*
 SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
@@ -162,6 +160,8 @@ CSP_SCRIPT_SRC = [
     "https://stackpath.bootstrapcdn.com",
     "https://cdn.jsdelivr.net",
     "https://code.jquery.com",
+    "https://www.google.com/recaptcha/api.js",
+    "https://www.gstatic.com/recaptcha/releases/",
 ]
 
 CSP_STYLE_SRC = [
@@ -194,4 +194,8 @@ CSP_IMG_SRC = [
 CSP_FRAME_SRC = [
     "https://maps.google.com/maps",
     "https://www.google.com/maps/",
+    "https://www.google.com/"
 ]
+
+RECAPTCHA_PUBLIC_KEY = "6Lc16KApAAAAAJpOe9EY-n5QkD9nmVFss3DoWxCh"
+RECAPTCHA_PRIVATE_KEY = "6Lc16KApAAAAACFQpwZNUJsuaW13Nam1XNDTW0io"

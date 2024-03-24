@@ -245,7 +245,8 @@ class ServiceImage(models.Model):
         return str(self.image)
 
     def get_thumbnail(self, pk):
-        # return a list of all images, belonging to service param that was passed in.
+        # return a list of all images, belonging to service param that was
+        # passed in.
         service = Service.objects.filter(pk=pk).get()
         images = ServiceImage.objects.filter(service_id=pk).all()
         for image in images:

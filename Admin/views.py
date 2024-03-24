@@ -1,15 +1,19 @@
-from django.shortcuts import render, redirect, get_object_or_404, HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponse, \
+    HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-from Home.models import requestAQuote, Service, ServiceImage, Employee, ServicePromotion
+from Home.models import requestAQuote, Service, ServiceImage, Employee, \
+    ServicePromotion
 from .models import *
-from .forms import EditService, EditThumbnail, AddImage, AddService, AddTestimonial, AddPromotion, AddGalleryImage, CreateGallery, EditProject, EditTestimonial
+from .forms import EditService, EditThumbnail, AddImage, AddService, \
+    AddTestimonial, AddPromotion, AddGalleryImage, CreateGallery, EditProject, \
+    EditTestimonial
 import json
 from django.utils.text import slugify
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import authenticate, login, update_session_auth_hash
 
 
-@login_required(login_url = '/login/')
+@login_required(login_url='/login/')
 def deleteApplicant(request, pk):
     applicant = get_object_or_404(Employee, pk=pk)
     applicant.delete()
@@ -17,20 +21,24 @@ def deleteApplicant(request, pk):
     return redirect("Admin:applicants")
 
 
-@login_required(login_url = '/login/')
+@login_required(login_url='/login/')
 def view_applicant_details(request, pk):
     # get the applicant, of whom we are wanting to view the details for.
     applicant = get_object_or_404(Employee, pk=pk)
 
-    return render(request, "admin/applicant_details.html", {'applicant': applicant})
+    return render(request, "admin/applicant_details.html",
+                  {'applicant': applicant})
 
-@login_required(login_url= '/login/')
+
+@login_required(login_url='/login/')
 def applicants(request):
     employee_apps = Employee.objects.all()
 
-    return render(request, "admin/applicants.html", {'applicants': employee_apps})
+    return render(request, "admin/applicants.html",
+                  {'applicants': employee_apps})
 
-@login_required (login_url = '/login/')
+
+@login_required(login_url='/login/')
 def testimonials(request):
     testimonials = Testimonial.objects.all()
 
@@ -44,9 +52,11 @@ def testimonials(request):
     else:
         form = AddTestimonial()
 
-    return render(request, "admin/testimonials.html", {'testimonials': testimonials, 'form': form})
+    return render(request, "admin/testimonials.html",
+                  {'testimonials': testimonials, 'form': form})
 
-@login_required (login_url = '/login/')
+
+@login_required(login_url='/login/')
 def delete_testimonial(request, pk):
     # query the testimonial to be deleted.
     test_del = Testimonial.objects.filter(pk=pk)
@@ -54,7 +64,8 @@ def delete_testimonial(request, pk):
 
     return redirect('Admin:testimonials')
 
-@login_required (login_url = '/login/')
+
+@login_required(login_url='/login/')
 def edit_testimonial(request, pk):
     # query the testimonial to be edited.
     test_edit = Testimonial.objects.filter(pk=pk).first()
@@ -63,7 +74,8 @@ def edit_testimonial(request, pk):
     #
     if request.method == "POST":
         form = EditTestimonial(request.POST, request.FILES, instance=test_edit)
-        # ensure that the form is valid, save and return to main testimonials page.
+        # ensure that the form is valid, save and return to main testimonials
+        # page.
         if form.is_valid():
             test_edit = form.save()
             test_edit.save()
@@ -73,29 +85,29 @@ def edit_testimonial(request, pk):
     else:
         form = EditTestimonial(instance=test_edit)
 
-    return render(request, "admin/edit_testimonials.html", {'form': form, 'testimonial': test_edit})
-
+    return render(request, "admin/edit_testimonials.html",
+                  {'form': form, 'testimonial': test_edit})
 
 
 # Create your views here.
-@login_required (login_url='/login/')
+@login_required(login_url='/login/')
 def admin(request):
-
-
     return render(request, 'admin/admin.html')
 
 
-@login_required (login_url='/login/')
+@login_required(login_url='/login/')
 def view_quotes(request):
     quotes = requestAQuote.objects.all()
 
-    return render(request, "admin/view_quotes.html", {'quotes' : quotes})
+    return render(request, "admin/view_quotes.html", {'quotes': quotes})
+
 
 def delete_quote(request, id):
-	quote = requestAQuote.objects.filter(pk=id).get()
-	quote.delete()
+    quote = requestAQuote.objects.filter(pk=id).get()
+    quote.delete()
 
-	return redirect('Admin:view_quotes')
+    return redirect('Admin:view_quotes')
+
 
 def deleteService(request, pk):
     # query the service that is to be deleted.
@@ -104,8 +116,8 @@ def deleteService(request, pk):
 
     return redirect('Admin:view_services')
 
-def view_services(request):
 
+def view_services(request):
     services = Service.objects.all().order_by('name')
     if request.method == "POST":
         form = AddService(request.POST)
@@ -119,7 +131,9 @@ def view_services(request):
     else:
         form = AddService()
 
-    return render(request, "admin/view_services.html", {'services': services, 'form': form})
+    return render(request, "admin/view_services.html",
+                  {'services': services, 'form': form})
+
 
 def edit_service(request, pk):
     service = get_object_or_404(Service, pk=pk)
@@ -128,10 +142,10 @@ def edit_service(request, pk):
     # we need to get the thumbnail corresponding to the service.
 
     # load the promotional images.
-    # get all of the promotional images pertaining to this service.
+    # get all the promotional images pertaining to this service.
     promotional_images = ServicePromotion.objects.filter(service_id=pk).all()
 
-    # get all of the projects, to display a row of project galleries.
+    # get all the projects, to display a row of project galleries.
     projects = Project.objects.filter(service_id=pk).all()
 
     images = ServiceImage.objects.filter(service_id=pk).all()
@@ -139,12 +153,13 @@ def edit_service(request, pk):
     url = None
     for image in images:
         # is this image set to default or not?
-        if image.is_default == True:
+        if image.is_default:
             # return id of current image.
             id = image.id
             break
 
-    # load up the thumbnail form, with the instance being the url for our current image.
+    # load up the thumbnail form, with the instance being the url for our
+    # current image.
     if request.method == "POST":
 
         form = EditService(request.POST, instance=service)
@@ -158,7 +173,7 @@ def edit_service(request, pk):
             service = form.save()
             service.save()
 
-            if ((new_url)) != False:
+            if new_url:
 
                 # delete the current thumbnail.
                 if id > 0:
@@ -179,17 +194,21 @@ def edit_service(request, pk):
         form = EditService(instance=service)
         edit_thumbnail = EditThumbnail()
 
-
-    return render(request, "admin/editService.html", {'form': form, 'edit_thumbnail': edit_thumbnail, 'service': service,
-        'images' : images, 'promotional_images': promotional_images, 'projects': projects})
+    return render(request, "admin/editService.html",
+                  {'form': form, 'edit_thumbnail': edit_thumbnail,
+                   'service': service,
+                   'images': images, 'promotional_images': promotional_images,
+                   'projects': projects})
 
 
 def editPromotionalBanner(request, pk):
-    # get all of the promotional images, pertaining to the service, which is the pk that was passed in as a parameter.
+    # get all the promotional images, pertaining to the service, which is
+    # the pk that was passed in as a parameter.
     promotional_images = ServicePromotion.objects.filter(service_id=pk).all()
 
-    # render the form, if everything is valid, create a new ServicePromotion that pertains to this service, reload the same-page.
-    # this time displaying new promotional image.
+    # render the form, if everything is valid, create a new ServicePromotion 
+    # that pertains to this service, reload the same-page. this time 
+    # displaying new promotional image.
 
     if request.method == 'POST':
         form = AddPromotion(request.POST, request.FILES)
@@ -197,7 +216,7 @@ def editPromotionalBanner(request, pk):
         # check to make sure that the form is valid.
         if form.is_valid():
             new_url = request.FILES.get('image', False)
-            if new_url != False:
+            if new_url:
                 new_promotion = form.save(commit=False)
                 new_promotion.service_id = pk
                 new_promotion.save()
@@ -206,8 +225,10 @@ def editPromotionalBanner(request, pk):
     else:
         form = AddPromotion()
 
+    return render(request, "admin/edit_promotional_banner.html",
+                  {'promotional_images': promotional_images, 'form': form,
+                   'id': pk})
 
-    return render(request, "admin/edit_promotional_banner.html", {'promotional_images': promotional_images, 'form': form, 'id': pk})
 
 def deletePromotion(request, pk):
     # query the promotion image based off of the pk that was passed in.
@@ -217,6 +238,7 @@ def deletePromotion(request, pk):
     promotion.delete()
 
     return redirect('Admin:editPromotionalBanner', pk)
+
 
 def edit_service_images(request, pk):
     # get all of the images of the belonging to the service.
@@ -237,7 +259,7 @@ def edit_service_images(request, pk):
 
         if form.is_valid():
             new_url = request.FILES.get('image', False)
-            if new_url != False:
+            if new_url:
                 new_service_image = form.save(commit=False)
                 new_service_image.service_id = pk
                 new_service_image.is_default = False
@@ -246,9 +268,12 @@ def edit_service_images(request, pk):
                 return redirect('Admin:edit_service_images', service.id)
     else:
         form = AddImage()
-    # get the id of the service as well, so that we can loop back to image gallery after deleting an image.
+    # get the id of the service as well, so that we can loop back to image 
+    # gallery after deleting an image.
 
-    return render(request, "admin/editImages.html", {'images': images, 'form': form, 'service': service})
+    return render(request, "admin/editImages.html",
+                  {'images': images, 'form': form, 'service': service})
+
 
 def deleteServiceImage(request, pk):
     # get the object of the service image that was passed in.
@@ -259,8 +284,9 @@ def deleteServiceImage(request, pk):
 
     return redirect('Admin:edit_service_images', pk)
 
+
 def edit_gallery(request, pk):
-    # get all of the images pertaining to the project, we will pass in the proj.
+    # get all the images pertaining to the project, we will pass in the proj.
 
     images = ProjectGallery.objects.filter(project_id=pk).all()
     # get the id of the service.
@@ -275,7 +301,7 @@ def edit_gallery(request, pk):
 
         if form.is_valid():
             new_url = request.FILES.get('image', False)
-            if new_url != False:
+            if new_url:
                 new_gallery_image = form.save(commit=False)
                 new_gallery_image.project_id = pk
                 new_gallery_image.save()
@@ -284,7 +310,9 @@ def edit_gallery(request, pk):
     else:
         form = AddGalleryImage()
 
-    return render(request, "admin/edit_gallery.html", {'images': images, 'form': form, 'id': id})
+    return render(request, "admin/edit_gallery.html",
+                  {'images': images, 'form': form, 'id': id})
+
 
 def edit_project(request, pk):
     # filter the project that we need to edit.
@@ -306,8 +334,8 @@ def edit_project(request, pk):
     else:
         form = EditProject(instance=project)
 
-    return render(request, "Admin/edit_project.html", {'form': form, 'project': project})
-
+    return render(request, "Admin/edit_project.html",
+                  {'form': form, 'project': project})
 
 
 def createGallery(request, pk):
@@ -321,12 +349,14 @@ def createGallery(request, pk):
             # get the service and assign it to this gallery object.
             gallery.service_id = pk
             gallery.save()
-            # return the user to the page where they can add images for this new gallery.
+            # return the user to the page where they can add images for this 
+            # new gallery.
             return redirect('Admin:edit_gallery', gallery.id)
     else:
         form = CreateGallery()
 
     return render(request, "admin/create_gallery.html", {'form': form})
+
 
 def deleteGalleryImage(request, pk):
     # get the image to be deleted.
@@ -336,6 +366,7 @@ def deleteGalleryImage(request, pk):
     image.delete()
 
     return redirect("Admin:edit_gallery", pk)
+
 
 def deleteProject(request, pk):
     # get the project that is to be deleted.
@@ -347,6 +378,7 @@ def deleteProject(request, pk):
     project.delete()
     return redirect('Admin:edit_service', pk)
 
+
 def settings(request):
     if request.method == "POST":
         print("A form was just submitted.")
@@ -355,18 +387,17 @@ def settings(request):
             print("It appears that you opted to change the password!")
             if request.user.is_authenticated:
 
-                change_password = PasswordChangeForm (request.user, request.POST)
+                change_password = PasswordChangeForm(request.user, request.POST)
 
-                if change_password.is_valid ( ):
-                    user = change_password.save (commit=False)
-                    change_password.save ( )
-                    update_session_auth_hash (request, user)
+                if change_password.is_valid():
+                    user = change_password.save(commit=False)
+                    change_password.save()
+                    update_session_auth_hash(request, user)
 
                     return redirect('Home:user_login')
 
     else:
         change_password = PasswordChangeForm(request.user)
 
-
-
-        return render(request, "admin/settings.html", {'change_password' : change_password})
+        return render(request, "admin/settings.html",
+                      {'change_password': change_password})

@@ -29,6 +29,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+
     {% block css_links %}
     <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
 
@@ -41,6 +42,15 @@
         <button type="button" class="close" data-dismiss="alert">x</button>
 
     </div>
+    {% endif %}
+
+    {% if no_captcha == 1 %}
+
+        <div class="alert alert-danger" role="alert">
+            You must complete the captcha, in order to submit the form.
+            <button type="button" class="close" data-dismiss="alert">x</button>
+        </div>
+
     {% endif %}
 
     <nav class="navbar" id="social_nav">
@@ -227,6 +237,8 @@
     </nav>
 
     {% endblock %}
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
 
@@ -703,6 +715,15 @@
                         </div>
                     </div>
 
+                    <div class="row justify-content-between text-left pl-5
+                    pr-5">
+                        <div class="form-group col-sm">
+                                  <div class="g-recaptcha"
+                                       data-sitekey="{{ site_key }}"></div>
+
+                        </div>
+                    </div>
+
 
                     <button type="submit" class="btn btn-primary contact_us_button p-3 w-25">Submit</button>
                 </form>
@@ -857,6 +878,7 @@
 
 
     <script src="{% static 'main.js' %}"></script>
+
 
     <script>
         $(function visitLink() {
