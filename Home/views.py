@@ -297,10 +297,10 @@ def service_detail(request, id, slug):
                                 )
     service_images = ServiceImage.objects.filter(service_id=id).all()
 
-    # get all of the promotional images pertaining to this service.
+    # get all the promotional images pertaining to this service.
     promotional_images = ServicePromotion.objects.filter(service_id=id).all()
 
-    # get all of the projects, to display a row of project galleries.
+    # get all the projects, to display a row of project galleries.
     projects = Project.objects.filter(service_id=id).all()
 
     return render(request, "service_details.html",
@@ -310,7 +310,7 @@ def service_detail(request, id, slug):
 
 
 def our_reviews(request):
-    # get all of the testimonial data.
+    # get all the testimonial data.
     testimonials = Testimonial.objects.all()
 
     return render(request, "our_reviews.html", {'testimonials': testimonials})
