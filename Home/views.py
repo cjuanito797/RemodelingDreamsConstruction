@@ -131,7 +131,10 @@ def requestAQuote(request):
         # print out the state:
         state = request.POST.get('id_state')
 
+        print(state)
         if not(state == "IA" or state == "NE"):
+            # clear the old form.
+            form = quoteForm()
             return render(request, 'requestAQuote.html', {'form': form,
                                                           'site_key': settings.RECAPTCHA_PUBLIC_KEY,
                                                           'invalid_state':
