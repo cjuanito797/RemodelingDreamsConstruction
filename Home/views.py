@@ -129,7 +129,7 @@ def requestAQuote(request):
         form = quoteForm(request.POST)
 
         # print out the state:
-        state = request.POST.get('id_state')
+        state = request.POST.get('state')
 
         print(state)
         if not(state == "IA" or state == "NE"):
