@@ -25,7 +25,7 @@ MEDIA_URL = '/media/'
 SECRET_KEY = "django-insecure-@sxd3tivehk_k!p=&^g#)@65+*+gpz-0cwd-*oo85m*uw^%m)="
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['3.132.195.102', '127.0.0.1',
                  'remodelingdreamsconstruction.com',
@@ -162,6 +162,9 @@ CSP_SCRIPT_SRC = [
     "https://code.jquery.com",
     "https://www.google.com/recaptcha/api.js",
     "https://www.gstatic.com/recaptcha/releases/",
+    "https://maps.googleapis.com/",
+    "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+    "'self'"
 ]
 
 CSP_STYLE_SRC = [
@@ -188,6 +191,7 @@ CSP_IMG_SRC = [
     "https://west-south.com/wp-content/",
     "https://static.vecteezy.com/",
     "https://www.woodstairs.com/",
+    "https://maps.gstatic.com/",
     "data:"
 ]
 
@@ -196,6 +200,7 @@ CSP_FRAME_SRC = [
     "https://www.google.com/maps/",
     "https://www.google.com/"
 ]
+
 
 RECAPTCHA_PUBLIC_KEY = "6Lc16KApAAAAAJpOe9EY-n5QkD9nmVFss3DoWxCh"
 RECAPTCHA_PRIVATE_KEY = "6Lc16KApAAAAACFQpwZNUJsuaW13Nam1XNDTW0io"

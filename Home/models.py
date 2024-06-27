@@ -220,16 +220,10 @@ class requestAQuote(models.Model):
     phoneNumber = models.CharField(max_length=30)
     streetAddress = models.CharField(max_length=45)
     city = models.CharField(max_length=30)
-    # need to set the state field to be an options, where the only option is IA or NE.
-    STATE_OPTIONS = [
-        ('Iowa', 'Iowa'),
-        ('Nebraska', 'Nebraska')
-    ]
 
     state = models.CharField(max_length=25,
-                             choices=STATE_OPTIONS,
                              blank=False)
-    zipcode = models.CharField(max_length=5)
+    zipcode = models.CharField(max_length=15)
     details = models.TextField(blank=False)
     date = models.DateTimeField(default=datetime.now, blank=True)
 
