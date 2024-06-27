@@ -128,6 +128,15 @@ def requestAQuote(request):
     if request.method == "POST":
         form = quoteForm(request.POST)
 
+        # print out the state:
+        state = request.POST.get('id_state')
+
+        if not(state == "IA" or state == "NE"):
+            return render(request, 'requestAQuote.html', {'form': form,
+                                                          'site_key': settings.RECAPTCHA_PUBLIC_KEY,
+                                                          'invalid_state':
+                                                              1})
+
         # ensure that there are no errors with the form.
 
         # verify the captcha.
