@@ -44,6 +44,15 @@ def home(request):
         # submitted and returned true, before we can hope to submit the form
         # or whether we need to return an error.
 
+        state = request.POST.get('state')
+        if not (state == "IA" or state == "NE"):
+            # clear the old form.
+            form = quoteForm()
+            return render(request, 'requestAQuote.html', {'form': form,
+                                                          'site_key': settings.RECAPTCHA_PUBLIC_KEY,
+                                                          'invalid_state':
+                                                              1})
+
         data = request.POST['g-recaptcha-response']
         values = {
             'secret': settings.RECAPTCHA_PRIVATE_KEY,
@@ -128,15 +137,11 @@ def requestAQuote(request):
     if request.method == "POST":
         form = quoteForm(request.POST)
 
-        # print out the state:
+        # validate the state!
         state = request.POST.get('state')
-
-        print(state)
         if not(state == "IA" or state == "NE"):
             # clear the old form.
             form = quoteForm()
-
-
             return render(request, 'requestAQuote.html', {'form': form,
                                                           'site_key': settings.RECAPTCHA_PUBLIC_KEY,
                                                           'invalid_state':
