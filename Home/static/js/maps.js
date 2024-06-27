@@ -7,7 +7,7 @@
 // For example: <script
 // src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-console.log("Sanity Check!");
+console.log("Sanity Check!   ");
 
 let autocomplete;
 let address1Field;
@@ -24,7 +24,6 @@ function initAutocomplete() {
     fields: ["address_components", "geometry"],
     types: ["address"],
   });
-  address1Field.focus();
   // When the user selects an address from the drop-down, populate the
   // address fields in the form.
   autocomplete.addListener("place_changed", fillInAddress);
