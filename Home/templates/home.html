@@ -33,6 +33,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
               rel="stylesheet">
+        <link rel="preload" fetchpriority="high" as="image" href="{% static 'housePlans.avif' %}"
+              type="image/webp">
 
         {% block css_links %}
             <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
@@ -372,7 +374,8 @@
                 </div>
 
                 <div class="col-sm p-5">
-                    <img src="../static/10482045_661903410559497_3949993609450000240_o.jpg"
+                    <img src="../static/10482045_661903410559497_3949993609450000240_o.jpg" 
+                         loading="lazy"
                          width="100%" height="85%">
 
                 </div>
@@ -386,7 +389,7 @@
             <div class="promotional_image p-0">
                 <a href="https://www.everlastsiding.com" target="_blank">
                     <img src="https://www.everlastsiding.com/sites/default/files/Everlast_4C-darker%20siding%20text_2.jpg"
-                         width="65%" height="65%" id="everlast">
+                         width="65%" height="65%" id="everlast" loading="lazy">
                 </a>
             </div>
 
@@ -394,7 +397,7 @@
                 <a href="https://www.trex.com/products/decking/transcend/?utm_id=go_cmp-1719182107_adg-75817427668_ad-651779979592_aud-337125460934:kwd-197812316_dev-c_ext-_prd-_mca-_sig-CjwKCAjw-b-kBhB-EiwA4fvKrFUgh0MV2nFc2TkeG3k-NeZV90NVjttSuxoNG6Iuz4_17_b9wj87DRoCh7AQAvD_BwE&utm_source=google&utm_medium=cpc&gclid=CjwKCAjw-b-kBhB-EiwA4fvKrFUgh0MV2nFc2TkeG3k-NeZV90NVjttSuxoNG6Iuz4_17_b9wj87DRoCh7AQAvD_BwE"
                    target="_blank">
                     <img src="https://images.trex.com/is/image/trexcompany/trex-platinum-badge-lg-1?ts=1676322000206&$mediaCarouselMain$&dpr=off"
-                         width="65%" height="65%" id="trex">
+                         width="65%" height="65%" id="trex" loading="lazy">
                 </a>
             </div>
 
@@ -402,13 +405,14 @@
                 <a href="https://www.ckfco.com/countertops/" target="_blank">
                     <img src="https://pacificshorestones.com/wp-content/uploads/2017/03/cambria-logo.png"
                          width="65%"
-                         height="65%" id="cambria">
+                         height="65%" id="cambria" loading="lazy">
                 </a>
             </div>
 
             <div class="promotional_image mt-2">
                 <a href="https://www.pella.com" target="_blank">
-                    <img src="../static/pella.png" width="65%" height="85%" id="pella">
+                    <img src="../static/pella.png" width="65%" height="85%" id="pella" 
+                         loading="lazy">
                 </a>
             </div>
 
@@ -629,7 +633,7 @@
                         <div class="card mt-5 service_card">
 
                             <img class="card-img-top service_image"
-                                 src="/media/{{ service.id|thumbnail }}">
+                                 src="/media/{{ service.id|thumbnail }}" loading="lazy">
 
                             <div class="card-body service_body">
 
@@ -826,7 +830,7 @@
                 </div>
 
 
-                <img src="../static/logo.jpeg" width="70%" height="50%">
+                <img src="../static/logo.jpeg" width="70%" height="50%" loading="lazy">
                 <br>
 
                 <div class="container-fluid text-center p-0">
